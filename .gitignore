@@ -1,0 +1,15 @@
+*.pyc
+*.mo
+*.egg
+/.installed.cfg
+UNEP.cartagenareportingtool.egg-info
+/bin/
+/develop-eggs/
+/include/
+/lib/
+/nixenv
+/parts/
+/var/
+/.mr.developer.cfg
+/src/plone.app.widgets
+*.swp
