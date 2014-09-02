@@ -5,7 +5,7 @@ version = '1.0a'
 
 setup(name='UNEP.cartagenareportingtool',
       version=version,
-      description="Cartagena Reporting Tool",
+      description="UNEP Cartagena Reporting Tool",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from

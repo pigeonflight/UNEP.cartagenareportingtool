@@ -26,7 +26,7 @@
        in Plone -->
   <genericsetup:registerProfile
       name="default"
-      title="Cartagena Reporting Tool"
+      title="UNEP Cartagena Reporting Tool"
       directory="profiles/default"
       description="Extension profile for Cartagena Reporting Tool"
       provides="Products.GenericSetup.interfaces.EXTENSION"
