@@ -91,11 +91,7 @@
     <field name="does_your_country_have_a_designated_national_focal_point_for_the_cartagena_convention_" type="zope.schema.Choice">
       <description/>
       <title>Does your country have a designated National Focal Point for the Cartagena Convention?</title>
-      <values>
-        <element>Yes</element>
-        <element>No</element>
-        <element>In Preparation</element>
-      </values>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_focal_point_name_of_organization" type="zope.schema.TextLine">
@@ -133,7 +129,7 @@
     <field name="national_agency_ministry_institution" type="zope.schema.Choice">
       <description>Does your country have a designated National Agency/Ministry/Institution or other appropriate authority for coordinating the implementation of the Cartagena Convention (Article 15, paragraph 2)?</description>
       <title>National agency/ministry/institution</title>
-      <values/>
+            <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="implementation_plans" type="zope.schema.Choice">

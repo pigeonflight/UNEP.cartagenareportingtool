@@ -32,6 +32,21 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
 
     form.model("models/country_report.xml")
 
+yes_no_inprep = SimpleVocabulary(
+    [
+     SimpleTerm(value=u'Yes', title=_(u'Yes')),
+     SimpleTerm(value=u'No', title=_(u'No')),
+     SimpleTerm(value=u'In Preparation', title=_(u'In Preparation'))
+     ]
+    )
+yes_no_inprep_other = SimpleVocabulary(
+    [
+     SimpleTerm(value=u'Yes', title=_(u'Yes')),
+     SimpleTerm(value=u'No', title=_(u'No')),
+     SimpleTerm(value=u'In Preparation', title=_(u'In Preparation')),
+     SimpleTerm(value=u'Other', title=_(u'Other'))
+     ]
+    )
 
 # Custom content-type class; objects created for this content type will
 # be instances of this class. Use this class to add content-type specific
