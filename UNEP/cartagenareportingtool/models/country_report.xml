@@ -1,8 +1,15 @@
-<model xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:indexer="http://namespaces.plone.org/supermodel/indexer" xmlns="http://namespaces.plone.org/supermodel/schema">
+<model xmlns:security="http://namespaces.plone.org/supermodel/security"
+xmlns:marshal="http://namespaces.plone.org/supermodel/marshal"
+xmlns:form="http://namespaces.plone.org/supermodel/form"
+xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
+xmlns="http://namespaces.plone.org/supermodel/schema"
+xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+       i18n:domain="UNEP.catagenareportingtool"
+>
   <schema>
-    <field name="country" type="zope.schema.Choice">
+    <field name="country" form:before="title" type="zope.schema.Choice">
       <description/>
-      <title>Country</title>
+      <title i18n:translate="Country">Country</title>
       <values>
         <element>Antigua &amp; Barbuda</element>
         <element>Aruba</element>
@@ -40,7 +47,7 @@
         <element>Venezuela</element>
       </values>
     </field>
-    <field name="reporting_period_start" type="zope.schema.Date">
+    <field name="reporting_period_start" form:before="country" type="zope.schema.Date">
       <description/>
       <title>Reporting Period Start</title>
     </field>
@@ -48,9 +55,10 @@
       <description/>
       <title>Reporting Period End</title>
     </field>
-    <field name="Title" type="zope.schema.TextLine">
+       
+    <field name="full_name_of_reporting_institution" type="zope.schema.TextLine">
       <description/>
-      <title>Full Name of Reporting Institution</title>
+      <title i18n:translate="Full Name of Reporting Institution">Full Name of Reporting Institution</title>
     </field>
     <field name="reporting_officer_name" type="zope.schema.TextLine">
       <description>Enter reporting officer's full name</description>
@@ -80,6 +88,10 @@
       <description/>
       <title>Web Address</title>
     </field>
+    
+      <fieldset name="test"
+          label="Test Fieldset"
+          description="Description of test fieldset">
     <field name="date_the_report_was_submitted" type="zope.schema.Date">
       <description/>
       <title>Date the report was submitted</title>
@@ -91,7 +103,7 @@
     <field name="does_your_country_have_a_designated_national_focal_point_for_the_cartagena_convention_" type="zope.schema.Choice">
       <description/>
       <title>Does your country have a designated National Focal Point for the Cartagena Convention?</title>
-      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_focal_point_name_of_organization" type="zope.schema.TextLine">
@@ -129,9 +141,9 @@
     <field name="national_agency_ministry_institution" type="zope.schema.Choice">
       <description>Does your country have a designated National Agency/Ministry/Institution or other appropriate authority for coordinating the implementation of the Cartagena Convention (Article 15, paragraph 2)?</description>
       <title>National agency/ministry/institution</title>
-            <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>
-      <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
+            <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
+    </fieldset>
     <field name="implementation_plans" type="zope.schema.Choice">
       <description>Has your country developed an implementation plans(s) to carry out the general obligations of the Cartagena Convention? (Article 4) </description>
       <title>Implementation Plans</title>
@@ -253,10 +265,8 @@
     <field name="pollution_emergencies_in_the_convention_area" type="zope.schema.Choice">
       <description>Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?</description>
       <title>Pollution Emergencies in the convention area</title>
-      <values>
-        <element>Yes</element>
-        <element>No</element>
-      </values>
+        <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>
+        <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="describe_pollution_emergencies" type="zope.schema.TextLine">
       <description>If yes, please describe the details and answer the question below.</description>
@@ -291,168 +301,168 @@
       <description>Does your country currently have any technical and other guidelines (e.g., EIAs) to assist the planning of major development projects in such a way as to prevent or minimize harmful impacts on the Convention Area?  &#13;
 </description>
       <title>Technical guidelines to assist planning of major development projects</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="technical_cooperation_agreements" type="zope.schema.Choice">
       <description>Does your country have technical cooperation agreements with any other Contracting Parties relating to the purposes of the Convention? </description>
       <title>Technical cooperation agreements</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="status_of_ratification_of_the_existing_protocols" type="zope.schema.Choice">
       <description>Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention.</description>
       <title>Status of ratification of the existing protocols</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="plans_to_propose_amendments_to_the_convention" type="zope.schema.Choice">
       <description>Does your country currently have any plan to propose any amendments to the Cartagena Convention?    &#13;
 </description>
       <title>Plans to propose amendments to the convention</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="designated_focal_point_for_the_oil_spills_protocol_" type="zope.schema.Choice">
       <description>Does your country have a designated Focal Point for the Oil Spills Protocol?</description>
       <title>Designated Focal Point for the Oil Spills Protocol?</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_policies_for_management_of_oil_spill_pollution__" type="zope.schema.Choice">
       <description>Does your country currently have any national policies for prevention, reduction and control of oil spill pollution? </description>
       <title>national policies for management of oil spill pollution? </title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_laws_for_management_of_oil_spill_pollution" type="zope.schema.Choice">
       <description>Does your country currently have any national laws for prevention, reduction and control of oil spill pollution? </description>
       <title>national laws for management of oil spill pollution</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_plans_for_management_of_oil_spill_pollution" type="zope.schema.Choice">
       <description>Does your country currently have any national plans for prevention, reduction and control of oil spill pollution?  </description>
       <title>national plans for management of oil spill pollution</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_operational_measures_for_responding_to_oil_spill_incidents" type="zope.schema.Choice">
       <description>Has your country established any national operational measures such as establishing national oil spill contingency plans for responding to oil spill incidents (Article 7 of the Oil Spills Protocol)?&#13;
 </description>
       <title>national operational measures for responding to oil spill incidents</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="oil_spill_incidents_since_1986" type="zope.schema.Choice">
       <description>Has your country experienced any oil-spill incidents since 1986 (Article 1, paragraph 4)? &#13;
 </description>
       <title>oil-spill incidents since 1986</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="designated_focal_point_for_the_spaw_protocol" type="zope.schema.Choice">
       <description>Does your country have a designated Focal Point for the SPAW Protocol?&#13;
 </description>
       <title>Designated Focal Point for the SPAW Protocol</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_policies_for_the_protection_of_wild_flora_and_fauna" type="zope.schema.Choice">
       <description>Does your country currently have any national policies, laws, mechanisms or measures for the protection of Wild Flora and Fauna? (Article 10 of the SPAW Protocol) &#13;
 </description>
       <title>national policies for the protection of Wild Flora and Fauna</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_laws_for_the_protection_of_wild_flora_and_fauna" type="zope.schema.Choice">
       <description>national laws for the protection of Wild Flora and Fauna</description>
       <title>national laws for the protection of Wild Flora and Fauna</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_plans_for_the_protection_of_wild_flora_and_fauna" type="zope.schema.Choice">
       <description>Does your country currently have any national plans or measures for the protection of Wild Flora and Fauna? (Article 10 of the SPAW Protocol) </description>
       <title>national plans for the protection of Wild Flora and Fauna</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="established_protected_areas_pursuant_to_the_spaw_protocol" type="zope.schema.Choice">
       <description>Has your country established any protected areas pursuant to the SPAW Protocol? (Article 4 of the SPAW Protocol) </description>
       <title>established protected areas pursuant to the SPAW Protocol</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="identified_all_endangered_threatened_species_within_your_country" type="zope.schema.Choice">
       <description>Has your country identified all of the endangered / threatened species listed in Annexes I, II, and III of the SPAW Protocol that are within your country (i.e. within areas over which your country exercises sovereignty, sovereign rights, or jurisdiction)?</description>
       <title>identified all endangered/threatened species within your country</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="measures_to_ensure_strict_protection_of_the_endangered_threatened_species" type="zope.schema.Choice">
       <description>Has your country taken measures to ensure strict protection of the endangered/threatened species listed in Annexes I and II (Article 11.1(a) and 11.1(b) of the SPAW Protocol)?</description>
       <title>measures to ensure strict protection of the endangered/threatened species</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="plans_for_the_management_of_endangered_threatened_species" type="zope.schema.Choice">
       <description>Has your country formulated, adopted, and implemented any plans for the management and use of species listed in Annex III (Article 11.1 (c) of the SPAW Protocol)?&#13;
 </description>
       <title>Plans for the management of endangered/threatened species</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="exemptions_to_species_protection" type="zope.schema.Choice">
       <description>Has your country adopted exemptions to species protection (Articles 11.2 and 14 of the SPAW Protocol)?</description>
       <title>Exemptions to species protection</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="changes_in_the_delimitation_of_protected_areas_or_to_changes_in_their_status" type="zope.schema.Choice">
       <description>Did your country proceed to any changes in the delimitation of protected areas and/or to changes in their status (Article 15 of the SPAW Protocol)?&#13;
 </description>
       <title>Changes in the delimitation of protected areas or to changes in their status</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="common_guidelines_or_criteria_adopted" type="zope.schema.Choice">
       <description>Has your country incorporated into its law or policy the common guidelines or criteria adopted under Article 21 of the SPAW Protocol?&#13;
 </description>
       <title>common guidelines or criteria adopted</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="designated_focal_point_for_the_lbs_protocol" type="zope.schema.Choice">
       <description>Does your country have a designated Focal Point for the LBS Protocol?&#13;
 </description>
       <title>Designated Focal Point for the LBS Protocol</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_definition_of_pollution_from_land_based_sources_and_activiites" type="zope.schema.Choice">
       <description>Is there a national definition of pollution from &#8220;Land-based sources and activities&#8221; (Article I (d))?&#13;
 </description>
       <title>National definition of pollution from Land-based sources and activiites</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources" type="zope.schema.Choice">
       <description>Does your country currently have any legislation for the prevention, reduction and control pollution from land-based sources in the Convention area (Article III)? </description>
       <title>legislation for prevention reduction and control of pollution from land-based sources</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol" type="zope.schema.Choice">
       <description>Has your country developed any implementation plans, programs, and measures to carry out the general terms of [or:  meet the objectives of] the LBS Protocol, including National Programmes of Action (NPAs)? (Article III)</description>
       <title>Plans programs and measures that meet objectives of the LBS Protocol</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution" type="zope.schema.Choice">
       <description>Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period? </description>
       <title>new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="other_types_and_or_sources_of_lbs_pollution" type="zope.schema.Choice">
       <description>Are there any other types and/or sources of LBS pollution other than those listed in Annex I of the LBS Protocol that require special consideration in your country?&#13;
 </description>
       <title>Other types and/or sources of LBS pollution</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="environmental_pollution_monitoring_and_assessment_programmes" type="zope.schema.Choice">
       <description>Does your country have any existing environmental pollution monitoring and assessment programmes as outlined in LBS Protocol Article VI?</description>
       <title>Environmental pollution monitoring and assessment programmes</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="guidelines_concerning_environmental_impact_assessments" type="zope.schema.Choice">
       <description>Has your country developed and adopted guidelines concerning environmental impact assessments (EIAs) or has your country generated EIAs consistent with the LBS Protocol, Article VII (2)?</description>
       <title>guidelines concerning environmental impact assessments</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="total_annual_estimate_of_pollutant_loads_from_lbs_activities" type="zope.schema.Choice">
       <description>Does your country have a total annual estimate of the pollutant loads to the marine environment for LBS activities?</description>
       <title>Total Annual estimate of pollutant loads from LBS activities</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="difficulties_in_the_implementation_of_the_lbs_protocol" type="zope.schema.Choice">
       <description>Has your country experienced any difficulties in the implementation of the LBS protocol?</description>
       <title>Difficulties in the implementation of the LBS protocol</title>
-      <values/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="major_areas_of_assistance_required_to_implement_protocols" type="zope.schema.Text">
       <description>What are three major areas of assistance required to assist your country in implementing the obligations of the Cartagena Convention and its Protocols.&#13;

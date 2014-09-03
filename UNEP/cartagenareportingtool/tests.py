@@ -52,6 +52,14 @@ def test_suite():
 
         # -*- extra stuff goes here -*-
 
+        # Integration tests for MemberFolder
+        ztc.ZopeDocFileSuite(
+            'MemberFolder.txt',
+            package='UNEP.cartagenareportingtool',
+            optionflags = OPTION_FLAGS,
+            test_class=TestCase),
+
+
         # Integration tests for CountryReport
         ztc.ZopeDocFileSuite(
             'CountryReport.txt',

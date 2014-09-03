@@ -6,7 +6,7 @@ from zope.interface import invariant, Invalid
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
-from plone.dexterity.content import Item
+from plone.dexterity.content import Container
 
 from plone.directives import dexterity, form
 from plone.app.textfield import RichText
@@ -20,41 +20,26 @@ from UNEP.cartagenareportingtool import MessageFactory as _
 
 # Interface class; used to define content-type schema.
 
-class ICountryReport(form.Schema, IImageScaleTraversable):
+class IMemberFolder(form.Schema, IImageScaleTraversable):
     """
-    Country Report for Cartagena Convention
+    Folder to hold reports
     """
 
     # If you want a schema-defined interface, delete the model.load
     # line below and delete the matching file in the models sub-directory.
     # If you want a model-based interface, edit
-    # models/country_report.xml to define the content type.
+    # models/member_folder.xml to define the content type.
 
-    form.model("models/country_report.xml")
+    form.model("models/member_folder.xml")
 
-yes_no_inprep = SimpleVocabulary(
-    [
-     SimpleTerm(value=u'Yes', title=_(u'Yes')),
-     SimpleTerm(value=u'No', title=_(u'No')),
-     SimpleTerm(value=u'In Preparation', title=_(u'In Preparation'))
-     ]
-    )
-yes_no_inprep_other = SimpleVocabulary(
-    [
-     SimpleTerm(value=u'Yes', title=_(u'Yes')),
-     SimpleTerm(value=u'No', title=_(u'No')),
-     SimpleTerm(value=u'In Preparation', title=_(u'In Preparation')),
-     SimpleTerm(value=u'Other', title=_(u'Other'))
-     ]
-    )
 
 # Custom content-type class; objects created for this content type will
 # be instances of this class. Use this class to add content-type specific
 # methods and properties. Put methods that are mainly useful for rendering
 # in separate view classes.
 
-class CountryReport(Item):
-    grok.implements(ICountryReport)
+class MemberFolder(Container):
+    grok.implements(IMemberFolder)
 
     # Add your class methods and properties here
     pass
@@ -62,7 +47,7 @@ class CountryReport(Item):
 
 # View class
 # The view will automatically use a similarly named template in
-# country_report_templates.
+# member_folder_templates.
 # Template filenames should be all lower case.
 # The view will render when you request a content object with this
 # interface with "/@@sampleview" appended.
@@ -73,15 +58,9 @@ class CountryReport(Item):
 class SampleView(grok.View):
     """ sample view class """
 
-    grok.context(ICountryReport)
+    grok.context(IMemberFolder)
     grok.require('zope2.View')
 
     # grok.name('view')
 
     # Add view methods here
-
-
-translatable_strings = [
-_(u'Full Name of Reporting Institution'),
-_(u'World'),
-  ]
