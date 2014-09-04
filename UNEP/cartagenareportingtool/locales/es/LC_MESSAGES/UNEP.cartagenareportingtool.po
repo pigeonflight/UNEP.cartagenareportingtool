@@ -6,6 +6,12 @@ msgstr ""
 "X-Generator: POEditor.com\n"
 "Project-Id-Version: UNEP.cartagenareportingtool\n"
 "Language: es\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: es\n"
+"Language: es\n"
+"Language-Name: Spanish\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: UNEP.cartagenareportingtool\n"
 
 #: UNEP.cartagenareportingtool:/country_report.py:37
 #: UNEP.cartagenareportingtool:/country_report.py:44
@@ -36,7 +42,7 @@ msgstr "Mundo"
 
 #:
 msgid "Country"
-msgstr "Paísy"
+msgstr "País"
 
 #:
 msgid "Full name of the reporting institution"

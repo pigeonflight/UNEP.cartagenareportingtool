@@ -7,6 +7,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
        i18n:domain="UNEP.catagenareportingtool"
 >
   <schema>
+   
     <field name="country" form:before="title" type="zope.schema.Choice">
       <description/>
       <title i18n:translate="">Country</title>
@@ -59,15 +60,11 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
        
     <field name="full_name_of_reporting_institution" type="zope.schema.TextLine">
       <description/>
-      <title i18n:translate="Full Name of Reporting Institution">Full Name of Reporting Institution</title>
+      <title i18n:translate="Full Name of Reporting Institution">Full name of reporting institution</title>
     </field>
     <field name="reporting_officer_name" type="zope.schema.TextLine">
-      <description>Enter reporting officer's full name</description>
-      <title i18n:translate="Reporting Officer Name">Reporting Officer Name</title>
-    </field>
-    <field name="title_of_reporting_officer" type="zope.schema.TextLine">
-      <description/>
-      <title >Title of reporting officer</title>
+      <description>Name and title of reporting officer</description>
+      <title i18n:translate="Name and title of reporting officer">Name and title of reporting officer</title>
     </field>
     <field name="agency" type="zope.schema.TextLine">
       <description/>
@@ -77,22 +74,31 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <description/>
       <title i18n:translate="Mailing Address">Mailing Address</title>
     </field>
-    <field name="telephone" type="zope.schema.TextLine">
-      <description>XXX replace with datagrid field</description>
-      <title i18n:translate="Tel.">Telephone</title>
+<field name="telephone" type="zope.schema.List"
+    form:widget="collective.z3cform.datagridfield.DataGridFieldFactory">
+
+      <title>Telephone</title>
+      <description>Enter telephone numbers here</description>
+      <max_length>5</max_length>
+      <min_length>1</min_length>
+      <missing_value/>
+      <readonly>False</readonly>
+      <required>False</required>
+
+      <value_type type="collective.z3cform.datagridfield.DictRow">
+        <title>Number</title>
+        <schema>UNEP.cartagenareportingtool.numberschema.INumberSchema</schema>
+      </value_type>
     </field>
     <field name="email" type="zope.schema.TextLine">
       <description/>
-      <title i18n:translate="E-mail">Email</title>
+      <title i18n:translate="E-mail">E-mail</title>
     </field>
     <field name="web_address" type="zope.schema.TextLine">
       <description/>
-      <title i18n:translate="Webpage">Web Address</title>
+      <title i18n:translate="Webpage">Webpage</title>
     </field>
     
-      <fieldset name="test"
-          label="Test Fieldset"
-          description="Description of test fieldset">
     <field name="date_the_report_was_submitted" type="zope.schema.Date">
       <description/>
       <title i18n:translate="Date the report was submitted (DD/MM/YYYY)">Date the report was submitted</title>
@@ -101,10 +107,14 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <description/>
       <title>Signature</title>
     </field>
+<!-- end of Part 1 -->
+      <fieldset name="section1"
+          label="Section 1"
+          description="Section 1: Designated National Focal Point, Institution and Implementation Plans - Articles 4, 15">
     <field name="does_your_country_have_a_designated_national_focal_point_for_the_cartagena_convention_" type="zope.schema.Choice">
       <description/>
       <title>Does your country have a designated National Focal Point for the Cartagena Convention?</title>
-      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_focal_point_name_of_organization" type="zope.schema.TextLine">
@@ -144,7 +154,6 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <title>National agency/ministry/institution</title>
             <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
-    </fieldset>
     <field name="implementation_plans" type="zope.schema.Choice">
       <description>Has your country developed an implementation plans(s) to carry out the general obligations of the Cartagena Convention? (Article 4) </description>
       <title>Implementation Plans</title>
@@ -179,6 +188,11 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
 </description>
       <title>Why implementation difficulties with details</title>
     </field>
+    </fieldset>
+<fieldset name="section2" label="Section 2" 
+       description="Section 2: Measures to Reduce Marine Pollution from Ships, Caused by Discharges or Dumping, from Exploration or Exploitation of the Sea-Bed , or from Discharges to the Atmosphere 
+- Articles 5, 6, 8, 9">
+
     <field name="national_definitions_for_pollution_sources" type="zope.schema.Choice">
       <description>Is there a national definition within existing pollution related legislation or regulations for &#8220;Pollution from Ships&#8221;, &#8220;Discharging or Dumping of wastes at sea&#8221;, &#8220;Exploration or Exploitation of the  Sea-Bed Activities&#8221;, and &#8220;Discharges (emissions) to the Atmosphere&#8221; (Articles 5, 6, 8, 9)?</description>
       <title>National definitions for pollution sources</title>
@@ -263,6 +277,8 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <description>If yes, please provide a website or URL reference related to such marine plans.</description>
       <title>Plan website</title>
     </field>
+  </fieldset>
+<fieldset name="section3" label="Section 3" description="Section 3: Cooperation in Cases of Emergency – Article 11">
     <field name="pollution_emergencies_in_the_convention_area" type="zope.schema.Choice">
       <description>Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?</description>
       <title>Pollution Emergencies in the convention area</title>
@@ -298,17 +314,23 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
 </description>
       <title>Jointly developed and promoted contingency plans</title>
     </field>
+</fieldset>
+<fieldset name="section4" label="Section 4" description="Section 4: Environmental Impact Assessment – Article 12" >
     <field name="technical_guidelines_to_assist_planning_of_major_development_projects" type="zope.schema.Choice">
       <description>Does your country currently have any technical and other guidelines (e.g., EIAs) to assist the planning of major development projects in such a way as to prevent or minimize harmful impacts on the Convention Area?  &#13;
 </description>
       <title>Technical guidelines to assist planning of major development projects</title>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
+</fieldset>
+<fieldset name="section5" label="Section 5" description="Section 5: Scientific and Technical Cooperation  – Article 13">
     <field name="technical_cooperation_agreements" type="zope.schema.Choice">
       <description>Does your country have technical cooperation agreements with any other Contracting Parties relating to the purposes of the Convention? </description>
       <title>Technical cooperation agreements</title>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
+</fieldset>
+<fieldset name="section6" label="Section 6" description="Section 6: Adoption/Amendment of the Convention and its Protocols  – Articles 17,18">
     <field name="status_of_ratification_of_the_existing_protocols" type="zope.schema.Choice">
       <description>Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention.</description>
       <title>Status of ratification of the existing protocols</title>
@@ -320,6 +342,8 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <title>Plans to propose amendments to the convention</title>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
+</fieldset>
+<fieldset name="section7" label="Section 7" description="Section 7: The Protocol Concerning Cooperation in Combating Oil Spills in the Wider Caribbean Region">
     <field name="designated_focal_point_for_the_oil_spills_protocol_" type="zope.schema.Choice">
       <description>Does your country have a designated Focal Point for the Oil Spills Protocol?</description>
       <title>Designated Focal Point for the Oil Spills Protocol?</title>
@@ -352,6 +376,8 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <title>oil-spill incidents since 1986</title>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
+</fieldset>
+<fieldset name="section8" label="Section 8" description="Section 8: The Protocol Concerning Specially Protected Areas and Wildlife (SPAW) - Article 4, 10, 11, 20, 21">
     <field name="designated_focal_point_for_the_spaw_protocol" type="zope.schema.Choice">
       <description>Does your country have a designated Focal Point for the SPAW Protocol?&#13;
 </description>
@@ -412,6 +438,8 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <title>common guidelines or criteria adopted</title>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
+</fieldset>
+<fieldset name="section9" label="Section 9" description="Section 9: The Protocol Concerning Pollution from Land-Based Sources  (LBS) and Activities - Articles I, III, VI, VII">
     <field name="designated_focal_point_for_the_lbs_protocol" type="zope.schema.Choice">
       <description>Does your country have a designated Focal Point for the LBS Protocol?&#13;
 </description>
@@ -470,5 +498,6 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
 </description>
       <title>Major areas of assistance required to implement protocols</title>
     </field>
+ </fieldset>
   </schema>
 </model>

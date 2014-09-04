@@ -13,3 +13,4 @@ UNEP.cartagenareportingtool.egg-info
 /.mr.developer.cfg
 /src/plone.app.widgets
 *.swp
+*.swo

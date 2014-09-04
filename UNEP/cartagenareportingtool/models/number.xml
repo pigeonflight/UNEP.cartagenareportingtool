@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<model xmlns="http://namespaces.plone.org/supermodel/schema"
+       xmlns:form="http://namespaces.plone.org/supermodel/form">
+
+    <schema>
+         <field name="number" type="zope.schema.TextLine"> 
+            <description/> 
+            <required>False</required> 
+            <title>Number</title> 
+        </field> 
+    </schema>
+</model>

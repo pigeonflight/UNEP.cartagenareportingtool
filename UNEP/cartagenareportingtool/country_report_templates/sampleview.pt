@@ -22,6 +22,8 @@
 
 
     <div tal:content="context/Title">Title inserted here</div>
+    <div tal:content="context/country">Title inserted here</div>
+    <b i18n:translate="">Country</b>
 
   </metal:content-core>
 </metal:main>
