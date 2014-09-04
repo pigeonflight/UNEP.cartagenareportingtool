@@ -3,10 +3,20 @@
        xmlns:form="http://namespaces.plone.org/supermodel/form">
 
     <schema>
-         <field name="number" type="zope.schema.TextLine"> 
-            <description/> 
-            <required>False</required> 
-            <title>Number</title> 
-        </field> 
+         <field name="type" type="zope.schema.Choice">
+           <values>
+             <element>fax</element>
+             <element>phone</element>
+             <element>mobile</element>
+           </values>
+            <description/>
+            <required>False</required>
+            <title>Type</title>
+        </field>
+         <field name="number" type="zope.schema.TextLine">
+            <description/>
+            <required>False</required>
+            <title>Number</title>
+        </field>
     </schema>
 </model>
