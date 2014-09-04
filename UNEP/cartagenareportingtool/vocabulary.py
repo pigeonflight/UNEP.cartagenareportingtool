@@ -1,5 +1,10 @@
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
+yes_no = SimpleVocabulary.fromValues(
+    [
+     'Yes','No'
+     ]
+    )
 yes_no_inprep = SimpleVocabulary.fromValues(
     [
      'Yes','No','In Preparation'

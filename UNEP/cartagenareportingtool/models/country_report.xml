@@ -223,6 +223,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         <element>Yes</element>
         <element>No</element>
       </values>
+      <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     </fieldset>
 <fieldset name="section2" label="Section 2"
@@ -230,8 +231,8 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
 - Articles 5, 6, 8, 9">
 
     <field name="national_definitions_for_pollution_sources" type="zope.schema.Choice">
-      <description>Is there a national definition within existing pollution related legislation or regulations for &#8220;Pollution from Ships&#8221;, &#8220;Discharging or Dumping of wastes at sea&#8221;, &#8220;Exploration or Exploitation of the  Sea-Bed Activities&#8221;, and &#8220;Discharges (emissions) to the Atmosphere&#8221; (Articles 5, 6, 8, 9)?</description>
-      <title>National definitions for pollution sources</title>       <required>False</required>
+      <title>1. Is there a national definition within existing pollution related legislation or regulations for &#8220;Pollution from Ships&#8221;, &#8220;Discharging or Dumping of wastes at sea&#8221;, &#8220;Exploration or Exploitation of the  Sea-Bed Activities&#8221;, and &#8220;Discharges (emissions) to the Atmosphere&#8221; (Articles 5, 6, 8, 9)?</title>
+      <description/>       <required>False</required>
       <values>
         <element>Yes</element>
         <element>No</element>
@@ -240,8 +241,8 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="management_measures_since_the_last_reporting_period_sources_of_pollution_in_the_convention_area" type="zope.schema.Choice">
-      <description>Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area? </description>
-      <title>management measures since the last reporting period sources of pollution in the Convention area</title>       <required>False</required>
+      <title>2. Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area? </title>
+      <description/>       <required>False</required>
       <values>
         <element>Yes</element>
         <element>No</element>
@@ -258,8 +259,8 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <title>Why no action since last reporting period</title>       <required>False</required>
     </field>
     <field name="other_pollution_sources_or_types_that_may_affect_marine_resources" type="zope.schema.Choice">
-      <description>Are there any other sources and/or types of pollution that may affect marine resources in the Convention area which require special consideration in your country?</description>
-      <title>Other pollution sources or types that may affect marine resources</title>       <required>False</required>
+      <title>3. Are there any other sources and/or types of pollution that may affect marine resources in the Convention area which require special consideration in your country?</title>
+      <description/>       <required>False</required>
       <values>
         <element>Yes</element>
         <element>No</element>
@@ -272,8 +273,8 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <title>Text for Discharges from ship</title>       <required>False</required>
     </field>
     <field name="policies_for_marine_pollution_management_for_special_consideration" type="zope.schema.Choice">
-      <description>Does your country have any national policies for marine pollution prevention, reduction and control for these activities requiring special consideration? </description>
-      <title>National policies for marine pollution management</title>       <required>False</required>
+      <title>4. Does your country have any national policies for marine pollution prevention, reduction and control for these activities requiring special consideration? </title>
+      <description/>       <required>False</required>
       <values>
         <element>Yes</element>
         <element>No</element>
@@ -302,11 +303,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     <field name="plans_for_marine_pollution_management_for_special_consideration" type="zope.schema.Choice">
       <description>Does your country have any national plans for marine pollution prevention, reduction and control for these activities requiring special consideration? </description>
       <title>National plans for marine pollution management</title>       <required>False</required>
-      <values>
-        <element>Yes</element>
-        <element>No</element>
-        <element>In Preparation</element>
-      </values>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="plan_website_for_marine_pollution" type="zope.schema.Text">
@@ -316,8 +313,8 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
   </fieldset>
 <fieldset name="section3" label="Section 3" description="Section 3: Cooperation in Cases of Emergency – Article 11">
     <field name="pollution_emergencies_in_the_convention_area" type="zope.schema.Choice">
-      <description>Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?</description>
-      <title>Pollution Emergencies in the convention area</title>       <required>False</required>
+      <title>1. Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?</title>
+      <description/>       <required>False</required>
         <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>
         <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
@@ -330,15 +327,17 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <title>Related marine emergency website</title>       <required>False</required>
     </field>
     <field name="response_to_emergencies" type="zope.schema.Set">
-      <description>In regards to the question above, did your country respond to the situation through any of the following: </description>
-      <title>Response to emergencies</title>       <required>False</required>
+      <title>2. In regards to the question above, did your country respond to the situation through any of the following:</title>
+      <description/>
+      <required>False</required>
       <value_type type="zope.schema.Choice">
         <values>
           <element>National Contingency Plans</element>
           <element>Regional Contingency Plans</element>
-          <element>Cooperation with Contracting Parties </element>
+          <element>Cooperation with Contracting Parties</element>
         </values>
-      </value_type>
+        </value_type>
+        <form:widget type="z3c.form.browser.checkbox.CheckBoxWidget"/>
     </field>
     <field name="contracting_parties_and_experience" type="zope.schema.Text">
       <description>If cooperation took place with other Contracting Parties, please specify the name of Contracting Parties you have worked with and briefly describe the experience. &#13;
@@ -346,48 +345,50 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <title>Contracting parties and experience</title>       <required>False</required>
     </field>
     <field name="jointly_developed_and_promoted_contingency_plans" type="zope.schema.TextLine">
-      <description>Has your country, jointly with another country or with other countries, developed and promoted any contingency plans for responding to incidents involving pollution or the threat thereof in the Convention area?&#13;
-</description>
-      <title>Jointly developed and promoted contingency plans</title>       <required>False</required>
+      <title>3. Has your country, jointly with another country or with other countries, developed and promoted any contingency plans for responding to incidents involving pollution or the threat thereof in the Convention area?</title>
+        <description/>       <required>False</required>
     </field>
 </fieldset>
 <fieldset name="section4" label="Section 4" description="Section 4: Environmental Impact Assessment – Article 12" >
     <field name="technical_guidelines_to_assist_planning_of_major_development_projects" type="zope.schema.Choice">
-      <description>Does your country currently have any technical and other guidelines (e.g., EIAs) to assist the planning of major development projects in such a way as to prevent or minimize harmful impacts on the Convention Area?  &#13;
-</description>
-      <title>Technical guidelines to assist planning of major development projects</title>       <required>False</required>
+      <title>1. Does your country currently have any technical and other guidelines (e.g., EIAs) to assist the planning of major development projects in such a way as to prevent or minimize harmful impacts on the Convention Area?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
 </fieldset>
 <fieldset name="section5" label="Section 5" description="Section 5: Scientific and Technical Cooperation  – Article 13">
     <field name="technical_cooperation_agreements" type="zope.schema.Choice">
-      <description>Does your country have technical cooperation agreements with any other Contracting Parties relating to the purposes of the Convention? </description>
-      <title>Technical cooperation agreements</title>       <required>False</required>
+      <title>1. Does your country have technical cooperation agreements with any other Contracting Parties relating to the purposes of the Convention?</title>
+     <description/>
+     <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
 </fieldset>
 <fieldset name="section6" label="Section 6" description="Section 6: Adoption/Amendment of the Convention and its Protocols  – Articles 17,18">
     <field name="status_of_ratification_of_the_existing_protocols" type="zope.schema.Choice">
-      <description>Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention.</description>
-      <title>Status of ratification of the existing protocols</title>       <required>False</required>
+      <title>1. Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention.</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="plans_to_propose_amendments_to_the_convention" type="zope.schema.Choice">
-      <description>Does your country currently have any plan to propose any amendments to the Cartagena Convention?    &#13;
-</description>
-      <title>Plans to propose amendments to the convention</title>       <required>False</required>
+      <title>2. Does your country currently have any plan to propose any amendments to the Cartagena Convention?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
 </fieldset>
 <fieldset name="section7" label="Section 7" description="Section 7: The Protocol Concerning Cooperation in Combating Oil Spills in the Wider Caribbean Region">
     <field name="designated_focal_point_for_the_oil_spills_protocol_" type="zope.schema.Choice">
-      <description>Does your country have a designated Focal Point for the Oil Spills Protocol?</description>
-      <title>Designated Focal Point for the Oil Spills Protocol?</title>       <required>False</required>
+      <title>1. Does your country have a designated Focal Point for the Oil Spills Protocol?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_policies_for_management_of_oil_spill_pollution__" type="zope.schema.Choice">
-      <description>Does your country currently have any national policies for prevention, reduction and control of oil spill pollution? </description>
-      <title>national policies for management of oil spill pollution? </title>       <required>False</required>
+      <title>2. Does your country currently have any national policies for prevention, reduction and control of oil spill pollution? </title>
+    <description/>   <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_laws_for_management_of_oil_spill_pollution" type="zope.schema.Choice">
@@ -401,29 +402,29 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_operational_measures_for_responding_to_oil_spill_incidents" type="zope.schema.Choice">
-      <description>Has your country established any national operational measures such as establishing national oil spill contingency plans for responding to oil spill incidents (Article 7 of the Oil Spills Protocol)?&#13;
-</description>
-      <title>national operational measures for responding to oil spill incidents</title>       <required>False</required>
+      <title>3. Has your country established any national operational measures such as establishing national oil spill contingency plans for responding to oil spill incidents (Article 7 of the Oil Spills Protocol)?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="oil_spill_incidents_since_1986" type="zope.schema.Choice">
-      <description>Has your country experienced any oil-spill incidents since 1986 (Article 1, paragraph 4)? &#13;
-</description>
-      <title>oil-spill incidents since 1986</title>       <required>False</required>
+      <title>4. Has your country experienced any oil-spill incidents since 1986 (Article 1, paragraph 4)?</title>
+      <description>oil-spill incidents since 1986</description>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
 </fieldset>
 <fieldset name="section8" label="Section 8" description="Section 8: The Protocol Concerning Specially Protected Areas and Wildlife (SPAW) - Article 4, 10, 11, 20, 21">
     <field name="designated_focal_point_for_the_spaw_protocol" type="zope.schema.Choice">
-      <description>Does your country have a designated Focal Point for the SPAW Protocol?&#13;
-</description>
-      <title>Designated Focal Point for the SPAW Protocol</title>       <required>False</required>
+      <title>1. Does your country have a designated Focal Point for the SPAW Protocol?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_policies_for_the_protection_of_wild_flora_and_fauna" type="zope.schema.Choice">
-      <description>Does your country currently have any national policies, laws, mechanisms or measures for the protection of Wild Flora and Fauna? (Article 10 of the SPAW Protocol) &#13;
-</description>
-      <title>national policies for the protection of Wild Flora and Fauna</title>       <required>False</required>
+      <title>2. Does your country currently have any national policies, laws, mechanisms or measures for the protection of Wild Flora and Fauna? (Article 10 of the SPAW Protocol)</title>
+    <description/>
+    <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_laws_for_the_protection_of_wild_flora_and_fauna" type="zope.schema.Choice">
@@ -437,41 +438,50 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="established_protected_areas_pursuant_to_the_spaw_protocol" type="zope.schema.Choice">
-      <description>Has your country established any protected areas pursuant to the SPAW Protocol? (Article 4 of the SPAW Protocol) </description>
-      <title>established protected areas pursuant to the SPAW Protocol</title>       <required>False</required>
+      <title>3. Has your country established any protected areas pursuant to the SPAW Protocol? (Article 4 of the SPAW Protocol) </title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="identified_all_endangered_threatened_species_within_your_country" type="zope.schema.Choice">
-      <description>Has your country identified all of the endangered / threatened species listed in Annexes I, II, and III of the SPAW Protocol that are within your country (i.e. within areas over which your country exercises sovereignty, sovereign rights, or jurisdiction)?</description>
-      <title>identified all endangered/threatened species within your country</title>       <required>False</required>
+      <title>4. Has your country identified all of the endangered / threatened species listed in Annexes I, II, and III of the SPAW Protocol that are within your country (i.e. within areas over which your country exercises sovereignty, sovereign rights, or jurisdiction)?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="measures_to_ensure_strict_protection_of_the_endangered_threatened_species" type="zope.schema.Choice">
-      <description>Has your country taken measures to ensure strict protection of the endangered/threatened species listed in Annexes I and II (Article 11.1(a) and 11.1(b) of the SPAW Protocol)?</description>
-      <title>measures to ensure strict protection of the endangered/threatened species</title>       <required>False</required>
+      <title>5. Has your country taken measures to ensure strict protection of the endangered/threatened species listed in Annexes I and II (Article 11.1(a) and 11.1(b) of the SPAW Protocol)?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="plans_for_the_management_of_endangered_threatened_species" type="zope.schema.Choice">
-      <description>Has your country formulated, adopted, and implemented any plans for the management and use of species listed in Annex III (Article 11.1 (c) of the SPAW Protocol)?&#13;
-</description>
-      <title>Plans for the management of endangered/threatened species</title>       <required>False</required>
+      <title>6. Has your country formulated, adopted, and implemented any plans for the management and use of species listed in Annex III (Article 11.1 (c) of the SPAW Protocol)?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="exemptions_to_species_protection" type="zope.schema.Choice">
-      <description>Has your country adopted exemptions to species protection (Articles 11.2 and 14 of the SPAW Protocol)?</description>
-      <title>Exemptions to species protection</title>       <required>False</required>
+      <title>7. Has your country adopted exemptions to species protection (Articles 11.2 and 14 of the SPAW Protocol)?</title>
+      <description/>  <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="changes_in_the_delimitation_of_protected_areas_or_to_changes_in_their_status" type="zope.schema.Choice">
-      <description>Did your country proceed to any changes in the delimitation of protected areas and/or to changes in their status (Article 15 of the SPAW Protocol)?&#13;
-</description>
-      <title>Changes in the delimitation of protected areas or to changes in their status</title>       <required>False</required>
-      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
+      <title>8. Did your country proceed to any changes in the delimitation of protected areas and/or to changes in their status (Article 15 of the SPAW Protocol)?</title>
+      <description/>
+      <required>False</required>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
+    </field>
+    <field name="changes_in_the_legal_status_of_species_listed" type="zope.schema.Choice">
+      <title>9. Did your country proceed to any changes in the legal status of species listed in Annexes I, III, or III (Article 15 of the SPAW Protocol)?</title>
+      <description/>
+      <required>False</required>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="common_guidelines_or_criteria_adopted" type="zope.schema.Choice">
-      <description>Has your country incorporated into its law or policy the common guidelines or criteria adopted under Article 21 of the SPAW Protocol?&#13;
-</description>
-      <title>common guidelines or criteria adopted</title>       <required>False</required>
+      <title>10. Has your country incorporated into its law or policy the common guidelines or criteria adopted under Article 21 of the SPAW Protocol?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
 </fieldset>
