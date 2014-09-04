@@ -1,27 +1,11 @@
-##############################################################################
-#
-# Copyright (c) 2003-2004 Zope Foundation and Contributors.
-# All Rights Reserved.
-#
-# This software is subject to the provisions of the Zope Public License,
-# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
-# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
-# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
-# FOR A PARTICULAR PURPOSE.
-#
-##############################################################################
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
-"POT-Creation-Date: Wed Sep  3 06:52:32 2014\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Zope 3 Developers <zope-dev@zope.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: zope/app/locales/extract.py\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: UNEP.cartagenareportingtool\n"
+"Language: en\n"
 
 #: UNEP.cartagenareportingtool:/country_report.py:37
 #: UNEP.cartagenareportingtool:/country_report.py:44
@@ -48,5 +32,573 @@ msgstr ""
 
 #: UNEP.cartagenareportingtool:/country_report.py:86
 msgid "World"
+msgstr ""
+
+#: 
+msgid "Country"
+msgstr ""
+
+#: 
+msgid "Full name of the reporting institution"
+msgstr ""
+
+#: 
+msgid "Period Reported (DD/MM/YYYY): from ${start_date} to ${end_date}"
+msgstr ""
+
+#: 
+msgid "Name and Title of reporting officer"
+msgstr ""
+
+#: 
+msgid "Agency"
+msgstr ""
+
+#: 
+msgid "Mailing Address"
+msgstr ""
+
+#: 
+msgid "Tel."
+msgstr ""
+
+#: 
+msgid "Fax"
+msgstr ""
+
+#: 
+msgid "E-mail"
+msgstr ""
+
+#: 
+msgid "Webpage"
+msgstr ""
+
+#: 
+msgid "Date the report was submitted (DD/MM/YYYY)"
+msgstr ""
+
+#: 
+msgid "Signature"
+msgstr ""
+
+#: 
+msgid "Does your country have a designated National Focal Point for the Cartagena\n"
+"Convention?"
+msgstr ""
+
+#: 
+msgid "If yes, please provide"
+msgstr ""
+
+#: 
+msgid "Name of Organization"
+msgstr ""
+
+#: 
+msgid "Contact Person"
+msgstr ""
+
+#: 
+msgid "Job Title"
+msgstr ""
+
+#: 
+msgid "Department"
+msgstr ""
+
+#: 
+msgid "Address"
+msgstr ""
+
+#: 
+msgid "Website"
+msgstr ""
+
+#: 
+msgid "Does your country have a designated National Agency/Ministry/Institution or other appropriate authority for coordinating the implementation of the Cartagena Convention (Article 15, paragraph 2)?"
+msgstr ""
+
+#: 
+msgid "Has your country developed an implementation plans(s) to carry out the general obligations of the Cartagena Convention? (Article 4)"
+msgstr ""
+
+#: 
+msgid "Existing Plan(s)"
+msgstr ""
+
+#: 
+msgid "If yes or in preparation, please provide brief details of all of the main implementation plan(s) that are developed and/or being used in your country, or that are in preparation."
+msgstr ""
+
+#: 
+msgid "If no, please describe why not."
+msgstr ""
+
+#: 
+msgid "If plans exist, please specify what existing frameworks are being used for \n"
+"implementation of the Convention."
+msgstr ""
+
+#: 
+msgid "Has your country received any external financial assistance to develop and/or\n"
+"implement existing plan(s)?"
+msgstr ""
+
+#: 
+msgid "If yes, please identify the source of the assistance."
+msgstr ""
+
+#: 
+msgid "If no, please state why not."
+msgstr ""
+
+#: 
+msgid "Has your country experienced any difficulties in the implementation of the above-mentioned plan(s)?"
+msgstr ""
+
+#: 
+msgid "If yes, please describe why with details."
+msgstr ""
+
+#: 
+msgid "This part requests information on the measures taken by the party to implement the provisions of the Cartagena Convention and on the effectiveness of such measures in meeting the Convention’s objectives, in particular with regard to Articles 3, 11 and 22 of the Convention."
+msgstr ""
+
+#: 
+msgid "Section 1: Designated National Focal Point, Institution and Implementation Plans - Articles 4, 15"
+msgstr ""
+
+#: 
+msgid "Section 2: Measures to Reduce Marine Pollution from Ships, Caused by Discharges or Dumping, from Exploration or Exploitation of the Sea-Bed , or from Discharges to the Atmosphere - Articles 5, 6, 8, 9"
+msgstr ""
+
+#: 
+msgid "Is there a national definition within existing pollution related legislation or regulations for “Pollution from Ships”, “Discharging or Dumping of wastes at sea”, “Exploration or Exploitation of the Sea-Bed Activities”, and “Discharges (emissions) to the Atmosphere” (Articles 5, 6, 8, 9)?"
+msgstr ""
+
+#: 
+msgid "If yes, please provide the text of the national definitions"
+msgstr ""
+
+#: 
+msgid "Discharges from ships"
+msgstr ""
+
+#: 
+msgid "Dumping of wastes and other matter at sea"
+msgstr ""
+
+#: 
+msgid "Exploration or exploitation of the sea-bed"
+msgstr ""
+
+#: 
+msgid "Discharges (air emissions) into the atmosphere"
+msgstr ""
+
+#: 
+msgid "Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area?"
+msgstr ""
+
+#: 
+msgid "If yes or in preparation, please provide the details of the major actions taken\n"
+"since the last reporting period"
+msgstr ""
+
+#: 
+msgid "If no, briefly state why not."
+msgstr ""
+
+#: 
+msgid "Are there any other sources and/or types of pollution that may affect marine resources in the Convention area which require special consideration in your country?"
+msgstr ""
+
+#: 
+msgid "If yes, please specify and answer Question 4 below. If not, please proceed to\n"
+"Section 3."
+msgstr ""
+
+#: 
+msgid "Does your country have any national policies, laws, or plans for marine pollution prevention, reduction and control for these activities requiring special consideration?"
+msgstr ""
+
+#: 
+msgid "Polices"
+msgstr ""
+
+#: 
+msgid "Laws"
+msgstr ""
+
+#: 
+msgid "Plans"
+msgstr ""
+
+#: 
+msgid "If yes or in preparation, please provide brief details."
+msgstr ""
+
+#: 
+msgid "Provide a website or URL reference to link the response to the appropriate \n"
+"information that is maintained by your country."
+msgstr ""
+
+#: 
+msgid "If no, describe why not."
+msgstr ""
+
+#: 
+msgid "If other, specify."
+msgstr ""
+
+#: 
+msgid "Section 3: Cooperation in Cases of Emergency – Article 11"
+msgstr ""
+
+#: 
+msgid "Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?"
+msgstr ""
+
+#: 
+msgid "If yes, please describe the details and answer the question below."
+msgstr ""
+
+#: 
+msgid "In regards to the question above, did your country respond to the situation through\n"
+"any of the following: \n"
+"\n"
+"A. National Contingency Plans\n"
+"\n"
+"B. Regional Contingency Plans\n"
+"\n"
+"C. Cooperation with Contracting Parties"
+msgstr ""
+
+#: 
+msgid "If cooperation took place with other Contracting Parties, please specify the name of Contracting Parties you have worked with and briefly describe the experience."
+msgstr ""
+
+#: 
+msgid "Has your country, jointly with another country or with other countries, developed and promoted any contingency plans for responding to incidents involving pollution or the threat thereof in the Convention area?"
+msgstr ""
+
+#: 
+msgid "If yes, please list the contingency plans developed and the countries involved."
+msgstr ""
+
+#: 
+msgid "Section 4: Environmental Impact Assessment – Article 12"
+msgstr ""
+
+#: 
+msgid "Does your country currently have any technical and other guidelines (e.g., EIAs) to assist the planning of major development projects in such a way as to prevent or minimize harmful impacts on the Convention Area?"
+msgstr ""
+
+#: 
+msgid "Section 5: Scientific and Technical Cooperation – Article 13"
+msgstr ""
+
+#: 
+msgid "Does your country have technical cooperation agreements with any other\n"
+"Contracting Parties relating to the purposes of the Convention?"
+msgstr ""
+
+#: 
+msgid "If yes, please provide the names of cooperating parties with areas of cooperation covered by the agreements."
+msgstr ""
+
+#: 
+msgid "If no, describe areas in which such agreements are desired."
+msgstr ""
+
+#: 
+msgid "Section 6: Adoption/Amendment of the Convention and its Protocols – Articles \n"
+"17,18"
+msgstr ""
+
+#: 
+msgid "Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention."
+msgstr ""
+
+#: 
+msgid "Cartagena Convention and the Oil Spill Protocol"
+msgstr ""
+
+#: 
+msgid "SPAW Protocol"
+msgstr ""
+
+#: 
+msgid "LBS Protocol"
+msgstr ""
+
+#: 
+msgid "If your country has not yet ratified/acceded to the Cartagena Convention or any of the Protocols listed above, please provide a summary of efforts towards ratification/accession"
+msgstr ""
+
+#: 
+msgid "Does your country currently have any plan to propose any amendments to the\n"
+"Cartagena Convention?"
+msgstr ""
+
+#: 
+msgid "If yes, please provide a brief summary of your proposals."
+msgstr ""
+
+#: 
+msgid "Section 7: The Protocol Concerning Cooperation in Combating Oil Spills in the \n"
+"Wider Caribbean Region"
+msgstr ""
+
+#: 
+msgid "Does your country have a designated Focal Point for the Oil Spills Protocol?"
+msgstr ""
+
+#: 
+msgid "Does your country currently have any national policies, laws, or plans for prevention, reduction and control of oil spill pollution?"
+msgstr ""
+
+#: 
+msgid "Has your country established any national operational measures such as\n"
+"establishing national oil spill contingency plans for responding to oil spill incidents (Article 7 of the Oil Spills Protocol)?"
+msgstr ""
+
+#: 
+msgid "Has your country experienced any oil-spill incidents since 1986 (Article 1, paragraph 4)? Please indicate whether any of these incidents resulted in major consequences to the marine environment."
+msgstr ""
+
+#: 
+msgid "If yes, please specify the details of every incident and the response measures\n"
+"taken."
+msgstr ""
+
+#: 
+msgid "Section 8: The Protocol Concerning Specially Protected Areas and Wildlife\n"
+"(SPAW) - Article 4, 10, 11, 20, 21"
+msgstr ""
+
+#: 
+msgid "Does your country have a designated Focal Point for the SPAW Protocol?"
+msgstr ""
+
+#: 
+msgid "Does your country currently have any national policies, laws, mechanisms or measures for the protection of Wild Flora and Fauna? (Article 10 of the SPAW Protocol)"
+msgstr ""
+
+#: 
+msgid "If yes or in preparation, please provide references for legal texts and other \n"
+"relevant documents and give a link to the websites where the documents can be found (including the list of protected species and the list of recovery plans)."
+msgstr ""
+
+#: 
+msgid "Has your country established any protected areas pursuant to the SPAW Protocol? (Article 4 of the SPAW Protocol)"
+msgstr ""
+
+#: 
+msgid "The total number of the protected areas established and the list of protected\n"
+"areas that have been established since the last report to the Organization:"
+msgstr ""
+
+#: 
+msgid "Location of each PA established since the last report (GPS Coordinates if\n"
+"available)"
+msgstr ""
+
+#: 
+msgid "Legal status of each and existence, or current development, of a specific\n"
+"management plan."
+msgstr ""
+
+#: 
+msgid "Has your country identified all of the endangered / threatened species listed in Annexes I, II, and III of the SPAW Protocol that are within your country (i.e. within areas over which your country exercises sovereignty, sovereign rights, or jurisdiction)?"
+msgstr ""
+
+#: 
+msgid "If yes, please provide a list of endangered / threatened species in your country (please refer to the Annex I, II, and III of the SPAW Protocol) since the end of the last reporting period."
+msgstr ""
+
+#: 
+msgid "If no, provide a timeframe necessary to do so."
+msgstr ""
+
+#: 
+msgid "Has your country taken measures to ensure strict protection of the endangered/threatened species listed in Annexes I and II (Article 11.1(a) and 11.1(b) of the SPAW Protocol)?"
+msgstr ""
+
+#: 
+msgid "Partially"
+msgstr ""
+
+#: 
+msgid "If yes, please list which measures (types of legal texts, prohibitions and/or \n"
+"regulations that they create)"
+msgstr ""
+
+#: 
+msgid "Has your country formulated, adopted, and implemented any plans for the\n"
+"management and use of species listed in Annex III (Article 11.1 (c) of the SPAW Protocol)?"
+msgstr ""
+
+#: 
+msgid "If yes or in preparation, please provide a reference to the implementation plans for the species that have been developed."
+msgstr ""
+
+#: 
+msgid "Has your country adopted exemptions to species protection (Articles 11.2 and 14 of the SPAW Protocol)?"
+msgstr ""
+
+#: 
+msgid "The list of species for which exemptions to strict protection have been\n"
+"adopted:"
+msgstr ""
+
+#: 
+msgid "For each species:"
+msgstr ""
+
+#: 
+msgid "The reason/purpose (scientific, traditional use, etc.) why the exemption was adopted"
+msgstr ""
+
+#: 
+msgid "The level of takes and/or killings and/or captures that is allowed per year"
+msgstr ""
+
+#: 
+msgid "To the extent possible, an estimate of the total species population size"
+msgstr ""
+
+#: 
+msgid "Did your country proceed to any changes in the delimitation of protected areas and/or to changes in their status (Article 15 of the SPAW Protocol)?"
+msgstr ""
+
+#: 
+msgid "If yes, provide the list of protected areas whose status or delimitation was \n"
+"changed and reasons for these changes."
+msgstr ""
+
+#: 
+msgid "Did your country proceed to any changes in the legal status of species listed in Annexes I, III, or III (Article 15 of the SPAW Protocol)?"
+msgstr ""
+
+#: 
+msgid "If yes, provide a list of species whose status or delimitation was changed and\n"
+"the reasons for these changes."
+msgstr ""
+
+#: 
+msgid "Has your country incorporated into its law or policy the common guidelines or criteria adopted under Article 21 of the SPAW Protocol?"
+msgstr ""
+
+#: 
+msgid "Section 9: The Protocol Concerning Pollution from Land-Based Sources (LBS)\n"
+"and Activities - Articles I, III, VI, VII"
+msgstr ""
+
+#: 
+msgid "Does your country have a designated Focal Point for the LBS Protocol?"
+msgstr ""
+
+#: 
+msgid "Is there a national definition of pollution from “Land-based sources and activities” (Article I (d))?"
+msgstr ""
+
+#: 
+msgid "If yes, please present the definition here and/or provide list of land-based\n"
+"sources of pollution that are identified in legislation for your country."
+msgstr ""
+
+#: 
+msgid "Does your country currently have any legislation for the prevention, reduction and control pollution from land-based sources in the Convention area (Article III)?"
+msgstr ""
+
+#: 
+msgid "If yes or in preparation, please provide the name of the legislation, a link to \n"
+"the text of the legislation, the pollutants being addressed or the scope of the legislation."
+msgstr ""
+
+#: 
+msgid "This list may be attached as an Annex to this report."
+msgstr ""
+
+#: 
+msgid "Has your country developed any implementation plans, programs, and measures to carry out the general terms of [or: meet the objectives of] the LBS Protocol, including National Programmes of Action (NPAs)? (Article III)"
+msgstr ""
+
+#: 
+msgid "If yes, please provide brief details and a link to all of the implementation plans that are developed and/or used in your country. If in preparation, please describe the nature of what is being prepared and the expected timeline for completion."
+msgstr ""
+
+#: 
+msgid "Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period?"
+msgstr ""
+
+#: 
+msgid "If yes, please specify briefly what new or amended national policies, laws,\n"
+"regulations or plans have been developed."
+msgstr ""
+
+#: 
+msgid "Are there any other types and/or sources of LBS pollution other than those listed in Annex I of the LBS Protocol that require special consideration in your country?"
+msgstr ""
+
+#: 
+msgid "If yes, please specify what concerns have developed for the other sources of\n"
+"LBS pollution in your country."
+msgstr ""
+
+#: 
+msgid "Does your country have any existing environmental pollution monitoring and\n"
+"assessment programmes as outlined in LBS Protocol Article VI?"
+msgstr ""
+
+#: 
+msgid "If yes, please indicate what monitoring and assessment programs have\n"
+"developed reports for the following parameters; \n"
+"\n"
+"- Frequency of monitoring: \n"
+"\n"
+"- Number of locations: \n"
+"\n"
+"- Parameters being monitored:"
+msgstr ""
+
+#: 
+msgid "Please provide detailed summaries of monitoring programmes in Annex 1."
+msgstr ""
+
+#: 
+msgid "If in preparation, please describe what is planned and the schedule for its\n"
+"completion."
+msgstr ""
+
+#: 
+msgid "Has your country developed and adopted guidelines concerning environmental impact assessments (EIAs) or has your country generated EIAs consistent with the LBS Protocol, Article VII (2)?"
+msgstr ""
+
+#: 
+msgid "If yes, please describe how often do you review and update those guidelines."
+msgstr ""
+
+#: 
+msgid "Does your country have a total annual estimate of the pollutant loads to the marine environment for LBS activities?"
+msgstr ""
+
+#: 
+msgid "If yes, please provide details of these loadings in Annex 2."
+msgstr ""
+
+#: 
+msgid "Has your country experienced any difficulties in the implementation of the LBS protocol?"
+msgstr ""
+
+#: 
+msgid "If yes, please describe those difficulties and possible reasons for them."
+msgstr ""
+
+#: 
+msgid "What are three major areas of assistance required to assist your country in\n"
+"implementing the obligations of the Cartagena Convention and its Protocols."
 msgstr ""
 

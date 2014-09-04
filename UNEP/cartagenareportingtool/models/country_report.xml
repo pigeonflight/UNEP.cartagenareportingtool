@@ -9,7 +9,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
   <schema>
     <field name="country" form:before="title" type="zope.schema.Choice">
       <description/>
-      <title i18n:translate="Country">Country</title>
+      <title i18n:translate="">Country</title>
       <values>
         <element>Antigua &amp; Barbuda</element>
         <element>Aruba</element>
@@ -47,9 +47,10 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         <element>Venezuela</element>
       </values>
     </field>
-    <field name="reporting_period_start" form:before="country" type="zope.schema.Date">
+    <field name="reporting_period_start"
+     type="zope.schema.Date">
       <description/>
-      <title>Reporting Period Start</title>
+      <title i18n:translate="Period Reported (DD/MM/YYYY): from ${start_date} to ${end_date}">Reporting Period Start</title>
     </field>
     <field name="reporting_period_end" type="zope.schema.Date">
       <description/>
@@ -62,31 +63,31 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     </field>
     <field name="reporting_officer_name" type="zope.schema.TextLine">
       <description>Enter reporting officer's full name</description>
-      <title>Reporting Officer Name</title>
+      <title i18n:translate="Reporting Officer Name">Reporting Officer Name</title>
     </field>
     <field name="title_of_reporting_officer" type="zope.schema.TextLine">
       <description/>
-      <title>Title of reporting officer</title>
+      <title >Title of reporting officer</title>
     </field>
     <field name="agency" type="zope.schema.TextLine">
       <description/>
-      <title>Agency</title>
+      <title i18n:translate="Agency">Agency</title>
     </field>
     <field name="mailing_address" type="zope.schema.Text">
       <description/>
-      <title>Mailing Address</title>
+      <title i18n:translate="Mailing Address">Mailing Address</title>
     </field>
     <field name="telephone" type="zope.schema.TextLine">
       <description>XXX replace with datagrid field</description>
-      <title>Telephone</title>
+      <title i18n:translate="Tel.">Telephone</title>
     </field>
     <field name="email" type="zope.schema.TextLine">
       <description/>
-      <title>Email</title>
+      <title i18n:translate="E-mail">Email</title>
     </field>
     <field name="web_address" type="zope.schema.TextLine">
       <description/>
-      <title>Web Address</title>
+      <title i18n:translate="Webpage">Web Address</title>
     </field>
     
       <fieldset name="test"
@@ -94,7 +95,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
           description="Description of test fieldset">
     <field name="date_the_report_was_submitted" type="zope.schema.Date">
       <description/>
-      <title>Date the report was submitted</title>
+      <title i18n:translate="Date the report was submitted (DD/MM/YYYY)">Date the report was submitted</title>
     </field>
     <field name="signature" type="zope.schema.TextLine">
       <description/>
