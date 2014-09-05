@@ -188,14 +188,16 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <title>National Agency/Ministry:Website</title>       <required>False</required>
     </field>
     <field name="implementation_plans" type="zope.schema.Choice">
-      <description></description>
-      <title>3. Has your country developed an implementation plans(s) to carry out the general obligations of the Cartagena Convention? (Article 4) </title>       <required>False</required>
+      <description/>
+      <title>3. Has your country developed an implementation plans(s) to carry out the general obligations of the Cartagena Convention? (Article 4)</title>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep_existingplans</source>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="brief_details_of_main_implementation_plans" type="zope.schema.Text">
       <description>If yes or in preparation, please provide brief details of all of the main implementation plan(s) that are developed and/or being used in your country, or that are in preparation.</description>
-      <title>Brief details of main implementation plans</title>       <required>False</required>
+      <title>Brief details of main implementation plans</title>
+      <required>False</required>
     </field>
     <field name="why_no_plans" type="zope.schema.TextLine">
       <description>If no, please state why not.&#13;
@@ -214,7 +216,8 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     <field name="why_implementation_difficulties_with_details" type="zope.schema.TextLine">
       <description>If yes, please describe why with details.&#13;
 </description>
-      <title>Why implementation difficulties with details</title>       <required>False</required>
+      <title>Why implementation difficulties with details</title>
+      <required>False</required>
     </field>
     <field name="has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans" type="zope.schema.Choice">
       <description></description>
@@ -223,6 +226,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         <element>Yes</element>
         <element>No</element>
       </values>
+      <required>False</required>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     </fieldset>
@@ -487,62 +491,69 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
 </fieldset>
 <fieldset name="section9" label="Section 9" description="Section 9: The Protocol Concerning Pollution from Land-Based Sources  (LBS) and Activities - Articles I, III, VI, VII">
     <field name="designated_focal_point_for_the_lbs_protocol" type="zope.schema.Choice">
-      <description>Does your country have a designated Focal Point for the LBS Protocol?&#13;
-</description>
-      <title>Designated Focal Point for the LBS Protocol</title>       <required>False</required>
-      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
+      <description/>
+      <title>Does your country have a designated Focal Point for the LBS Protocol?</title>
+      <required>False</required>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>
+      <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_definition_of_pollution_from_land_based_sources_and_activiites" type="zope.schema.Choice">
-      <description>Is there a national definition of pollution from &#8220;Land-based sources and activities&#8221; (Article I (d))?&#13;
-</description>
-      <title>National definition of pollution from Land-based sources and activiites</title>       <required>False</required>
+      <title>2. Is there a national definition of pollution from &#8220;Land-based sources and activities&#8221; (Article I (d))?</title>       <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources" type="zope.schema.Choice">
-      <description>Does your country currently have any legislation for the prevention, reduction and control pollution from land-based sources in the Convention area (Article III)? </description>
-      <title>legislation for prevention reduction and control of pollution from land-based sources</title>       <required>False</required>
+      <title>3. Does your country currently have any legislation for the prevention, reduction and control pollution from land-based sources in the Convention area (Article III)?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol" type="zope.schema.Choice">
-      <description>Has your country developed any implementation plans, programs, and measures to carry out the general terms of [or:  meet the objectives of] the LBS Protocol, including National Programmes of Action (NPAs)? (Article III)</description>
-      <title>Plans programs and measures that meet objectives of the LBS Protocol</title>       <required>False</required>
+      <title>4. Has your country developed any implementation plans, programs, and measures to carry out the general terms of [or:  meet the objectives of] the LBS Protocol, including National Programmes of Action (NPAs)? (Article III)</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution" type="zope.schema.Choice">
-      <description>Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period? </description>
-      <title>new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution</title>       <required>False</required>
+      <title>5. Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period? </title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="other_types_and_or_sources_of_lbs_pollution" type="zope.schema.Choice">
-      <description>Are there any other types and/or sources of LBS pollution other than those listed in Annex I of the LBS Protocol that require special consideration in your country?&#13;
-</description>
-      <title>Other types and/or sources of LBS pollution</title>       <required>False</required>
+      <title>6. Are there any other types and/or sources of LBS pollution other than those listed in Annex I of the LBS Protocol that require special consideration in your country?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="environmental_pollution_monitoring_and_assessment_programmes" type="zope.schema.Choice">
-      <description>Does your country have any existing environmental pollution monitoring and assessment programmes as outlined in LBS Protocol Article VI?</description>
-      <title>Environmental pollution monitoring and assessment programmes</title>       <required>False</required>
+      <title>7. Does your country have any existing environmental pollution monitoring and assessment programmes as outlined in LBS Protocol Article VI?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="guidelines_concerning_environmental_impact_assessments" type="zope.schema.Choice">
-      <description>Has your country developed and adopted guidelines concerning environmental impact assessments (EIAs) or has your country generated EIAs consistent with the LBS Protocol, Article VII (2)?</description>
-      <title>guidelines concerning environmental impact assessments</title>       <required>False</required>
+      <title>8. Has your country developed and adopted guidelines concerning environmental impact assessments (EIAs) or has your country generated EIAs consistent with the LBS Protocol, Article VII (2)?</title>
+     <description/>
+    <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="total_annual_estimate_of_pollutant_loads_from_lbs_activities" type="zope.schema.Choice">
-      <description>Does your country have a total annual estimate of the pollutant loads to the marine environment for LBS activities?</description>
-      <title>Total Annual estimate of pollutant loads from LBS activities</title>       <required>False</required>
+      <title>9. Does your country have a total annual estimate of the pollutant loads to the marine environment for LBS activities?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="difficulties_in_the_implementation_of_the_lbs_protocol" type="zope.schema.Choice">
-      <description>Has your country experienced any difficulties in the implementation of the LBS protocol?</description>
-      <title>Difficulties in the implementation of the LBS protocol</title>       <required>False</required>
+      <title>10. Has your country experienced any difficulties in the implementation of the LBS protocol?</title>
+      <description/>
+      <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="major_areas_of_assistance_required_to_implement_protocols" type="zope.schema.Text">
-      <description>What are three major areas of assistance required to assist your country in implementing the obligations of the Cartagena Convention and its Protocols.&#13;
-</description>
-      <title>Major areas of assistance required to implement protocols</title>       <required>False</required>
+      <title>11. What are three major areas of assistance required to assist your country in implementing the obligations of the Cartagena Convention and its Protocols.</title>
+     <description/>
+     <required>False</required>
     </field>
  </fieldset>
   </schema>
