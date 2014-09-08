@@ -4,49 +4,14 @@ xmlns:form="http://namespaces.plone.org/supermodel/form"
 xmlns:indexer="http://namespaces.plone.org/supermodel/indexer"
 xmlns="http://namespaces.plone.org/supermodel/schema"
 xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-       i18n:domain="UNEP.catagenareportingtool"
+       i18n:domain="UNEP.cartagenareportingtool"
 >
   <schema>
    
-    <field name="country" form:before="title" type="zope.schema.Choice">
+    <field name="country" type="zope.schema.Choice">
       <description/>
-      <title i18n:translate="">Country</title>       <required>False</required>
-      <values>
-        <element>Antigua &amp; Barbuda</element>
-        <element>Aruba</element>
-        <element>Bahamas</element>
-        <element>Barbados</element>
-        <element>Belize</element>
-        <element>Bermuda</element>
-        <element>Bonaire</element>
-        <element>British Virgin Islands</element>
-        <element>Cayman Islands</element>
-        <element>Colombia</element>
-        <element>Costa Rica</element>
-        <element>Cuba</element>
-        <element>Curacao</element>
-        <element>Dominica</element>
-        <element>Dominican Republic</element>
-        <element>Grenada</element>
-        <element>Guatemala</element>
-        <element>Guyana</element>
-        <element>Haiti</element>
-        <element>Honduras</element>
-        <element>Jamaica</element>
-        <element>Mexico</element>
-        <element>Netherlands Antilles</element>
-        <element>Nicaragua</element>
-        <element>Panama</element>
-        <element>St. Kitts &amp; Nevis</element>
-        <element>Saint Lucia</element>
-        <element>St. Vincent &amp; the Grenadines</element>
-        <element>Suriname</element>
-        <element>Trinidad &amp; Tobago</element>
-        <element>Turks &amp; Caicos Islands</element>
-        <element>United States of America</element>
-        <element>US Virgin Islands</element>
-        <element>Venezuela</element>
-      </values>
+      <title i18n:translate="Country">Country</title>       <required>False</required>
+      <source>UNEP.cartagenareportingtool.vocabulary.countries</source>
     </field>
     <field name="reporting_period_start"
      type="zope.schema.Date">
@@ -200,21 +165,18 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <required>False</required>
     </field>
     <field name="why_no_plans" type="zope.schema.TextLine">
-      <description>If no, please state why not.&#13;
+      <description>If no, please state why not.
 </description>
       <title>Why no plans</title>       <required>False</required>
     </field>
     <field name="difficulties_in_the_implementation_of_plan_s_" type="zope.schema.Choice">
       <title>4. Has your country experienced any difficulties in the implementation of the above-mentioned plan(s)?</title>
       <description/>       <required>False</required>
-      <values>
-        <element>Yes</element>
-        <element>No</element>
-      </values>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no</source>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="why_implementation_difficulties_with_details" type="zope.schema.TextLine">
-      <description>If yes, please describe why with details.&#13;
+      <description>If yes, please describe why with details.
 </description>
       <title>Why implementation difficulties with details</title>
       <required>False</required>
@@ -222,10 +184,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     <field name="has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans" type="zope.schema.Choice">
       <description></description>
       <title>5. Has your country received any external financial assistance to develop and/or implement existing plan(s)?</title>
-      <values>
-        <element>Yes</element>
-        <element>No</element>
-      </values>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no</source>
       <required>False</required>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
@@ -235,23 +194,15 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
 - Articles 5, 6, 8, 9">
 
     <field name="national_definitions_for_pollution_sources" type="zope.schema.Choice">
-      <title>1. Is there a national definition within existing pollution related legislation or regulations for &#8220;Pollution from Ships&#8221;, &#8220;Discharging or Dumping of wastes at sea&#8221;, &#8220;Exploration or Exploitation of the  Sea-Bed Activities&#8221;, and &#8220;Discharges (emissions) to the Atmosphere&#8221; (Articles 5, 6, 8, 9)?</title>
+      <title>1. Is there a national definition within existing pollution related legislation or regulations for 'Pollution from Ships', 'Discharging or Dumping of wastes at sea', 'Exploration or Exploitation of the  Sea-Bed Activities', and 'Discharges (emissions) to the Atmosphere' (Articles 5, 6, 8, 9)?</title>
       <description/>       <required>False</required>
-      <values>
-        <element>Yes</element>
-        <element>No</element>
-        <element>In Preparation</element>
-      </values>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="management_measures_since_the_last_reporting_period_sources_of_pollution_in_the_convention_area" type="zope.schema.Choice">
       <title>2. Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area? </title>
       <description/>       <required>False</required>
-      <values>
-        <element>Yes</element>
-        <element>No</element>
-        <element>In Preparation</element>
-      </values>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="details_of_pollution_source_management_action_since_last_reporting_period" type="zope.schema.Text">
@@ -265,25 +216,18 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     <field name="other_pollution_sources_or_types_that_may_affect_marine_resources" type="zope.schema.Choice">
       <title>3. Are there any other sources and/or types of pollution that may affect marine resources in the Convention area which require special consideration in your country?</title>
       <description/>       <required>False</required>
-      <values>
-        <element>Yes</element>
-        <element>No</element>
-      </values>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no</source>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="text_for_discharges_from_ship" type="zope.schema.Text">
-      <description>If yes, please provide the text of the national definitions for discharges from ships&#13;
+      <description>If yes, please provide the text of the national definitions for discharges from ships
 </description>
       <title>Text for Discharges from ship</title>       <required>False</required>
     </field>
     <field name="policies_for_marine_pollution_management_for_special_consideration" type="zope.schema.Choice">
       <title>4. Does your country have any national policies for marine pollution prevention, reduction and control for these activities requiring special consideration? </title>
       <description/>       <required>False</required>
-      <values>
-        <element>Yes</element>
-        <element>No</element>
-        <element>In Preparation</element>
-      </values>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="policy_website_for_marine_pollution" type="zope.schema.Text">
@@ -293,11 +237,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     <field name="laws_for_marine_pollution_management_for_special_consideration" type="zope.schema.Choice">
       <description>Does your country have any national laws for marine pollution prevention, reduction and control for these activities requiring special consideration? </description>
       <title>National laws for marine pollution management</title>       <required>False</required>
-      <values>
-        <element>Yes</element>
-        <element>No</element>
-        <element>In Preparation</element>
-      </values>
+      <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="law_website_for_marine_pollution" type="zope.schema.Text">
@@ -315,7 +255,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <title>Plan website</title>       <required>False</required>
     </field>
   </fieldset>
-<fieldset name="section3" label="Section 3" description="Section 3: Cooperation in Cases of Emergency – Article 11">
+<fieldset name="section3" label="Section 3" description="Section 3: Cooperation in Cases of Emergency - Article 11">
     <field name="pollution_emergencies_in_the_convention_area" type="zope.schema.Choice">
       <title>1. Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?</title>
       <description/>       <required>False</required>
@@ -335,16 +275,12 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <description/>
       <required>False</required>
       <value_type type="zope.schema.Choice">
-        <values>
-          <element>National Contingency Plans</element>
-          <element>Regional Contingency Plans</element>
-          <element>Cooperation with Contracting Parties</element>
-        </values>
+        <source>UNEP.cartagenareportingtool.vocabulary.plans</source>
         </value_type>
         <form:widget type="z3c.form.browser.checkbox.CheckBoxWidget"/>
     </field>
     <field name="contracting_parties_and_experience" type="zope.schema.Text">
-      <description>If cooperation took place with other Contracting Parties, please specify the name of Contracting Parties you have worked with and briefly describe the experience. &#13;
+      <description>If cooperation took place with other Contracting Parties, please specify the name of Contracting Parties you have worked with and briefly describe the experience.
 </description>
       <title>Contracting parties and experience</title>       <required>False</required>
     </field>
@@ -353,7 +289,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         <description/>       <required>False</required>
     </field>
 </fieldset>
-<fieldset name="section4" label="Section 4" description="Section 4: Environmental Impact Assessment – Article 12" >
+<fieldset name="section4" label="Section 4" description="Section 4: Environmental Impact Assessment - Article 12" >
     <field name="technical_guidelines_to_assist_planning_of_major_development_projects" type="zope.schema.Choice">
       <title>1. Does your country currently have any technical and other guidelines (e.g., EIAs) to assist the planning of major development projects in such a way as to prevent or minimize harmful impacts on the Convention Area?</title>
       <description/>
@@ -361,7 +297,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
 </fieldset>
-<fieldset name="section5" label="Section 5" description="Section 5: Scientific and Technical Cooperation  – Article 13">
+<fieldset name="section5" label="Section 5" description="Section 5: Scientific and Technical Cooperation - Article 13">
     <field name="technical_cooperation_agreements" type="zope.schema.Choice">
       <title>1. Does your country have technical cooperation agreements with any other Contracting Parties relating to the purposes of the Convention?</title>
      <description/>
@@ -369,7 +305,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
 </fieldset>
-<fieldset name="section6" label="Section 6" description="Section 6: Adoption/Amendment of the Convention and its Protocols  – Articles 17,18">
+<fieldset name="section6" label="Section 6" description="Section 6: Adoption/Amendment of the Convention and its Protocols - Articles 17,18">
     <field name="status_of_ratification_of_the_existing_protocols" type="zope.schema.Choice">
       <title>1. Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention.</title>
       <description/>
@@ -498,7 +434,7 @@ xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
     <field name="national_definition_of_pollution_from_land_based_sources_and_activiites" type="zope.schema.Choice">
-      <title>2. Is there a national definition of pollution from &#8220;Land-based sources and activities&#8221; (Article I (d))?</title>       <description/>
+      <title>2. Is there a national definition of pollution from 'Land-based sources and activities' (Article I (d))?</title>       <description/>
       <required>False</required>
       <source>UNEP.cartagenareportingtool.vocabulary.yes_no_inprep</source>       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>

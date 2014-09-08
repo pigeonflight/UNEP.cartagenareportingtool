@@ -14,8 +14,12 @@
     <p class="documentDescription" tal:content="context/Description" />
 
     <tal:block repeat="widget view/widgets/values">
+
         <div class="field" tal:condition="python:widget.__name__ not in ('IBasic.title', 'IBasic.description', 'title', 'description',)">
-            <label tal:content="widget/label" />
+            <label 
+             tal:define="label widget/label" 
+             tal:content="python:context.transate(label, domain='UNEP.cartagenareportingtool')" 
+             />
             <br />
             <div tal:content="structure widget/render" />
         </div>
@@ -25,7 +29,10 @@
               tal:attributes="id python:''.join((group.prefix, 'groups.', group.__name__)).replace('.', '-')">
         <legend tal:content="group/label" />
         <div class="field" tal:repeat="widget group/widgets/values">
-            <label tal:content="widget/label" />
+            <label 
+             tal:define="label widget/label" 
+             python:context.transate(label, domain='UNEP.cartagenareportingtool')" 
+               />
             <br />
             <div tal:content="structure widget/render" />
         </div>

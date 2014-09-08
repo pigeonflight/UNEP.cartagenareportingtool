@@ -1,0 +1,674 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: UNEP.cartagenareportingtool\n"
+"Language: fr\n"
+
+#: UNEP.cartagenareportingtool:/country_report.py:37
+#: UNEP.cartagenareportingtool:/country_report.py:44
+msgid "Yes"
+msgstr "Oui"
+
+#: UNEP.cartagenareportingtool:/country_report.py:38
+#: UNEP.cartagenareportingtool:/country_report.py:45
+msgid "No"
+msgstr "Non"
+
+#: UNEP.cartagenareportingtool:/country_report.py:39
+#: UNEP.cartagenareportingtool:/country_report.py:46
+msgid "In Preparation"
+msgstr "En cours de préparation"
+
+#: UNEP.cartagenareportingtool:/country_report.py:47
+msgid "Other"
+msgstr "Autre"
+
+#: UNEP.cartagenareportingtool:/country_report.py:85
+msgid "Hello"
+msgstr "Bonjour"
+
+#: UNEP.cartagenareportingtool:/country_report.py:86
+msgid "World"
+msgstr "Monde"
+
+#: 
+msgid "Country"
+msgstr "Pays"
+
+#: 
+msgid "Full name of the reporting institution"
+msgstr "Nom complet de l’institution soumettant le rapport"
+
+#: 
+msgid "Period Reported (DD/MM/YYYY): from ${start_date} to ${end_date}"
+msgstr "Période visée (jour/mois/année) : de __________à __________"
+
+#: 
+msgid "Name and Title of reporting officer"
+msgstr "Nom et titre de l’administrateur en charge du rapport :"
+
+#: 
+msgid "Agency"
+msgstr "Organisme"
+
+#: 
+msgid "Mailing Address"
+msgstr "Adresse"
+
+#: 
+msgid "Tel."
+msgstr "Tél."
+
+#: 
+msgid "Fax"
+msgstr "Télécopie"
+
+#: 
+msgid "E-mail"
+msgstr "Courrier électronique"
+
+#: 
+msgid "Webpage"
+msgstr "Site Web"
+
+#: 
+msgid "Date the report was submitted (DD/MM/YYYY)"
+msgstr "Date de remise du rapport (jour/mois/année)"
+
+#: 
+msgid "Signature"
+msgstr "Signature"
+
+#: 
+#, fuzzy
+msgid "Does your country have a designated National Focal Point for the Cartagena Convention?"
+msgstr "Existe-t-il dans votre pays un point de liaison national pour la Convention de\n"
+"Cartagena?"
+
+#: 
+msgid "If yes, please provide"
+msgstr "Dans l’affirmative, donnez les renseignements suivants"
+
+#: 
+msgid "Name of Organization"
+msgstr "Nom de l’organisation"
+
+#: 
+msgid "Contact Person"
+msgstr "Personne-ressource"
+
+#: 
+msgid "Job Title"
+msgstr "Titre"
+
+#: 
+msgid "Department"
+msgstr "Organisme"
+
+#: 
+msgid "Address"
+msgstr "Adresse"
+
+#: 
+msgid "Website"
+msgstr "Site Web"
+
+#: 
+msgid "Does your country have a designated National Agency/Ministry/Institution or other appropriate authority for coordinating the implementation of the Cartagena Convention (Article 15, paragraph 2)?"
+msgstr "Existe-t-il dans votre pays une agence nationale, un ministère, une institution ou toute autre autorité appropriée chargée de la coordination et de la mise en œuvre de la Convention de Cartagena (article 15, paragraphe 2)?"
+
+#: 
+msgid "Has your country developed an implementation plans(s) to carry out the general obligations of the Cartagena Convention? (Article 4)"
+msgstr "Votre pays a-t-il élaboré un ou des plans de mise en œuvre en vue de satisfaire aux obligations générales de la Convention de Cartagena? (article 4)"
+
+#: 
+msgid "Existing Plan(s)"
+msgstr "Plan(s) existants(s)"
+
+#: 
+msgid "If yes or in preparation, please provide brief details of all of the main implementation plan(s) that are developed and/or being used in your country, or that are in preparation."
+msgstr "Si vous cochez oui ou en cours de préparation, résumez les renseignements\n"
+"relatifs aux principaux plans d’exécution qui ont été élaborés ou qui sont en \n"
+"cours d’exécution ou de préparation dans votre pays."
+
+#: 
+msgid "If no, please describe why not."
+msgstr "Sinon, expliquez."
+
+#: 
+#, fuzzy
+msgid "If plans exist, please specify what existing frameworks are being used for implementation of the Convention."
+msgstr "Si ces plans existent, veuillez préciser les cadres qui sont utilisés pour la mise en œuvre de la Convention."
+
+#: 
+#, fuzzy
+msgid "Has your country received any external financial assistance to develop and/or implement existing plan(s)?"
+msgstr "Votre pays a-t-il reçu des aides financières extérieures pour l’élaboration ou la mise en œuvre des plans existants?"
+
+#: 
+msgid "If yes, please identify the source of the assistance."
+msgstr "Dans l’affirmative, veuillez préciser les sources d’aide."
+
+#: 
+msgid "If no, please state why not."
+msgstr "Sinon, expliquez."
+
+#: 
+msgid "Has your country experienced any difficulties in the implementation of the above-mentioned plan(s)?"
+msgstr "Votre pays a-t-il éprouvé des difficultés dans la mise en œuvre du ou des plans\n"
+"susmentionnés?"
+
+#: 
+msgid "If yes, please describe why with details."
+msgstr "Dans l’affirmative, précisez."
+
+#: 
+msgid "This part requests information on the measures taken by the party to implement the provisions of the Cartagena Convention and on the effectiveness of such measures in meeting the Convention’s objectives, in particular with regard to Articles 3, 11 and 22 of the Convention."
+msgstr "Cette partie vise des renseignements relatifs aux mesures prises par les Parties en vue de mettre en œuvre les dispositions de la Convention de Cartagena et à l’efficacité de telles mesures pour atteindre les objectifs du protocole, notamment en lien avec les articles 3, 11 et 22 de la Convention."
+
+#: 
+msgid "Section 1: Designated National Focal Point, Institution and Implementation Plans - Articles 4, 15"
+msgstr "Première partie : Point de liaison national désigné, institution et projets de mise en œuvre – articles 4 et 15"
+
+#: 
+msgid "Section 2: Measures to Reduce Marine Pollution from Ships, Caused by Discharges or Dumping, from Exploration or Exploitation of the Sea-Bed , or from Discharges to the Atmosphere - Articles 5, 6, 8, 9"
+msgstr "Partie 2 : Mesures pour réduire la pollution marine provenant des navires, du déchargement ou du rejet de déchets en mer, des activités d’exploration ou d’exploitation des fonds marins ou des rejets dans l’atmosphère - articles 5, 6, 8, 9"
+
+#: 
+msgid "Is there a national definition within existing pollution related legislation or regulations for “Pollution from Ships”, “Discharging or Dumping of wastes at sea”, “Exploration or Exploitation of the Sea-Bed Activities”, and “Discharges (emissions) to the Atmosphere” (Articles 5, 6, 8, 9)?"
+msgstr "Y a-t-il une définition nationale au sein de la législation ou de la réglementation\n"
+"pertinente qui vise la « pollution provenant des navires », « le déchargement ou le rejet de déchets en mer », les « activités d’exploration ou d’exploitation des fonds marins », ainsi que la « le déchargement (l’émission) de polluants dans l’atmosphère »? – articles 5, 6, 8, 9"
+
+#: 
+msgid "If yes, please provide the text of the national definitions"
+msgstr "Dans l’affirmative, fournissez le texte des définitions nationales suivantes"
+
+#: 
+msgid "Discharges from ships"
+msgstr "Rejets provenant des navires"
+
+#: 
+msgid "Dumping of wastes and other matter at sea"
+msgstr "Rejet des déchets et autres substances en mer"
+
+#: 
+msgid "Exploration or exploitation of the sea-bed"
+msgstr "Exploration ou exploitation des fonds marins"
+
+#: 
+msgid "Discharges (air emissions) into the atmosphere"
+msgstr "Décharges (émissions polluantes) dans l’atmosphère"
+
+#: 
+msgid "Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area?"
+msgstr "Votre pays a-t-il pris des mesures depuis la dernière période afin d’éviter, de\n"
+"réduire et de contrôler les sources susmentionnées de pollution dans la zone de la Convention?"
+
+#: 
+#, fuzzy
+msgid "If yes or in preparation, please provide the details of the major actions taken since the last reporting period"
+msgstr "Dans l’affirmative ou si c’est en cours de préparation, veuillez fournir les détails\n"
+"des actions principales prises depuis la dernière période"
+
+#: 
+msgid "If no, briefly state why not."
+msgstr "Sinon, expliquez brièvement pourquoi."
+
+#: 
+msgid "Are there any other sources and/or types of pollution that may affect marine resources in the Convention area which require special consideration in your country?"
+msgstr "Y a-t-il dans votre pays d’autres sources ou types de pollution susceptibles de\n"
+"causer des dommages aux ressources marines dans la zone couverte par la \n"
+"Convention et nécessitant une considération particulière?"
+
+#: 
+msgid "If yes, please specify and answer Question 4 below. If not, please proceed to Section 3."
+msgstr ""
+
+#: 
+msgid "Does your country have any national policies, laws, or plans for marine pollution prevention, reduction and control for these activities requiring special consideration?"
+msgstr "Existe-t-il dans votre pays des politiques, des lois ou des plans pour la prévention, la réduction et le contrôle de la pollution marine en ce qui concerne les activités nécessitant une considération particulière?"
+
+#: 
+msgid "Polices"
+msgstr ""
+
+#: 
+msgid "Laws"
+msgstr ""
+
+#: 
+msgid "Plans"
+msgstr ""
+
+#: 
+msgid "If yes or in preparation, please provide brief details."
+msgstr "Dans l’affirmative ou si ces instruments sont en cours de préparation, précisez."
+
+#: 
+#, fuzzy
+msgid "Provide a website or URL reference to link the response to the appropriate information that is maintained by your country."
+msgstr "Fournir l’adresse d’un site Web ou un lien URL permettant d’accéder à\n"
+"l’information pertinente offerte par votre pays."
+
+#: 
+msgid "If no, describe why not."
+msgstr "Sinon, expliquez."
+
+#: 
+msgid "If other, specify."
+msgstr "Si autre, précisez."
+
+#: 
+msgid "Section 3: Cooperation in Cases of Emergency – Article 11"
+msgstr "Partie 3 : Coopération en cas d’urgence – article 11"
+
+#: 
+msgid "Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?"
+msgstr "Votre pays a-t-il fait face à des urgences dans la zone de la Convention (y compris des urgences qui ont placé la zone de la Convention en danger imminent de pollution ou qui l’auraient déjà polluée)?"
+
+#: 
+msgid "If yes, please describe the details and answer the question below."
+msgstr "Dans l’affirmative, précisez et répondez à la question ci-dessous."
+
+#: 
+#, fuzzy
+msgid "In regards to the question above, did your country respond to the situation through any of the following: \n"
+"\n"
+"A. National Contingency Plans\n"
+"\n"
+"B. Regional Contingency Plans\n"
+"\n"
+"C. Cooperation with Contracting Parties"
+msgstr "En ce qui concerne la question précédente, votre pays a-t-il répondu à la situation en suivant des plans d’urgence qu’il s’est donnés ou en collaboration avec d’autres Parties contractantes?"
+
+#: 
+msgid "If cooperation took place with other Contracting Parties, please specify the name of Contracting Parties you have worked with and briefly describe the experience."
+msgstr "Dans l’affirmative, donnez le nom de la partie contractante avec qui vous avez\n"
+"travaillé et décrivez brièvement l’expérience."
+
+#: 
+msgid "Has your country, jointly with another country or with other countries, developed and promoted any contingency plans for responding to incidents involving pollution or the threat thereof in the Convention area?"
+msgstr "Votre pays a-t-il élaboré et promu, seul ou en collaboration avec un ou plusieurs pays, des plans d’urgence pour répondre à des cas de pollution ou à des menaces de pollution dans la zone de la Convention?"
+
+#: 
+msgid "If yes, please list the contingency plans developed and the countries involved."
+msgstr "Dans l’affirmative, donnez la liste des plans d’urgence élaborés et des pays\n"
+"concernés."
+
+#: 
+msgid "Section 4: Environmental Impact Assessment – Article 12"
+msgstr "Partie 4 : Évaluation des impacts sur l’environnement - article 12"
+
+#: 
+msgid "Does your country currently have any technical and other guidelines (e.g., EIAs) to assist the planning of major development projects in such a way as to prevent or minimize harmful impacts on the Convention Area?"
+msgstr "Existe-t-il dans votre pays des directives techniques ou autres (par exemple des EIE) pour aider dans la planification des projets majeurs de planification en vue de prévenir ou d’atténuer les impacts négatifs sur la zone de la Convention?"
+
+#: 
+msgid "Section 5: Scientific and Technical Cooperation – Article 13"
+msgstr "Partie 5 : Coopération scientifique et technique – article 13"
+
+#: 
+#, fuzzy
+msgid "Does your country have technical cooperation agreements with any other Contracting Parties relating to the purposes of the Convention?"
+msgstr "Votre pays a-t-il passé des accords de coopération technique avec d’autres Parties contractantes relatifs aux objectifs de la Convention?"
+
+#: 
+msgid "If yes, please provide the names of cooperating parties with areas of cooperation covered by the agreements."
+msgstr "Dans l’affirmative, donnez le nom des autres Parties engagées ainsi que les\n"
+"domaines de coopération couverts par ces accords."
+
+#: 
+msgid "If no, describe areas in which such agreements are desired."
+msgstr "Sinon, précisez les domaines dans lesquels ces accords seraient nécessaires."
+
+#: 
+#, fuzzy
+msgid "Section 6: Adoption/Amendment of the Convention and its Protocols – Articles 17,18"
+msgstr "Partie 6 : Adoption ou modification de la Convention et de ses protocoles – articles 17, 18"
+
+#: 
+msgid "Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention."
+msgstr "Veuillez indiquer l’état relatif à l’adhésion ou la ratification des Protocoles existants de la Convention de Cartagena?"
+
+#: 
+msgid "Cartagena Convention and the Oil Spill Protocol"
+msgstr "Convention de Cartagena et protocoles sur les déversements d’hydrocarbures"
+
+#: 
+msgid "SPAW Protocol"
+msgstr "Protocole SPAW"
+
+#: 
+msgid "LBS Protocol"
+msgstr "Protocole LBS"
+
+#: 
+msgid "If your country has not yet ratified/acceded to the Cartagena Convention or any of the Protocols listed above, please provide a summary of efforts towards ratification/accession"
+msgstr "Si votre pays n’a pas encore ratifié la Convention de Cartagena, ni aucun des\n"
+"protocoles mentionnés ci-dessus, ou n’y a pas encore adhéré, veuillez fournir un résumé des efforts déployés en ce sens."
+
+#: 
+#, fuzzy
+msgid "Does your country currently have any plan to propose any amendments to the Cartagena Convention?"
+msgstr "Votre pays a-t-il l’intention de proposer des amendements à la Convention de\n"
+"Cartagena?"
+
+#: 
+msgid "If yes, please provide a brief summary of your proposals."
+msgstr "Dans l’affirmative, faites un bref résumé de vos propositions."
+
+#: 
+#, fuzzy
+msgid "Section 7: The Protocol Concerning Cooperation in Combating Oil Spills in the Wider Caribbean Region"
+msgstr "Partie 7 : Protocole relatif à la coopération en matière de lutte contre\n"
+"les déversements d’hydrocarbures dans la région des Caraïbes"
+
+#: 
+msgid "Does your country have a designated Focal Point for the Oil Spills Protocol?"
+msgstr "Existe-t-il dans votre pays un point de liaison désigné pour le Protocole relatif aux déversements d’hydrocarbures dans la région des Caraïbes?"
+
+#: 
+msgid "Does your country currently have any national policies, laws, or plans for prevention, reduction and control of oil spill pollution?"
+msgstr "Existe-t-il dans votre pays des politiques, des lois ou des plans pour la prévention, la réduction et le contrôle des déversements d’hydrocarbures?"
+
+#: 
+#, fuzzy
+msgid "Has your country established any national operational measures such as establishing national oil spill contingency plans for responding to oil spill incidents (Article 7 of the Oil Spills Protocol)?"
+msgstr "Votre pays a-t-il élaboré des mesures opérationnelles nationales telles que des\n"
+"plans d’urgence nationaux pour répondre à des déversements des hydrocarbures (article 7 du Protocole relatif aux déversements d’hydrocarbures)?"
+
+#: 
+msgid "Has your country experienced any oil-spill incidents since 1986 (Article 1, paragraph 4)? Please indicate whether any of these incidents resulted in major consequences to the marine environment."
+msgstr "Votre pays a-t-il fait face à des incidents de déversements d’hydrocarbures\n"
+"depuis 1986 (article premier, paragraphe 4)? Veuillez indiquer les conséquences principales liées à ces incidents sur l’environnement marin."
+
+#: 
+#, fuzzy
+msgid "If yes, please specify the details of every incident and the response measures taken."
+msgstr "Dans l’affirmative, donnez les détails de chacun des incidents et les mesures \n"
+"prises pour y répondre."
+
+#: 
+#, fuzzy
+msgid "Section 8: The Protocol Concerning Specially Protected Areas and Wildlife (SPAW) - Article 4, 10, 11, 20, 21"
+msgstr "Partie 8 : Protocole relatif aux zones et à la vie sauvage spécialement\n"
+"protégées (SPAW) – articles 4, 10, 11, 20, 21"
+
+#: 
+msgid "Does your country have a designated Focal Point for the SPAW Protocol?"
+msgstr "Votre pays a-t-il un point de liaison désigné pour le protocole SPAW?"
+
+#: 
+msgid "Does your country currently have any national policies, laws, mechanisms or measures for the protection of Wild Flora and Fauna? (Article 10 of the SPAW Protocol)"
+msgstr "Existe-t-il dans votre pays des politiques, des lois, des mesures ou des mécanismes pour la protection de la flore et la faune sauvages? – article 10 du protocole SPAW"
+
+#: 
+#, fuzzy
+msgid "If yes or in preparation, please provide references for legal texts and other relevant documents and give a link to the websites where the documents can be found (including the list of protected species and the list of recovery plans)."
+msgstr "Dans l’affirmative, ou si c’est en cours de préparation, donnez la référence de\n"
+"textes juridiques et d’autres documents pertinents, ainsi que les liens des sites \n"
+"Web où ces documents se trouvent (ce qui inclut la liste des espèces protégées et des plans de rétablissement."
+
+#: 
+msgid "Has your country established any protected areas pursuant to the SPAW Protocol? (Article 4 of the SPAW Protocol)"
+msgstr "Votre pays a-t-il créé des zones protégées conformément au protocole SPAW? – article 4 du protocole SPAW"
+
+#: 
+#, fuzzy
+msgid "The total number of the protected areas established and the list of protected areas that have been established since the last report to the Organization"
+msgstr "Nombre de zones protégées créées :"
+
+#: 
+#, fuzzy
+msgid "Location of each PA established since the last report (GPS Coordinates if available)"
+msgstr "Localisation de chaque zone (coordonnées GPS, si disponibles) :"
+
+#: 
+#, fuzzy
+msgid "Legal status of each and existence, or current development, of a specific management plan."
+msgstr "Condition de chaque zone (complète, partielle, inadéquate)"
+
+#: 
+msgid "Has your country identified all of the endangered / threatened species listed in Annexes I, II, and III of the SPAW Protocol that are within your country (i.e. within areas over which your country exercises sovereignty, sovereign rights, or jurisdiction)?"
+msgstr "Votre pays a-t-il identifié toutes les espèces menacées ou en danger figurant dans les listes des annexes I, II et III du protocole SPAW et présentes dans votre pays (à savoir, dans des zones sur lesquelles votre pays exerce la souveraineté, le droit souverain ou la juridiction)?"
+
+#: 
+msgid "If yes, please provide a list of endangered / threatened species in your country (please refer to the Annex I, II, and III of the SPAW Protocol) since the end of the last reporting period."
+msgstr "Dans l’affirmative, joindre la liste des espèces menacées ou en danger\n"
+"d’extinction dans votre pays (se référer aux annexes I, II et III du protocole \n"
+"SPAW) depuis la fin de la dernière période de rapport."
+
+#: 
+msgid "If no, provide a timeframe necessary to do so."
+msgstr "Sinon, donnez le délai nécessaire pour son élaboration."
+
+#: 
+msgid "Has your country taken measures to ensure strict protection of the endangered/threatened species listed in Annexes I and II (Article 11.1(a) and 11.1(b) of the SPAW Protocol)?"
+msgstr "Votre pays a-t-il entrepris des mesures sévères de protection des espèces\n"
+"menacées ou en voie de disparition figurant aux annexes I et II? – articles 11.1(a) et 11.1(b) du protocole SPAW"
+
+#: 
+msgid "Partially"
+msgstr "Partiellement"
+
+#: 
+#, fuzzy
+msgid "If yes, please list which measures (types of legal texts, prohibitions and/or regulations that they create)"
+msgstr "Dans l’affirmative, joindre la liste"
+
+#: 
+#, fuzzy
+msgid "Has your country formulated, adopted, and implemented any plans for the management and use of species listed in Annex III (Article 11.1 (c) of the SPAW Protocol)?"
+msgstr "Votre pays a-t-il élaboré, adopté et mis en œuvre des plans pour la gestion et\n"
+"l’utilisation des espèces figurant à l’annexe III?"
+
+#: 
+msgid "If yes or in preparation, please provide a reference to the implementation plans for the species that have been developed."
+msgstr "Dans l’affirmative, ou si les plans sont en cours de préparation, indiquez la\n"
+"référence des plans de mise en œuvre élaborés."
+
+#: 
+msgid "Has your country adopted exemptions to species protection (Articles 11.2 and 14 of the SPAW Protocol)?"
+msgstr "Votre pays a-t-il adopté des exemptions aux articles 11.2 et 14 sur la protection des espèces du protocole SPAW?"
+
+#: 
+msgid "The list of species for which exemptions to strict protection have been\n"
+"adopted:"
+msgstr "La liste des espèces pour lesquelles des exemptions aux mesures sévères ont\n"
+"été adoptées"
+
+#: 
+msgid "For each species:"
+msgstr "Pour chaque espèce"
+
+#: 
+msgid "The reason/purpose (scientific, traditional use, etc.) why the exemption was adopted"
+msgstr "La raison ou le but (utilisation scientifique, traditionnelle, etc.) de \n"
+"l’exemption adoptée"
+
+#: 
+msgid "The level of takes and/or killings and/or captures that is allowed per year"
+msgstr "Le quota de prises ou de captures permis par année"
+
+#: 
+msgid "To the extent possible, an estimate of the total species population size"
+msgstr "Dans la mesure du possible, un estimé de la taille totale de la population \n"
+"de l’espèce"
+
+#: 
+msgid "Did your country proceed to any changes in the delimitation of protected areas and/or to changes in their status (Article 15 of the SPAW Protocol)?"
+msgstr "Votre pays a-t-il apporté des modifications à la délimitation des aires protégées ou à leur statut? – article 15 du protocole SPAW"
+
+#: 
+#, fuzzy
+msgid "If yes, provide the list of protected areas whose status or delimitation was changed and reasons for these changes."
+msgstr "Dans l’affirmative, fournir la liste des aires protégées dont le statut ou la délimitation ont été modifiés ainsi que les raisons de ces modifications."
+
+#: 
+msgid "Did your country proceed to any changes in the legal status of species listed in Annexes I, III, or III (Article 15 of the SPAW Protocol)?"
+msgstr "Votre pays a-t-il modifié le statut légal des espèces figurant aux annexes I, II ou III? – article 15 du protocole SPAW"
+
+#: 
+#, fuzzy
+msgid "If yes, provide a list of species whose status or delimitation was changed and the reasons for these changes."
+msgstr "Dans l’affirmative, veuillez fournir une liste des espèces pour lesquelles on a modifié le statut ou la délimitation et indiquer les raisons de ces changements."
+
+#: 
+msgid "Has your country incorporated into its law or policy the common guidelines or criteria adopted under Article 21 of the SPAW Protocol?"
+msgstr "Votre pays a-t-il incorporé dans ses lois ou politiques les lignes directrices ou les critères adoptés conformément à l’article 21 du protocole SPAW?"
+
+#: 
+#, fuzzy
+msgid "Section 9: The Protocol Concerning Pollution from Land-Based Sources (LBS) and Activities - Articles I, III, VI, VII"
+msgstr "Partie 9 : Protocole relatif à la pollution due à des sources et à des\n"
+"activités terrestres (LBS) - articles I, III, VI, VII"
+
+#: 
+msgid "Does your country have a designated Focal Point for the LBS Protocol?"
+msgstr "Existe-t-il dans votre pays un point de liaison désigné pour le protocole LBS?"
+
+#: 
+msgid "Is there a national definition of pollution from “Land-based sources and activities” (Article I (d))?"
+msgstr "Existe-t-il une définition nationale de la pollution provenant des « sources et activités terrestres » (article I(d))? "
+
+#: 
+#, fuzzy
+msgid "If yes, please present the definition here and/or provide list of land-based sources of pollution that are identified in legislation for your country."
+msgstr "Dans l’affirmative, donnez ici la définition et/ou fournissez la liste des sources\n"
+"terrestres de pollution qui sont identifiées dans la législation de votre pays."
+
+#: 
+msgid "Does your country currently have any legislation for the prevention, reduction and control pollution from land-based sources in the Convention area (Article III)?"
+msgstr "Votre pays a-t-il mis en place des lois visant à prévenir, à réduire et à contrôler la pollution provenant de sources terrestres dans la zone de la Convention? – article III"
+
+#: 
+#, fuzzy
+msgid "If yes or in preparation, please provide the name of the legislation, a link to the text of the legislation, the pollutants being addressed or the scope of the legislation."
+msgstr "Dans l’affirmative, ou si les lois sont en cours de préparation, veuillez fournir \n"
+"le nom de la loi, un lien vers le texte de loi en question, les polluants visés ou \n"
+"l’ampleur de la législation."
+
+#: 
+msgid "This list may be attached as an Annex to this report."
+msgstr "Vous pouvez joindre cette liste en tant qu’annexe au présent document"
+
+#: 
+msgid "Has your country developed any implementation plans, programs, and measures to carry out the general terms of [or: meet the objectives of] the LBS Protocol, including National Programmes of Action (NPAs)? (Article III)"
+msgstr "Votre pays a-t-il élaboré des plans, programmes et mesures pour mettre en œuvre les dispositions générales du [ou : atteindre les objectifs] du protocole LBS, y compris les programmes d’action nationale (PAN)? – article III"
+
+#: 
+#, fuzzy
+msgid "If yes, please provide brief details and a link to all of the implementation plans that are developed and/or used in your country. If in preparation, please describe the nature of what is being prepared and the expected timeline for completion."
+msgstr "Dans l’affirmative, donnez de brefs détails (ainsi qu’un lien) sur tous les plans\n"
+"qui ont été élaborés ou qui sont employés dans votre pays. Si les plans, \n"
+"programmes et mesures sont en cours de préparation, veuillez en décrire la \n"
+"nature et préciser le délai d’exécution."
+
+#: 
+msgid "Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period?"
+msgstr "Votre pays a-t-il élaboré de nouvelles politiques, lois, règlements ou plans (ou en a-t-il modifié) pour la réduction de la pollution LBS au cours de la période faisant l’objet de ce rapport?"
+
+#: 
+#, fuzzy
+msgid "If yes, please specify briefly what new or amended national policies, laws, regulations or plans have been developed."
+msgstr "Dans l’affirmative, donnez de brèves précisions concernant les politiques, lois,\n"
+"règlements ou plans nationaux nouvellement adoptés ou modifiés."
+
+#: 
+msgid "Are there any other types and/or sources of LBS pollution other than those listed in Annex I of the LBS Protocol that require special consideration in your country?"
+msgstr "Y-a-t-il d’autres types ou sources de pollution LBS figurant dans la liste, à l’annexe du protocole LBS, qui nécessitent une attention particulière dans votre pays?"
+
+#: 
+#, fuzzy
+msgid "If yes, please specify what concerns have developed for the other sources of LBS pollution in your country."
+msgstr "Dans l’affirmative, donnez des précisions concernant les inquiétudes qu’entraînent les autres sources de pollution LBS dans votre pays."
+
+#: 
+#, fuzzy
+msgid "Does your country have any existing environmental pollution monitoring and assessment programmes as outlined in LBS Protocol Article VI?"
+msgstr "Existe-t-il dans votre pays des programmes de surveillance et d’évaluation de la\n"
+"pollution de l’environnement, conformément à l’article VI du protocole LBS?"
+
+#: 
+#, fuzzy
+msgid "If yes, please indicate what monitoring and assessment programs have developed reports for the following parameters; \n"
+"\n"
+"- Frequency of monitoring: \n"
+"\n"
+"- Number of locations: \n"
+"\n"
+"- Parameters being monitored:"
+msgstr "Dans l’affirmative, veuillez indiquer quels programmes de surveillance et \n"
+"d’évaluation ont permis d’élaborer des rapports faisant état des paramètres \n"
+"suivants : \n"
+"\n"
+"- La fréquence de la surveillance : \n"
+"\n"
+"- Le nombre de sites :\n"
+"\n"
+"- Les paramètres surveillés :"
+
+#: 
+msgid "Please provide detailed summaries of monitoring programmes in Annex 1."
+msgstr "Faites des résumés détaillés des programmes de surveillance à l’annexe 1."
+
+#: 
+#, fuzzy
+msgid "If in preparation, please describe what is planned and the schedule for its completion."
+msgstr "Si les programmes sont en cours de préparation, précisez ce qui est projeté et le \n"
+"calendrier d’exécution."
+
+#: 
+msgid "Has your country developed and adopted guidelines concerning environmental impact assessments (EIAs) or has your country generated EIAs consistent with the LBS Protocol, Article VII (2)?"
+msgstr "Votre pays a-t-il élaboré et adopté des lignes directrices concernant les évaluations de l’impact sur l’environnement (EIE) ou a-t-il produit des EIE qui sont conformes à l’article VII (2) du protocole LBS?"
+
+#: 
+msgid "If yes, please describe how often do you review and update those guidelines."
+msgstr "Dans l’affirmative, indiquez la fréquence de révision et leur mise à jour."
+
+#: 
+msgid "Does your country have a total annual estimate of the pollutant loads to the marine environment for LBS activities?"
+msgstr "Votre pays a-t-il des estimations annuelles totales de la charge de polluants dans le milieu marin provenant des activités terrestres à partir des paramètres indiqués dans le Rapport technique no 33* du PEC?"
+
+#: 
+msgid "If yes, please provide details of these loadings in Annex 2."
+msgstr "Dans l’affirmative, donnez des détails des charges à l’annexe 2."
+
+#: 
+msgid "Has your country experienced any difficulties in the implementation of the LBS protocol?"
+msgstr "Votre pays a-t-il éprouvé des difficultés dans la mise en œuvre du protocole LBS?"
+
+#: 
+msgid "If yes, please describe those difficulties and possible reasons for them."
+msgstr "Dans l’affirmative, décrivez ces difficultés et donnez des raisons possibles."
+
+#: 
+#, fuzzy
+msgid "What are three major areas of assistance required to assist your country in implementing the obligations of the Cartagena Convention and its Protocols."
+msgstr "11.Quels sont les trois principaux domaines dans lesquels vous aimeriez être aidé pour satisfaire aux obligations de la Convention de Cartagena et de ses protocoles?"
+
+#: 
+msgid "introductory_text"
+msgstr "La Convention pour la protection et la mise en valeur du milieu marin dans la région des Caraïbes, dénommée Convention de Cartagena, est un accord légalement contraignant pour la protection et la mise en valeur de la région des Caraïbes. La Convention se focalise, entre autres, sur les sources terrestres de pollution, le rejet des déchets en mer, la pollution provenant des navires, la protection de la biodiversité et la pollution atmosphérique. Trois Protocoles ont été élaborés dans le cadre de la Convention pour faire face à ces questions : le Protocole relatif à la coopération en matière de lutte contre les déversements d’hydrocarbures, le Protocole relatif aux zones et à la vie sauvage spécialement protégées (SPAW), et le Protocole relatif aux sources et activités terrestres (LBS).\n"
+"\n"
+"Conformément aux obligations des Parties en vertu de l’article 4 de la Convention, de coopérer, de s’entraider et de chercher à harmoniser leurs politiques, ainsi qu’à leur obligation de faire des rapports sur les protocoles, le présent questionnaire a pour but de faciliter la transmission de renseignements entre les Parties et le Secrétariat ainsi que le partage de renseignements sur des questions relatives à la mise en œuvre de la Convention et de ses protocoles. Le présent questionnaire est divisé en deux parties : \n"
+"\n"
+"Dans la Partie A, il est demandé aux personnes chargées de l’élaboration du rapport de fournir des renseignements d’ordre général tels que les coordonnées et le nom de la personne chargée du rapport. Il est important que tous les renseignements pertinents soient fournis. \n"
+"La Partie B il est demandé aux personnes chargées de l’élaboration du rapport de fournir les renseignements relatifs aux mesures prises par les Parties en vue de mettre en œuvre les dispositions de la Convention de Cartagena et ses protocoles, ainsi que sur l’efficacité de telles mesures pour atteindre les objectifs de la Convention et de ses protocoles. \n"
+"\n"
+"Veuillez indiquer le cas échéant si les renseignements requis ne sont pas disponibles. Si vous souhaitez fournir des renseignements supplémentaires, veuillez les joindre au rapport. Les rapports doivent parvenir au Secrétariat de la Convention de Cartagena, au plus tard, trois mois avant la réunion intergouvernementale. Pour toute question ou aide supplémentaire, n’hésitez pas à joindre : \n"
+"\n"
+"M. Christopher Corbin\n"
+"Responsable du programme AMEP \n"
+"Secrétariat à la Convention de Cartagena\n"
+"Programme des Nations Unies pour l’Environnement - Programme pour l’environnement des Caraïbes\n"
+"14-20 Port Royal Street,\n"
+"\n"
+"Kingston, Jamaïque;\n"
+"Tél. : (876) 922-9267-9\n"
+"Fax : (876) 922-9292\n"
+"E-mail : rcu@cep.unep.org"
+

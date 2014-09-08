@@ -1,53 +1,28 @@
 from five import grok
 
-
+from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
+from z3c.form.browser.radio import RadioFieldWidget
 from z3c.form import group, field
 from zope import schema
-from zope.interface import invariant, Invalid
+from zope.interface import invariant, Interface, Invalid
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
 from plone.dexterity.content import Item
+from plone.dexterity.browser.add import DefaultAddForm, DefaultAddView
 
 from plone.directives import dexterity, form
 from plone.app.textfield import RichText
 from plone.namedfile.field import NamedImage, NamedFile
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from plone.namedfile.interfaces import IImageScaleTraversable
+from plone.supermodel import model
 
 
 from UNEP.cartagenareportingtool import MessageFactory as _
+from UNEP.cartagenareportingtool import vocabulary
+from interface import INumberSchema, ICountryReport
 
-
-# Interface class; used to define content-type schema.
-
-class ICountryReport(form.Schema, IImageScaleTraversable):
-    """
-    Country Report for Cartagena Convention
-    """
-
-    # If you want a schema-defined interface, delete the model.load
-    # line below and delete the matching file in the models sub-directory.
-    # If you want a model-based interface, edit
-    # models/country_report.xml to define the content type.
-
-    form.model("models/country_report.xml")
-
-yes_no_inprep = SimpleVocabulary(
-    [
-     SimpleTerm(value=u'Yes', title=_(u'Yes')),
-     SimpleTerm(value=u'No', title=_(u'No')),
-     SimpleTerm(value=u'In Preparation', title=_(u'In Preparation'))
-     ]
-    )
-yes_no_inprep_other = SimpleVocabulary(
-    [
-     SimpleTerm(value=u'Yes', title=_(u'Yes')),
-     SimpleTerm(value=u'No', title=_(u'No')),
-     SimpleTerm(value=u'In Preparation', title=_(u'In Preparation')),
-     SimpleTerm(value=u'Other', title=_(u'Other'))
-     ]
-    )
 
 # Custom content-type class; objects created for this content type will
 # be instances of this class. Use this class to add content-type specific
@@ -86,3 +61,26 @@ translatable_strings = [
 _(u'Full Name of Reporting Institution'),
 _(u'World'),
   ]
+class AddForm(dexterity.AddForm):
+    """ custom add form """
+    grok.name('UNEP.cartagenareportingtool.country_report')
+#
+
+"""
+    "national_focal_point_contact_person",
+    "national_focal_point_job_title",
+    "national_focal_point_department",
+    "national_focal_point_address",
+    "national_focal_point_telephone",
+    "national_focal_point_email",
+    "national_focal_point_website",
+    "national_agency_ministry_institution",
+     "national_agency_name_of_organization",
+    "national_agency_contact_person",
+    "national_agency_job_title",
+    "national_agency_department",
+    "national_agency_address",
+    "national_agency_telephone",
+    "national_agency_email",
+    "national_agency_website"]
+"""

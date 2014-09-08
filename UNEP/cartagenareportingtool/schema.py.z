@@ -1,0 +1,88 @@
+    country=schema.Choice(
+    title = _(u"Country)",
+               mapping={'placeholder':''}),
+    required=False,
+    source=vocabulary.countries
+    )   
+
+    reporting_period_start=schema.Date(
+    title = _(u"Reporting Period Start)",
+               mapping={'placeholder':''}),
+    required=False,
+    
+    )   
+
+    reporting_period_end=schema.Date(
+    title = _(u"Reporting Period End)",
+               mapping={'placeholder':''}),
+    required=False,
+    
+    )   
+
+    full_name_of_reporting_institution=schema.TextLine(
+    title = _(u"Full name of reporting institution)",
+               mapping={'placeholder':''}),
+    required=False,
+    
+    )   
+
+    reporting_officer_name=schema.TextLine(
+    title = _(u"Name and title of reporting officer)",
+               mapping={'placeholder':''}),
+    required=False,
+    
+    )   
+
+    agency=schema.TextLine(
+    title = _(u"Agency)",
+               mapping={'placeholder':''}),
+    required=False,
+    
+    )   
+
+    mailing_address=schema.Text(
+    title = _(u"Mailing Address)",
+               mapping={'placeholder':''}),
+    required=False,
+    
+    )   
+
+ form.widget(
+      telephone=collective.z3cform.datagridfield.DataGridFieldFactory)
+
+    telephone=schema.List(
+    title = _(u"Telephone)",
+               mapping={'placeholder':''}),
+    required=False,
+    
+    )   
+
+    email=schema.TextLine(
+    title = _(u"E-mail)",
+               mapping={'placeholder':''}),
+    required=False,
+    
+    )   
+
+    web_page=schema.TextLine(
+    title = _(u"Webpage)",
+               mapping={'placeholder':''}),
+    required=False,
+    
+    )   
+
+    date_the_report_was_submitted=schema.Date(
+    title = _(u"Date the report was submitted)",
+               mapping={'placeholder':''}),
+    required=False,
+    
+    )   
+
+    signature=schema.TextLine(
+    title = _(u"Signature)",
+               mapping={'placeholder':''}),
+    required=False,
+    
+    )   
+
+12

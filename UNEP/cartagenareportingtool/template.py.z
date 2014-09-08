@@ -1,0 +1,134 @@
+from xml.etree import cElementTree as ET
+xml = ET.ElementTree(file="models/country_report.xml")
+field_template = open("field.tmpl","r").read()
+widget_template = open("widget.tmpl","r").read()
+model_fieldset_template = open("model_fieldset.tmpl","r").read()
+
+IMPORTS = """from plone.namedfile.interfaces import IImageScaleTraversable
+from zope.interface import invariant, Interface, Invalid
+from plone.directives import dexterity, form
+from zope import schema
+from UNEP.cartagenareportingtool import MessageFactory as _
+from UNEP.cartagenareportingtool import vocabulary
+from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
+from plone.supermodel import model
+
+class INumberSchema(Interface):
+    phone_type = schema.Choice(
+                     title=_(u"Type"),
+                     required=False,
+                     source=vocabulary.phone_type,
+                        )
+    number = schema.TextLine(
+                     title=_(u"Number"),
+                     required=False,
+                        )
+
+class ICountryReport(form.Schema, IImageScaleTraversable):
+    '''
+    Country Report for Cartagena Convention
+    '''
+"""
+
+FILE="interface.py"
+outputfile = open(FILE,"w")
+outputfile.write(IMPORTS)
+
+FIELD="{http://namespaces.plone.org/supermodel/schema}field"
+FIELDSET="{http://namespaces.plone.org/supermodel/schema}fieldset"
+TITLE="{http://namespaces.plone.org/supermodel/schema}title"
+SOURCE="{http://namespaces.plone.org/supermodel/schema}source"
+WIDGET="{http://namespaces.plone.org/supermodel/form}widget"
+PACKAGE_NAME="UNEP.cartagenareportingtool"
+#build template dictionary
+# example of format
+vardict = {
+            "widget":"RadioFieldWidget",
+            "name":"name_of_widget",
+            "type":"TextLine",#default type
+            "vocab_info":None,
+            "i18nstring":"a long string to say",
+            "mapping_dict":"{'placeholder':''}",
+           }
+schema = xml.getroot()[0]
+
+# functions
+def schema_from_child_node(child):
+   if FIELD == child.tag:
+       fieldtype = child.attrib.get('type',None)
+       widget = child.attrib.get(WIDGET,None)
+       if fieldtype:
+           vardict['type'] = fieldtype.split('.')[-1]
+       vardict['widget'] = widget
+       vardict['name'] = child.attrib['name']
+       vardict['vocab_info'] = ''
+
+       for subnode in child:
+           # set the vocabulary source
+           if SOURCE == subnode.tag:
+               vocab_source = subnode.text.split(PACKAGE_NAME+".")[1]
+               vardict['vocab_info'] = "source=%s" % vocab_source
+           # use the title as the i18n string
+           if TITLE == subnode.tag:
+               vardict['i18nstring']=subnode.text
+
+       # check if we need to declare a widget
+       if widget:
+           outputfile.write(widget_template % vardict)
+       outputfile.write(field_template % vardict)
+
+def generate_schema(schema):
+    """
+      each section is to be associated with a fieldset
+      {'description': 'Section 9: The Protocol Concerning Pollution from Land-Based Sources  (LBS) and Activities - Articles I, III, VI, VII', 
+        # description is the i18nstring
+        'name': 'section9', 
+        # name is the name of the fieldset
+        'label': 'Section 9'
+        # label is the title of the fieldset
+       } 
+      resulting model fieldset should look like:
+       model.fieldset(
+        'section1',
+        label=_(u"Section 1"),
+        description=_(u"Section 1: Designated National Focal Point, Institution and Implementation Plans - Articles 4, 15"),
+        fields=[
+    "does_your_country_have_a_designated_national_focal_point_for_the_cartagena_convention",
+       "national_focal_point_name_of_organization",
+    "national_agency_ministry_institution",
+    "implementation_plans",
+       ])
+    """
+    fieldset_dict = {}
+    for child in schema:
+        schema_from_child_node(child)
+        if FIELDSET == child.tag:
+        # iterate over fieldset
+            for subnode in child:
+                fieldset_name = child.attrib['name'] 
+                exists = fieldset_dict.get(fieldset_name,None)
+                if not exists:
+                    fieldset_dict[fieldset_name] = {}
+                    fieldset_dict[fieldset_name]['fields_'] = []
+                    fieldset_dict[fieldset_name]['attrib'] = child.attrib
+                else:
+                    fieldset_dict[fieldset_name]['fields_'].append(subnode.attrib['name'])
+                schema_from_child_node(subnode)
+
+    for section in fieldset_dict.keys():
+         
+        fields_str = "["
+        fields_ = fieldset_dict[section]['fields_']
+        fields_.reverse()
+        for field in fields_:
+            fields_str = fields_str + "'%s'," % field.encode("utf-8")
+        fields_str = fields_str + "]"
+        
+        field_tmpl = fieldset_dict[section]['attrib']
+        field_tmpl['fields'] = fields_str
+        try:
+            outputfile.write(model_fieldset_template % field_tmpl)
+        except:
+            print field_tmpl
+    
+generate_schema(schema)

@@ -13,6 +13,7 @@ from plone.app.textfield import RichText
 from plone.namedfile.field import NamedImage, NamedFile
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from plone.namedfile.interfaces import IImageScaleTraversable
+from plone import api
 
 
 from UNEP.cartagenareportingtool import MessageFactory as _
@@ -55,12 +56,35 @@ class MemberFolder(Container):
 # of this type by uncommenting the grok.name line below or by
 # changing the view class name and template filename to View / view.pt.
 
-class SampleView(grok.View):
+class MemberFolderView(grok.View):
     """ sample view class """
 
     grok.context(IMemberFolder)
     grok.require('zope2.View')
 
-    # grok.name('view')
-
+    grok.name('view')
+     
     # Add view methods here
+    def edit_country_report(self):
+        """ determine if a report exists """
+        all_reports = self.get_all_reports
+        if len(all_reports) == 0:
+            url = "++add++UNEP.cartagenareportingtool.countryreport"
+        else:
+            url = "%s/edit" % all_reports[0].id
+        return url
+        
+    @property
+    def member_path(self):
+        current_user = api.user.get_current()
+        return '/'.join(self.context.getPhysicalPath())
+        
+    @property
+    def get_all_reports(self):
+        catalog = api.portal.get_tool(name='portal_catalog')
+
+        documents = catalog(
+                  portal_type='UNEP.cartagenareportingtool.countryreport',
+                  path={'query': self.member_path, 'depth': 1}
+                  )
+        return documents

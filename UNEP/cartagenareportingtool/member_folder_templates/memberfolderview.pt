@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="UNEP.cartagenareportingtool">
+<body>
+
+<tal:comment tal:condition="nothing">
+    This is a sample view template. It will not be used for rendering the
+    content unless activated by creation of a view class with a matching name.
+</tal:comment>
+<div metal:fill-slot="top_slot"
+              tal:define="dummy python:request.set('disable_border', 1)" />
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+
+    <h2 tal:content="view/member_path">
+    </h2>
+
+    
+    <pre i18n:translate="introductory_text">Title inserted here</pre>
+<button><a tal:attributes="href view/edit_country_report">edit country report</a></button>
+<div tal:content="view/get_all_reports">all reports</div>
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+
