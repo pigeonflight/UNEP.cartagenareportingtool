@@ -46,8 +46,8 @@ class CountryReport(Item):
 # of this type by uncommenting the grok.name line below or by
 # changing the view class name and template filename to View / view.pt.
 
-class SampleView(dexterity.DisplayForm):
-    """ sample view class """
+class View(dexterity.DisplayForm):
+    """  view class """
 
     grok.context(ICountryReport)
     grok.require('zope2.View')
@@ -55,12 +55,15 @@ class SampleView(dexterity.DisplayForm):
     # grok.name('view')
 
     # Add view methods here
+    def edit_report(self):
+        """ determine if a report exists """
+        url = "%s/edit" % self.context.absolute_url()
+        return url
 
+class EditForm(dexterity.EditForm):
+    grok.context(ICountryReport)
+    grok.template('edit')
 
-translatable_strings = [
-_(u'Full Name of Reporting Institution'),
-_(u'World'),
-  ]
 class AddForm(dexterity.AddForm):
     """ custom add form """
     grok.name('UNEP.cartagenareportingtool.country_report')

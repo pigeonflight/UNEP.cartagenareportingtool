@@ -4,42 +4,36 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       lang="en"
       metal:use-macro="context/main_template/macros/master"
-      i18n:domain="UNEP.cartagenareportingtool">
+      i18n:domain="plone.app.dexterity">
 <body>
-
-<metal:main fill-slot="main">
-
-    <h1 class="documentFirstHeading" tal:content="context/Title" />
-
-    <p class="documentDescription" tal:content="context/Description" />
+<tal:comment tal:condition="nothing">
+    This is the view that users see when they view the summary of the report
+</tal:comment>
+<div metal:fill-slot="top_slot"
+              tal:define="dummy python:request.set('disable_border', 1)" />
+<metal:header fill-slot="content-description">
+<a  tal:attributes="href view/edit_report">
+<button class="btn">sup dude</button></a>
+</metal:header>
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
 
     <tal:block repeat="widget view/widgets/values">
-
-        <div class="field" tal:condition="python:widget.__name__ not in ('IBasic.title', 'IBasic.description', 'title', 'description',)">
-            <label 
-             tal:define="label widget/label" 
-             tal:content="python:context.transate(label, domain='UNEP.cartagenareportingtool')" 
-             />
-            <br />
-            <div tal:content="structure widget/render" />
-        </div>
+        <tal:block tal:condition="python:widget.__name__ not in ('IBasic.title', 'IBasic.description', 'title', 'description',)">
+            <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
+        </tal:block>
     </tal:block>
-            
+
     <fieldset tal:repeat="group view/groups"
               tal:attributes="id python:''.join((group.prefix, 'groups.', group.__name__)).replace('.', '-')">
         <legend tal:content="group/label" />
-        <div class="field" tal:repeat="widget group/widgets/values">
-            <label 
-             tal:define="label widget/label" 
-             python:context.transate(label, domain='UNEP.cartagenareportingtool')" 
-               />
-            <br />
-            <div tal:content="structure widget/render" />
-        </div>
+        <tal:block tal:repeat="widget group/widgets/values">
+            <tal:widget tal:replace="structure widget/@@ploneform-render-widget"/>
+        </tal:block>
     </fieldset>
 
+  </metal:content-core>
 </metal:main>
 
 </body>
 </html>
-

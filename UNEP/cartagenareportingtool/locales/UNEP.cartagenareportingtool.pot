@@ -1,606 +1,732 @@
+##############################################################################
+#
+# Copyright (c) 2003-2004 Zope Foundation and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+##############################################################################
 msgid ""
 msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: Mon Sep  8 16:37:35 2014\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Zope 3 Developers <zope-dev@zope.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: POEditor.com\n"
-"Project-Id-Version: UNEP.cartagenareportingtool\n"
-"Language: en\n"
-"Preferred-Encodings: utf-8 latin1\n"
-"Domain: UNEP.cartagenareportingtool\n"
+"Generated-By: zope/app/locales/extract.py\n"
 
-#: UNEP.cartagenareportingtool:/country_report.py:37
-#: UNEP.cartagenareportingtool:/country_report.py:44
-msgid "Yes"
+#: UNEP.cartagenareportingtool:/country_report.py:61
+msgid "Full Name of Reporting Institution"
 msgstr ""
 
-#: UNEP.cartagenareportingtool:/country_report.py:38
-#: UNEP.cartagenareportingtool:/country_report.py:45
-msgid "No"
-msgstr ""
-
-#: UNEP.cartagenareportingtool:/country_report.py:39
-#: UNEP.cartagenareportingtool:/country_report.py:46
-msgid "In Preparation"
-msgstr ""
-
-#: UNEP.cartagenareportingtool:/country_report.py:47
-msgid "Other"
-msgstr ""
-
-#: UNEP.cartagenareportingtool:/country_report.py:85
-msgid "Hello"
-msgstr ""
-
-#: UNEP.cartagenareportingtool:/country_report.py:86
+#: UNEP.cartagenareportingtool:/country_report.py:62
 msgid "World"
 msgstr ""
 
-#:
-msgid "Country"
+#: UNEP.cartagenareportingtool:/interface.py:100
+#. Default: ""
+msgid "Does your country have a designated National Focal Point for the Cartagena Convention?"
 msgstr ""
 
-#:
-msgid "Full name of the reporting institution"
+#: UNEP.cartagenareportingtool:/interface.py:106
+#. Default: ""
+msgid "National Focal Point:Name of Organization"
 msgstr ""
 
-#:
-msgid "Period Reported (DD/MM/YYYY): from ${start_date} to ${end_date}"
+#: UNEP.cartagenareportingtool:/interface.py:112
+#. Default: ""
+msgid "National Focal Point:Contact Person"
 msgstr ""
 
-#:
-msgid "Name and Title of reporting officer"
+#: UNEP.cartagenareportingtool:/interface.py:118
+#. Default: ""
+msgid "National Focal Point:Job Title"
 msgstr ""
 
-#:
-msgid "Agency"
+#: UNEP.cartagenareportingtool:/interface.py:12
+msgid "Type"
 msgstr ""
 
-#:
-msgid "Mailing Address"
+#: UNEP.cartagenareportingtool:/interface.py:124
+#. Default: ""
+msgid "National Focal Point:Department"
 msgstr ""
 
-#:
-msgid "Tel."
+#: UNEP.cartagenareportingtool:/interface.py:130
+#. Default: ""
+msgid "National Focal Point:Address"
 msgstr ""
 
-#:
-msgid "Fax"
+#: UNEP.cartagenareportingtool:/interface.py:136
+#. Default: ""
+msgid "National Focal Point:Telephone"
 msgstr ""
 
-#:
-msgid "E-mail"
+#: UNEP.cartagenareportingtool:/interface.py:142
+#. Default: ""
+msgid "National Focal Point:Email"
 msgstr ""
 
-#:
-msgid "Webpage"
+#: UNEP.cartagenareportingtool:/interface.py:148
+#. Default: ""
+msgid "National Focal Point:Website"
 msgstr ""
 
-#:
-msgid "Date the report was submitted (DD/MM/YYYY)"
-msgstr ""
-
-#:
-msgid "Signature"
-msgstr ""
-
-#:
-msgid "Does your country have a designated National Focal Point for the Cartagena\n"
-"Convention?"
-msgstr ""
-
-#:
-msgid "If yes, please provide"
-msgstr ""
-
-#:
-msgid "Name of Organization"
-msgstr ""
-
-#:
-msgid "Contact Person"
-msgstr ""
-
-#:
-msgid "Job Title"
-msgstr ""
-
-#:
-msgid "Department"
-msgstr ""
-
-#:
-msgid "Address"
-msgstr ""
-
-#:
-msgid "Website"
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:154
+#. Default: ""
 msgid "Does your country have a designated National Agency/Ministry/Institution or other appropriate authority for coordinating the implementation of the Cartagena Convention (Article 15, paragraph 2)?"
 msgstr ""
 
-#:
+#: UNEP.cartagenareportingtool:/interface.py:160
+#. Default: ""
+msgid "National Agency/Ministry:Name of Organization"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:166
+#. Default: ""
+msgid "National Agency/Ministry:Contact Person"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:17
+#: UNEP.cartagenareportingtool:/interface.py:71
+msgid "Number"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:172
+#. Default: ""
+msgid "National Agency/Ministry:Job Title"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:178
+#. Default: ""
+msgid "National Agency/Ministry:Department"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:184
+#. Default: ""
+msgid "National Agency/Ministry:Address"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:190
+#. Default: ""
+msgid "National Agency/Ministry:Telephone"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:196
+#. Default: ""
+msgid "National Agency/Ministry:Email"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:202
+#. Default: ""
+msgid "National Agency/Ministry:Website"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:208
+#. Default: ""
 msgid "Has your country developed an implementation plans(s) to carry out the general obligations of the Cartagena Convention? (Article 4)"
 msgstr ""
 
-#:
-msgid "Existing Plan(s)"
+#: UNEP.cartagenareportingtool:/interface.py:214
+#. Default: ""
+msgid "Brief details of main implementation plans"
 msgstr ""
 
-#:
-msgid "If yes or in preparation, please provide brief details of all of the main implementation plan(s) that are developed and/or being used in your country, or that are in preparation."
+#: UNEP.cartagenareportingtool:/interface.py:220
+#. Default: ""
+msgid "Why no plans"
 msgstr ""
 
-#:
-msgid "If no, please describe why not."
-msgstr ""
-
-#:
-msgid "If plans exist, please specify what existing frameworks are being used for \n"
-"implementation of the Convention."
-msgstr ""
-
-#:
-msgid "Has your country received any external financial assistance to develop and/or\n"
-"implement existing plan(s)?"
-msgstr ""
-
-#:
-msgid "If yes, please identify the source of the assistance."
-msgstr ""
-
-#:
-msgid "If no, please state why not."
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:226
+#. Default: ""
 msgid "Has your country experienced any difficulties in the implementation of the above-mentioned plan(s)?"
 msgstr ""
 
-#:
-msgid "If yes, please describe why with details."
+#: UNEP.cartagenareportingtool:/interface.py:23
+#. Default: ""
+msgid "Country"
 msgstr ""
 
-#:
-msgid "This part requests information on the measures taken by the party to implement the provisions of the Cartagena Convention and on the effectiveness of such measures in meeting the Convention’s objectives, in particular with regard to Articles 3, 11 and 22 of the Convention."
+#: UNEP.cartagenareportingtool:/interface.py:232
+#. Default: ""
+msgid "Why implementation difficulties with details"
 msgstr ""
 
-#:
-msgid "Section 1: Designated National Focal Point, Institution and Implementation Plans - Articles 4, 15"
+#: UNEP.cartagenareportingtool:/interface.py:238
+#. Default: ""
+msgid "Has your country received any external financial assistance to develop and/or implement existing plan(s)?"
 msgstr ""
 
-#:
-msgid "Section 2: Measures to Reduce Marine Pollution from Ships, Caused by Discharges or Dumping, from Exploration or Exploitation of the Sea-Bed , or from Discharges to the Atmosphere - Articles 5, 6, 8, 9"
+#: UNEP.cartagenareportingtool:/interface.py:244
+#. Default: ""
+msgid "${number} Is there a national definition within existing pollution related legislation or regulations for 'Pollution from Ships', 'Discharging or Dumping of wastes at sea', 'Exploration or Exploitation of the  Sea-Bed Activities', and 'Discharges (emissions) to the Atmosphere' (Articles 5, 6, 8, 9)?"
 msgstr ""
 
-#:
-msgid "Is there a national definition within existing pollution related legislation or regulations for “Pollution from Ships”, “Discharging or Dumping of wastes at sea”, “Exploration or Exploitation of the Sea-Bed Activities”, and “Discharges (emissions) to the Atmosphere” (Articles 5, 6, 8, 9)?"
+#: UNEP.cartagenareportingtool:/interface.py:250
+#. Default: ""
+msgid "${number} Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area? "
 msgstr ""
 
-#:
-msgid "If yes, please provide the text of the national definitions"
+#: UNEP.cartagenareportingtool:/interface.py:256
+#. Default: ""
+msgid "details of pollution source  management action since last reporting period"
 msgstr ""
 
-#:
-msgid "Discharges from ships"
+#: UNEP.cartagenareportingtool:/interface.py:262
+#. Default: ""
+msgid "Why no action since last reporting period"
 msgstr ""
 
-#:
-msgid "Dumping of wastes and other matter at sea"
+#: UNEP.cartagenareportingtool:/interface.py:268
+#. Default: ""
+msgid "${number} Are there any other sources and/or types of pollution that may affect marine resources in the Convention area which require special consideration in your country?"
 msgstr ""
 
-#:
-msgid "Exploration or exploitation of the sea-bed"
+#: UNEP.cartagenareportingtool:/interface.py:274
+#. Default: ""
+msgid "Text for Discharges from ship"
 msgstr ""
 
-#:
-msgid "Discharges (air emissions) into the atmosphere"
+#: UNEP.cartagenareportingtool:/interface.py:280
+#. Default: ""
+msgid "${number} Does your country have any national policies for marine pollution prevention, reduction and control for these activities requiring special consideration? "
 msgstr ""
 
-#:
-msgid "Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area?"
+#: UNEP.cartagenareportingtool:/interface.py:286
+#. Default: ""
+msgid "Policy website"
 msgstr ""
 
-#:
-msgid "If yes or in preparation, please provide the details of the major actions taken\n"
-"since the last reporting period"
+#: UNEP.cartagenareportingtool:/interface.py:29
+#. Default: ""
+msgid "Reporting Period Start"
 msgstr ""
 
-#:
-msgid "If no, briefly state why not."
+#: UNEP.cartagenareportingtool:/interface.py:292
+#. Default: ""
+msgid "National laws for marine pollution management"
 msgstr ""
 
-#:
-msgid "Are there any other sources and/or types of pollution that may affect marine resources in the Convention area which require special consideration in your country?"
+#: UNEP.cartagenareportingtool:/interface.py:298
+#. Default: ""
+msgid "Law Website"
 msgstr ""
 
-#:
-msgid "If yes, please specify and answer Question 4 below. If not, please proceed to\n"
-"Section 3."
+#: UNEP.cartagenareportingtool:/interface.py:304
+#. Default: ""
+msgid "National plans for marine pollution management"
 msgstr ""
 
-#:
-msgid "Does your country have any national policies, laws, or plans for marine pollution prevention, reduction and control for these activities requiring special consideration?"
+#: UNEP.cartagenareportingtool:/interface.py:310
+#. Default: ""
+msgid "Plan website"
 msgstr ""
 
-#:
-msgid "Polices"
+#: UNEP.cartagenareportingtool:/interface.py:316
+#. Default: ""
+msgid "${number} Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?"
 msgstr ""
 
-#:
-msgid "Laws"
+#: UNEP.cartagenareportingtool:/interface.py:322
+#. Default: ""
+msgid "Describe pollution emergencies"
 msgstr ""
 
-#:
-msgid "Plans"
+#: UNEP.cartagenareportingtool:/interface.py:328
+#. Default: ""
+msgid "Related marine emergency website"
 msgstr ""
 
-#:
-msgid "If yes or in preparation, please provide brief details."
+#: UNEP.cartagenareportingtool:/interface.py:334
+#. Default: ""
+msgid "${number} In regards to the question above, did your country respond to the situation through any of the following:"
 msgstr ""
 
-#:
-msgid "Provide a website or URL reference to link the response to the appropriate \n"
-"information that is maintained by your country."
+#: UNEP.cartagenareportingtool:/interface.py:340
+#. Default: ""
+msgid "Contracting parties and experience"
 msgstr ""
 
-#:
-msgid "If no, describe why not."
-msgstr ""
-
-#:
-msgid "If other, specify."
-msgstr ""
-
-#:
-msgid "Section 3: Cooperation in Cases of Emergency – Article 11"
-msgstr ""
-
-#:
-msgid "Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?"
-msgstr ""
-
-#:
-msgid "If yes, please describe the details and answer the question below."
-msgstr ""
-
-#:
-msgid "In regards to the question above, did your country respond to the situation through\n"
-"any of the following: \n"
-"\n"
-"A. National Contingency Plans\n"
-"\n"
-"B. Regional Contingency Plans\n"
-"\n"
-"C. Cooperation with Contracting Parties"
-msgstr ""
-
-#:
-msgid "If cooperation took place with other Contracting Parties, please specify the name of Contracting Parties you have worked with and briefly describe the experience."
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:346
+#. Default: ""
 msgid "Has your country, jointly with another country or with other countries, developed and promoted any contingency plans for responding to incidents involving pollution or the threat thereof in the Convention area?"
 msgstr ""
 
-#:
-msgid "If yes, please list the contingency plans developed and the countries involved."
+#: UNEP.cartagenareportingtool:/interface.py:35
+#. Default: ""
+msgid "Reporting Period End"
 msgstr ""
 
-#:
-msgid "Section 4: Environmental Impact Assessment – Article 12"
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:352
+#. Default: ""
 msgid "Does your country currently have any technical and other guidelines (e.g., EIAs) to assist the planning of major development projects in such a way as to prevent or minimize harmful impacts on the Convention Area?"
 msgstr ""
 
-#:
-msgid "Section 5: Scientific and Technical Cooperation – Article 13"
+#: UNEP.cartagenareportingtool:/interface.py:358
+#. Default: ""
+msgid "Does your country have technical cooperation agreements with any other Contracting Parties relating to the purposes of the Convention?"
 msgstr ""
 
-#:
-msgid "Does your country have technical cooperation agreements with any other\n"
-"Contracting Parties relating to the purposes of the Convention?"
-msgstr ""
-
-#:
-msgid "If yes, please provide the names of cooperating parties with areas of cooperation covered by the agreements."
-msgstr ""
-
-#:
-msgid "If no, describe areas in which such agreements are desired."
-msgstr ""
-
-#:
-msgid "Section 6: Adoption/Amendment of the Convention and its Protocols – Articles \n"
-"17,18"
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:364
+#. Default: ""
 msgid "Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention."
 msgstr ""
 
-#:
-msgid "Cartagena Convention and the Oil Spill Protocol"
+#: UNEP.cartagenareportingtool:/interface.py:370
+#. Default: ""
+msgid "Does your country currently have any plan to propose any amendments to the Cartagena Convention?"
 msgstr ""
 
-#:
-msgid "SPAW Protocol"
-msgstr ""
-
-#:
-msgid "LBS Protocol"
-msgstr ""
-
-#:
-msgid "If your country has not yet ratified/acceded to the Cartagena Convention or any of the Protocols listed above, please provide a summary of efforts towards ratification/accession"
-msgstr ""
-
-#:
-msgid "Does your country currently have any plan to propose any amendments to the\n"
-"Cartagena Convention?"
-msgstr ""
-
-#:
-msgid "If yes, please provide a brief summary of your proposals."
-msgstr ""
-
-#:
-msgid "Section 7: The Protocol Concerning Cooperation in Combating Oil Spills in the \n"
-"Wider Caribbean Region"
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:376
+#. Default: ""
 msgid "Does your country have a designated Focal Point for the Oil Spills Protocol?"
 msgstr ""
 
-#:
-msgid "Does your country currently have any national policies, laws, or plans for prevention, reduction and control of oil spill pollution?"
+#: UNEP.cartagenareportingtool:/interface.py:382
+#. Default: ""
+msgid "Does your country currently have any national policies for prevention, reduction and control of oil spill pollution? "
 msgstr ""
 
-#:
-msgid "Has your country established any national operational measures such as\n"
-"establishing national oil spill contingency plans for responding to oil spill incidents (Article 7 of the Oil Spills Protocol)?"
+#: UNEP.cartagenareportingtool:/interface.py:388
+#. Default: ""
+msgid "national laws for management of oil spill pollution"
 msgstr ""
 
-#:
-msgid "Has your country experienced any oil-spill incidents since 1986 (Article 1, paragraph 4)? Please indicate whether any of these incidents resulted in major consequences to the marine environment."
+#: UNEP.cartagenareportingtool:/interface.py:394
+#. Default: ""
+msgid "national plans for management of oil spill pollution"
 msgstr ""
 
-#:
-msgid "If yes, please specify the details of every incident and the response measures\n"
-"taken."
+#: UNEP.cartagenareportingtool:/interface.py:400
+#. Default: ""
+msgid "Has your country established any national operational measures such as establishing national oil spill contingency plans for responding to oil spill incidents (Article 7 of the Oil Spills Protocol)?"
 msgstr ""
 
-#:
-msgid "Section 8: The Protocol Concerning Specially Protected Areas and Wildlife\n"
-"(SPAW) - Article 4, 10, 11, 20, 21"
+#: UNEP.cartagenareportingtool:/interface.py:406
+#. Default: ""
+msgid "Has your country experienced any oil-spill incidents since 1986 (Article 1, paragraph 4)?"
 msgstr ""
 
-#:
+#: UNEP.cartagenareportingtool:/interface.py:41
+#. Default: ""
+msgid "Full name of reporting institution"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:412
+#. Default: ""
 msgid "Does your country have a designated Focal Point for the SPAW Protocol?"
 msgstr ""
 
-#:
+#: UNEP.cartagenareportingtool:/interface.py:418
+#. Default: ""
 msgid "Does your country currently have any national policies, laws, mechanisms or measures for the protection of Wild Flora and Fauna? (Article 10 of the SPAW Protocol)"
 msgstr ""
 
-#:
-msgid "If yes or in preparation, please provide references for legal texts and other \n"
-"relevant documents and give a link to the websites where the documents can be found (including the list of protected species and the list of recovery plans)."
+#: UNEP.cartagenareportingtool:/interface.py:424
+#. Default: ""
+msgid "national laws for the protection of Wild Flora and Fauna"
 msgstr ""
 
-#:
-msgid "Has your country established any protected areas pursuant to the SPAW Protocol? (Article 4 of the SPAW Protocol)"
+#: UNEP.cartagenareportingtool:/interface.py:430
+#. Default: ""
+msgid "national plans for the protection of Wild Flora and Fauna"
 msgstr ""
 
-#:
-msgid "The total number of the protected areas established and the list of protected\n"
-"areas that have been established since the last report to the Organization:"
+#: UNEP.cartagenareportingtool:/interface.py:436
+#. Default: ""
+msgid "Has your country established any protected areas pursuant to the SPAW Protocol? (Article 4 of the SPAW Protocol) "
 msgstr ""
 
-#:
-msgid "Location of each PA established since the last report (GPS Coordinates if\n"
-"available)"
-msgstr ""
-
-#:
-msgid "Legal status of each and existence, or current development, of a specific\n"
-"management plan."
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:442
+#. Default: ""
 msgid "Has your country identified all of the endangered / threatened species listed in Annexes I, II, and III of the SPAW Protocol that are within your country (i.e. within areas over which your country exercises sovereignty, sovereign rights, or jurisdiction)?"
 msgstr ""
 
-#:
-msgid "If yes, please provide a list of endangered / threatened species in your country (please refer to the Annex I, II, and III of the SPAW Protocol) since the end of the last reporting period."
-msgstr ""
-
-#:
-msgid "If no, provide a timeframe necessary to do so."
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:448
+#. Default: ""
 msgid "Has your country taken measures to ensure strict protection of the endangered/threatened species listed in Annexes I and II (Article 11.1(a) and 11.1(b) of the SPAW Protocol)?"
 msgstr ""
 
-#:
-msgid "Partially"
+#: UNEP.cartagenareportingtool:/interface.py:454
+#. Default: ""
+msgid "Has your country formulated, adopted, and implemented any plans for the management and use of species listed in Annex III (Article 11.1 (c) of the SPAW Protocol)?"
 msgstr ""
 
-#:
-msgid "If yes, please list which measures (types of legal texts, prohibitions and/or \n"
-"regulations that they create)"
-msgstr ""
-
-#:
-msgid "Has your country formulated, adopted, and implemented any plans for the\n"
-"management and use of species listed in Annex III (Article 11.1 (c) of the SPAW Protocol)?"
-msgstr ""
-
-#:
-msgid "If yes or in preparation, please provide a reference to the implementation plans for the species that have been developed."
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:460
+#. Default: ""
 msgid "Has your country adopted exemptions to species protection (Articles 11.2 and 14 of the SPAW Protocol)?"
 msgstr ""
 
-#:
-msgid "The list of species for which exemptions to strict protection have been\n"
-"adopted:"
-msgstr ""
-
-#:
-msgid "For each species:"
-msgstr ""
-
-#:
-msgid "The reason/purpose (scientific, traditional use, etc.) why the exemption was adopted"
-msgstr ""
-
-#:
-msgid "The level of takes and/or killings and/or captures that is allowed per year"
-msgstr ""
-
-#:
-msgid "To the extent possible, an estimate of the total species population size"
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:466
+#. Default: ""
 msgid "Did your country proceed to any changes in the delimitation of protected areas and/or to changes in their status (Article 15 of the SPAW Protocol)?"
 msgstr ""
 
-#:
-msgid "If yes, provide the list of protected areas whose status or delimitation was \n"
-"changed and reasons for these changes."
+#: UNEP.cartagenareportingtool:/interface.py:47
+#. Default: ""
+msgid "Name and Title of reporting officer"
 msgstr ""
 
-#:
+#: UNEP.cartagenareportingtool:/interface.py:472
+#. Default: ""
 msgid "Did your country proceed to any changes in the legal status of species listed in Annexes I, III, or III (Article 15 of the SPAW Protocol)?"
 msgstr ""
 
-#:
-msgid "If yes, provide a list of species whose status or delimitation was changed and\n"
-"the reasons for these changes."
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:478
+#. Default: ""
 msgid "Has your country incorporated into its law or policy the common guidelines or criteria adopted under Article 21 of the SPAW Protocol?"
 msgstr ""
 
-#:
-msgid "Section 9: The Protocol Concerning Pollution from Land-Based Sources (LBS)\n"
-"and Activities - Articles I, III, VI, VII"
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:484
+#. Default: ""
 msgid "Does your country have a designated Focal Point for the LBS Protocol?"
 msgstr ""
 
-#:
-msgid "Is there a national definition of pollution from “Land-based sources and activities” (Article I (d))?"
+#: UNEP.cartagenareportingtool:/interface.py:490
+#. Default: ""
+msgid "Is there a national definition of pollution from 'Land-based sources and activities' (Article I (d))?"
 msgstr ""
 
-#:
-msgid "If yes, please present the definition here and/or provide list of land-based\n"
-"sources of pollution that are identified in legislation for your country."
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:496
+#. Default: ""
 msgid "Does your country currently have any legislation for the prevention, reduction and control pollution from land-based sources in the Convention area (Article III)?"
 msgstr ""
 
-#:
-msgid "If yes or in preparation, please provide the name of the legislation, a link to \n"
-"the text of the legislation, the pollutants being addressed or the scope of the legislation."
+#: UNEP.cartagenareportingtool:/interface.py:502
+#. Default: ""
+msgid "Has your country developed any implementation plans, programs, and measures to carry out the general terms of [or:  meet the objectives of] the LBS Protocol, including National Programmes of Action (NPAs)? (Article III)"
 msgstr ""
 
-#:
-msgid "This list may be attached as an Annex to this report."
+#: UNEP.cartagenareportingtool:/interface.py:508
+#. Default: ""
+msgid "Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period? "
 msgstr ""
 
-#:
-msgid "Has your country developed any implementation plans, programs, and measures to carry out the general terms of [or: meet the objectives of] the LBS Protocol, including National Programmes of Action (NPAs)? (Article III)"
-msgstr ""
-
-#:
-msgid "If yes, please provide brief details and a link to all of the implementation plans that are developed and/or used in your country. If in preparation, please describe the nature of what is being prepared and the expected timeline for completion."
-msgstr ""
-
-#:
-msgid "Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period?"
-msgstr ""
-
-#:
-msgid "If yes, please specify briefly what new or amended national policies, laws,\n"
-"regulations or plans have been developed."
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:514
+#. Default: ""
 msgid "Are there any other types and/or sources of LBS pollution other than those listed in Annex I of the LBS Protocol that require special consideration in your country?"
 msgstr ""
 
-#:
-msgid "If yes, please specify what concerns have developed for the other sources of\n"
-"LBS pollution in your country."
+#: UNEP.cartagenareportingtool:/interface.py:520
+#. Default: ""
+msgid "Does your country have any existing environmental pollution monitoring and assessment programmes as outlined in LBS Protocol Article VI?"
 msgstr ""
 
-#:
-msgid "Does your country have any existing environmental pollution monitoring and\n"
-"assessment programmes as outlined in LBS Protocol Article VI?"
-msgstr ""
-
-#:
-msgid "If yes, please indicate what monitoring and assessment programs have\n"
-"developed reports for the following parameters; \n"
-"\n"
-"- Frequency of monitoring: \n"
-"\n"
-"- Number of locations: \n"
-"\n"
-"- Parameters being monitored:"
-msgstr ""
-
-#:
-msgid "Please provide detailed summaries of monitoring programmes in Annex 1."
-msgstr ""
-
-#:
-msgid "If in preparation, please describe what is planned and the schedule for its\n"
-"completion."
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:526
+#. Default: ""
 msgid "Has your country developed and adopted guidelines concerning environmental impact assessments (EIAs) or has your country generated EIAs consistent with the LBS Protocol, Article VII (2)?"
 msgstr ""
 
-#:
-msgid "If yes, please describe how often do you review and update those guidelines."
+#: UNEP.cartagenareportingtool:/interface.py:53
+#. Default: ""
+msgid "Agency"
 msgstr ""
 
-#:
+#: UNEP.cartagenareportingtool:/interface.py:532
+#. Default: ""
 msgid "Does your country have a total annual estimate of the pollutant loads to the marine environment for LBS activities?"
 msgstr ""
 
-#:
-msgid "If yes, please provide details of these loadings in Annex 2."
-msgstr ""
-
-#:
+#: UNEP.cartagenareportingtool:/interface.py:538
+#. Default: ""
 msgid "Has your country experienced any difficulties in the implementation of the LBS protocol?"
 msgstr ""
 
-#:
-msgid "If yes, please describe those difficulties and possible reasons for them."
+#: UNEP.cartagenareportingtool:/interface.py:544
+#. Default: ""
+msgid "What are three major areas of assistance required to assist your country in implementing the obligations of the Cartagena Convention and its Protocols."
 msgstr ""
 
-#:
-msgid "What are three major areas of assistance required to assist your country in\n"
-"implementing the obligations of the Cartagena Convention and its Protocols."
+#: UNEP.cartagenareportingtool:/interface.py:551
+msgid "Section 1"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:552
+msgid "Section 1: Designated National Focal Point, Institution and Implementation Plans - Articles 4, 15"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:557
+msgid "Section 2"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:558
+msgid "Section 2: Measures to Reduce Marine Pollution from Ships, Caused by Discharges or Dumping, from Exploration or Exploitation of the Sea-Bed , or from Discharges to the Atmosphere - Articles 5, 6, 8, 9"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:563
+msgid "Section 3"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:564
+msgid "Section 3: Cooperation in Cases of Emergency - Article 11"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:569
+msgid "Section 4"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:570
+msgid "Section 4: Environmental Impact Assessment - Article 12"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:575
+msgid "Section 5"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:576
+msgid "Section 5: Scientific and Technical Cooperation - Article 13"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:581
+msgid "Section 6"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:582
+msgid "Section 6: Adoption/Amendment of the Convention and its Protocols - Articles 17,18"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:587
+msgid "Section 7"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:588
+msgid "Section 7: The Protocol Concerning Cooperation in Combating Oil Spills in the Wider Caribbean Region"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:59
+#. Default: ""
+msgid "Mailing Address"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:593
+msgid "Section 8"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:594
+msgid "Section 8: The Protocol Concerning Specially Protected Areas and Wildlife (SPAW) - Article 4, 10, 11, 20, 21"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:599
+msgid "Section 9"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:600
+msgid "Section 9: The Protocol Concerning Pollution from Land-Based Sources  (LBS) and Activities - Articles I, III, VI, VII"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:66
+msgid "Telephone"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:76
+#. Default: ""
+msgid "E-mail"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:82
+#. Default: ""
+msgid "Webpage"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:88
+#. Default: ""
+msgid "Date the report was submitted"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/interface.py:94
+#. Default: ""
+msgid "Signature"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/member_folder_templates/memberfolderview.pt:23
+#. Default: "Title inserted here"
+msgid "introductory_text"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:27
+msgid "National Contingency Plans"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:28
+msgid "Regional Contingency Plans"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:29
+msgid "Cooperation with Contracting Parties"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:34
+msgid "phone"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:35
+msgid "fax"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:36
+msgid "other"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:41
+msgid "Antigua & Barbuda"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:42
+msgid "Aruba"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:43
+msgid "Bahamas"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:44
+msgid "Barbados"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:45
+msgid "Belize"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:46
+msgid "Bermuda"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:47
+msgid "Bonaire"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:48
+msgid "British Virgin Islands"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:49
+msgid "Cayman Islands"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:50
+msgid "Colombia"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:51
+msgid "Costa Rica"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:52
+msgid "Cuba"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:53
+msgid "Curacao"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:54
+msgid "Dominica"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:55
+msgid "Dominican Republic"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:56
+msgid "Grenada"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:57
+msgid "Guatemala"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:58
+msgid "Guyana"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:59
+msgid "Haiti"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:60
+msgid "Honduras"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:61
+msgid "Jamaica"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:62
+msgid "Mexico"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:63
+msgid "Netherlands Antilles"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:64
+msgid "Nicaragua"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:65
+msgid "Panama"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:66
+msgid "St. Kitts & Nevis"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:67
+msgid "Saint Lucia"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:68
+msgid "St. Vincent & the Grenadines"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:69
+msgid "Suriname"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:70
+msgid "Trinidad & Tobago"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:71
+msgid "Turks & Caicos Islands"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:72
+msgid "United States of America"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:73
+msgid "US Virgin Islands"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/vocabulary.py:74
+msgid "Venezuela"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/widgets/twoline_input.pt:44
+msgid "${DYNAMIC_CONTENT}"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/widgets/twoline_input.pt:58
+#. Default: "Keep existing file"
+msgid "file_keep"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/widgets/twoline_input.pt:71
+#. Default: "Remove existing file"
+msgid "file_remove"
+msgstr ""
+
+#: UNEP.cartagenareportingtool:/widgets/twoline_input.pt:83
+#. Default: "Replace with new file"
+msgid "file_replace"
 msgstr ""
 

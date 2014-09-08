@@ -25,9 +25,6 @@ class INumberSchema(Interface):
                         )
 
 class ICountryReport(form.Schema, IImageScaleTraversable):
-    '''
-    Country Report for Cartagena Convention
-    '''
 """
 
 FILE="interface.py"
@@ -109,17 +106,20 @@ def generate_schema(schema):
                 exists = fieldset_dict.get(fieldset_name,None)
                 if not exists:
                     fieldset_dict[fieldset_name] = {}
-                    fieldset_dict[fieldset_name]['fields_'] = []
                     fieldset_dict[fieldset_name]['attrib'] = child.attrib
+                    fieldset_dict[fieldset_name]['fields_'] = []
+                    fieldset_dict[fieldset_name]['fields_'].append(subnode.attrib['name'])
                 else:
                     fieldset_dict[fieldset_name]['fields_'].append(subnode.attrib['name'])
                 schema_from_child_node(subnode)
 
-    for section in fieldset_dict.keys():
+    
+    fieldset_dict_keys = fieldset_dict.keys()
+    fieldset_dict_keys.reverse()
+    for section in fieldset_dict_keys:
          
         fields_str = "["
         fields_ = fieldset_dict[section]['fields_']
-        fields_.reverse()
         for field in fields_:
             fields_str = fields_str + "'%s'," % field.encode("utf-8")
         fields_str = fields_str + "]"

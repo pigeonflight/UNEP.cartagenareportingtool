@@ -65,13 +65,22 @@ class MemberFolderView(grok.View):
     grok.name('view')
      
     # Add view methods here
-    def edit_country_report(self):
+    def edit_report(self):
         """ determine if a report exists """
         all_reports = self.get_all_reports
         if len(all_reports) == 0:
             url = "++add++UNEP.cartagenareportingtool.countryreport"
         else:
             url = "%s/edit" % all_reports[0].id
+        return url
+        
+    def view_report(self):
+        """ return the view report url """
+        all_reports = self.get_all_reports
+        if len(all_reports) == 0:
+            url = "#"
+        else:
+            url = "%s/view" % all_reports[0].id
         return url
         
     @property
@@ -88,3 +97,9 @@ class MemberFolderView(grok.View):
                   path={'query': self.member_path, 'depth': 1}
                   )
         return documents
+    @property
+    def report_exists(self):
+        if self.get_all_reports > 0:
+            return True
+        else:
+            return False

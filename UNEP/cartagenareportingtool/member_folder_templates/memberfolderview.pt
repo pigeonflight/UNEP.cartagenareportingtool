@@ -16,13 +16,38 @@
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
-    <h2 tal:content="view/member_path">
+    <h2 i18n:domain="plone" i18n:translate="heading_welcome_to">
+     Welcome
     </h2>
 
     
-    <pre i18n:translate="introductory_text">Title inserted here</pre>
-<button><a tal:attributes="href view/edit_country_report">edit country report</a></button>
-<div tal:content="view/get_all_reports">all reports</div>
+  <div class="row">
+     <div class="cell width-10 position-0"><pre i18n:translate="introductory_text">Title inserted here</pre></div>
+<div class="cell width-6 position-10">
+<a  tal:attributes="href view/edit_report">
+<button class="btn btn-success">
+<b tal:condition="view/report_exists" i18n:translate="">start new report</b>
+<b tal:condition="not:view/report_exists" i18n:translate="">continue editing report</b>
+</button>
+</a>
+<p />
+<a  tal:condition="not:view/report_exists">
+<button class="btn btn-primary">
+<i i18n:translate="">view report</i>
+</button>
+</a>
+<a  tal:condition="view/report_exists" tal:attributes="href view/view_report">
+<button class="btn btn-primary disabled">
+<i i18n:translate="">view report</i>
+</button>
+</a>
+<!-- if there is no report -->
+<button class="btn"  tal:condition="not:view/report_exists">
+<i i18n:translate="">view report</i>
+</button>
+</div>
+  </div>
+
   </metal:content-core>
 </metal:main>
 
