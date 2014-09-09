@@ -28,6 +28,7 @@ setup(name='UNEP.cartagenareportingtool',
           'setuptools',
           'plone.app.dexterity [grok]',
           'plone.namedfile [blobs]',
+          'z3c.jbot',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

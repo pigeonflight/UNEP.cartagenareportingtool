@@ -53,6 +53,9 @@
     description=""
     handler="UNEP.cartagenareportingtool.setuphandlers.setupVarious"
     />
+
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot directory="jbot_overrides" />
 <!--
 
       <adapter
