@@ -13,11 +13,19 @@
 </tal:comment>
 <div metal:fill-slot="top_slot"
               tal:define="dummy python:request.set('disable_border', 1)" />
-<metal:main fill-slot="content-core">
+
+<metal:slot fill-slot="header">
+</metal:slot>
+<metal:slot fill-slot="content-title">
+</metal:slot>
+<metal:slot fill-slot="content-description">
+</metal:slot>
+
+<metal:main fill-slot="main">
   <metal:content-core define-macro="content-core">
 
-    <h2 i18n:domain="plone" i18n:translate="heading_welcome_to">
-     Welcome
+    <h2 i18n:translate="">
+     Welcome to our reporting tool
     </h2>
 
     

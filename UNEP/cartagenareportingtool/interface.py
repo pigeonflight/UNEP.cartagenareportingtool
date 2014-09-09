@@ -19,6 +19,12 @@ class INumberSchema(Interface):
                         )
 
 class ICountryReport(form.Schema, IImageScaleTraversable):
+    id = schema.Id(
+        title=_(u"Identifier"),
+        description=_(u"The unique identifier of object."),
+        required=False
+    )
+    
     country=schema.Choice(
     title = _(u"Country",
                mapping={'number':''}),

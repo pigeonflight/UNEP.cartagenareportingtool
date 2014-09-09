@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts" meta_type="JavaScripts Registry">
+
+
+ <!-- Only for logged-in users -->
+ <javascript id="++resource++UNEP.cartagenareportingtool/jSelect/jSelect.js" authenticated="True"/>
+</object>

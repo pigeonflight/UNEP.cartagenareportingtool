@@ -62,7 +62,12 @@ class View(dexterity.DisplayForm):
 
 class EditForm(dexterity.EditForm):
     grok.context(ICountryReport)
-    grok.template('edit')
+    #grok.template('edit')
+    
+    def __call__(self):
+        self.request.set('disable_border', 1)
+        return super(EditForm, self).__call__()
+    
 
 class AddForm(dexterity.AddForm):
     """ custom add form """
