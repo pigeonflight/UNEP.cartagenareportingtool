@@ -1,22 +1,29 @@
 # -*- coding: utf-8 -*-
-
+#from CMFCore.utils import getToolByName
 from plone import api
 from Products.CMFPlone.interfaces import constrains
+from plone.app.controlpanel.security import ISecuritySchema
+import logging
 
+
+PROFILE_ID='profile-UNEP.cartagenareportingtool:default'
+PRODUCT = 'UNEP.cartagenareportingtool'
 
 def setupVarious(context):
-
-    if context.readDataFile('unep.marker.txt') is None:
+    if context.readDataFile('unep.cartagenareportingtool.marker.txt') is None:
         return
-
-    api.content.delete(api.content.get('/news'))
-    api.content.delete(api.content.get('/Members'))
-    api.content.delete(api.content.get('/front-page'))
-    api.content.delete(api.content.get('/events'))
+    
+    setup = api.portal.get_tool(name='portal_setup')
+    setup.runImportStepFromProfile(PROFILE_ID, 'typeinfo')
+    
+    #api.content.delete(api.content.get('/news'))
+    #api.content.delete(api.content.get('/Members'))
+    #api.content.delete(api.content.get('/front-page'))
+    #api.content.delete(api.content.get('/events'))
 
     portal = api.portal.get()
     
-    #check for the existence of meetings and documents
+    #check for the existence of reports folder
     #
     if not api.content.get('/r'):
         reports = api.content.create(
@@ -30,3 +37,26 @@ def setupVarious(context):
         behavior.setConstrainTypesMode(constrains.ENABLED)
         behavior.setLocallyAllowedTypes(['UNEP.cartagenareportingtool.memberfolder'])
         behavior.setImmediatelyAddableTypes(['UNEP.cartagenareportingtool.memberfolder'])
+    mp = api.portal.get_tool(name='portal_membership')
+    # set type to custom member type
+    mp.setMemberAreaType('UNEP.cartagenareportingtool.memberfolder')
+    # set member folder name
+    mp.setMembersFolderById('r')
+    
+    # call update security 
+    set_up_security(context)
+
+def set_up_security(context):
+    """ Enable/disable security controlpanel (a.k.a. @@security-controlpanel)
+        settings.
+    """
+
+    site = context.getSite()
+    
+    #site security setup!
+    security = ISecuritySchema(site)
+    import pdb;pdb.set_trace()
+    security.enable_user_folders = True
+    #secSchema.set_enable_self_reg(True)
+    #secSchema.set_enable_user_pwd_choice(True)
+    

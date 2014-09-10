@@ -18,13 +18,15 @@ class INumberSchema(Interface):
                      required=False,
                         )
 
+        
+        
 class ICountryReport(form.Schema, IImageScaleTraversable):
-    id = schema.Id(
-        title=_(u"Identifier"),
-        description=_(u"The unique identifier of object."),
-        required=False
-    )
     
+    form.mode(title='hidden')
+    title = schema.TextLine(
+        title = _(u'Title'),
+        required = False,
+    )
     country=schema.Choice(
     title = _(u"Country",
                mapping={'number':''}),
@@ -104,8 +106,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     )
     does_your_country_have_a_designated_national_focal_point_for_the_cartagena_convention_=schema.Choice(
     title = _(u"Does your country have a designated National Focal Point for the Cartagena Convention?",
-),
- #              mapping={'number':'1.'}),
+               mapping={'number':'1.'}),
     required=False,
     source=vocabulary.yes_no_inprep
     )

@@ -56,6 +56,16 @@
 
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot directory="jbot_overrides" />
+   
+   <plone:behavior
+
+    title="Generate unique id"
+    description="generates a unique id"
+    for="plone.dexterity.interfaces.IDexterityContent"
+    provides=".behaviour.INameForCountryReport"
+    />
+
+<adapter factory=".behaviour.NameForCountryReport" />
 <!--
 
       <adapter

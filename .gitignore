@@ -14,3 +14,4 @@ UNEP.cartagenareportingtool.egg-info
 /src/plone.app.widgets
 *.swp
 *.swo
+.zedstate

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<import-steps>
+ <import-step id="languagetool" version="20070615-01" handler="Products.PloneLanguageTool.exportimport.importLanguageTool" title="Plone Language Tool">
+  <dependency step="toolset"/>
+  
+  
+  Import language settings.
+ 
+ </import-step>
+ <import-step id="plone.app.contenttypes" version="20140210-01" handler="plone.app.contenttypes.setuphandlers.setupVarious" title="plone.app.contenttypes base content-types">
+  <dependency step="typeinfo"/>
+  
+  
+    plone.app.contenttypes installation step.
+ 
+ </import-step>
+ <import-step id="plone.app.contenttypes--plone-content" version="20111108-01" handler="plone.app.contenttypes.setuphandlers.importContent" title="plone.app.contenttypes base content-types">
+  
+    plone.app.contenttypes plone-content installation step.
+ 
+ </import-step>
+ <import-step id="portal-transforms-various" version="20070309-01" handler="Products.PortalTransforms.setuphandlers.setupPortalTransforms" title="PortalTransforms setup">
+  <dependency step="componentregistry"/>
+  
+  
+    PortalTransforms installation step.
+ 
+ </import-step>
+</import-steps>

@@ -96,10 +96,9 @@ class MemberFolderView(grok.View):
                   portal_type='UNEP.cartagenareportingtool.countryreport',
                   path={'query': self.member_path, 'depth': 1}
                   )
-        return documents
+        return documents #
     @property
     def report_exists(self):
         if self.get_all_reports > 0:
             return True
-        else:
-            return False
+        return False
