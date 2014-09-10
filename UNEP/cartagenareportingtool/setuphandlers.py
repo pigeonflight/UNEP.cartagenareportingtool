@@ -55,7 +55,6 @@ def set_up_security(context):
     
     #site security setup!
     security = ISecuritySchema(site)
-    import pdb;pdb.set_trace()
     security.enable_user_folders = True
     #secSchema.set_enable_self_reg(True)
     #secSchema.set_enable_user_pwd_choice(True)
