@@ -4,4 +4,7 @@
 
  <!-- Only for logged-in users -->
  <javascript id="++resource++UNEP.cartagenareportingtool/jSelect/jSelect.js" authenticated="True"/>
+ <javascript id="++resource++UNEP.cartagenareportingtool/custom_nextprev_nav.js" 
+ 	expression="python:object.meta_type in ['Country Report',]"
+ 	authenticated="True"/>
 </object>
