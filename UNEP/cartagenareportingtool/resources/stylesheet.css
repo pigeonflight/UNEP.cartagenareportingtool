@@ -5,7 +5,16 @@
     font-family:'Gentium Basic', sans-serif;
     font-size:18px;
     line-height:1.5;
+    padding-left: 0px;
 }
 button.btn.disabled {
 opacity: .2;
+}
+.reporting-tool-control-panel {
+background: #F3F3F3;
+display: block;
+padding: 20px;
+height: auto;
+border-radius: 5px;
+box-shadow: 1px 1px 1px -1px #888;
 }
