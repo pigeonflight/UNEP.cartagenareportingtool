@@ -25,11 +25,12 @@ setup(name='UNEP.cartagenareportingtool',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
+          'collective.z3cform.datagridfield',
           'setuptools',
+          'plone.api',
           'plone.app.dexterity [grok]',
           'plone.namedfile [blobs]',
           'z3c.jbot',
-          'collective.z3cform.datagridfield',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
