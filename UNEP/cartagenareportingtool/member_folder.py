@@ -99,6 +99,7 @@ class MemberFolderView(grok.View):
         return documents #
     @property
     def report_exists(self):
-        if self.get_all_reports > 0:
+        if len(self.get_all_reports) > 0:
             return True
-        return False
+        return None
+   

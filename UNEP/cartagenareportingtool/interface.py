@@ -4,6 +4,7 @@ from plone.directives import dexterity, form
 from zope import schema
 from UNEP.cartagenareportingtool import MessageFactory as _
 from UNEP.cartagenareportingtool import vocabulary
+from z3c.form.browser.radio import RadioFieldWidget
 from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
 from plone.supermodel import model
 
@@ -104,6 +105,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
+    form.widget(does_your_country_have_a_designated_national_focal_point_for_the_cartagena_convention_=RadioFieldWidget)
     does_your_country_have_a_designated_national_focal_point_for_the_cartagena_convention_=schema.Choice(
     title = _(u"Does your country have a designated National Focal Point for the Cartagena Convention?",
                mapping={'number':'1.'}),
@@ -158,6 +160,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
+    form.widget(national_agency_ministry_institution=RadioFieldWidget)
     national_agency_ministry_institution=schema.Choice(
     title = _(u"Does your country have a designated National Agency/Ministry/Institution or other appropriate authority for coordinating the implementation of the Cartagena Convention (Article 15, paragraph 2)?",
                mapping={'number':'2.'}),
@@ -212,6 +215,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
+    form.widget(implementation_plans=RadioFieldWidget)
     implementation_plans=schema.Choice(
     title = _(u"Has your country developed an implementation plans(s) to carry out the general obligations of the Cartagena Convention? (Article 4)",
                mapping={'number':'3.'}),
@@ -230,6 +234,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
+    form.widget(difficulties_in_the_implementation_of_plan_s_=RadioFieldWidget)
     difficulties_in_the_implementation_of_plan_s_=schema.Choice(
     title = _(u"Has your country experienced any difficulties in the implementation of the above-mentioned plan(s)?",
                mapping={'number':'4.'}),
@@ -242,18 +247,21 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
+    form.widget(has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans=RadioFieldWidget)
     has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans=schema.Choice(
     title = _(u"Has your country received any external financial assistance to develop and/or implement existing plan(s)?",
                mapping={'number':'5.'}),
     required=False,
     source=vocabulary.yes_no
     )
+    form.widget(national_definitions_for_pollution_sources=RadioFieldWidget)
     national_definitions_for_pollution_sources=schema.Choice(
     title = _(u"${number} Is there a national definition within existing pollution related legislation or regulations for 'Pollution from Ships', 'Discharging or Dumping of wastes at sea', 'Exploration or Exploitation of the  Sea-Bed Activities', and 'Discharges (emissions) to the Atmosphere' (Articles 5, 6, 8, 9)?",
                mapping={'number':'1.'}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(management_measures_since_the_last_reporting_period_sources_of_pollution_in_the_convention_area=RadioFieldWidget)
     management_measures_since_the_last_reporting_period_sources_of_pollution_in_the_convention_area=schema.Choice(
     title = _(u"${number} Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area? ",
                mapping={'number':'2.'}),
@@ -272,6 +280,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
+    form.widget(other_pollution_sources_or_types_that_may_affect_marine_resources=RadioFieldWidget)
     other_pollution_sources_or_types_that_may_affect_marine_resources=schema.Choice(
     title = _(u"${number} Are there any other sources and/or types of pollution that may affect marine resources in the Convention area which require special consideration in your country?",
                mapping={'number':'3.'}),
@@ -284,8 +293,9 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
+    form.widget(policies_for_marine_pollution_management_for_special_consideration=RadioFieldWidget)
     policies_for_marine_pollution_management_for_special_consideration=schema.Choice(
-    title = _(u"${number} Does your country have any national policies for marine pollution prevention, reduction and control for these activities requiring special consideration? ",
+    title = _(u"Does your country have any national policies for marine pollution prevention, reduction and control for these activities requiring special consideration? ",
                mapping={'number':'4.'}),
     required=False,
     source=vocabulary.yes_no_inprep
@@ -296,6 +306,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
+    form.widget(laws_for_marine_pollution_management_for_special_consideration=RadioFieldWidget)
     laws_for_marine_pollution_management_for_special_consideration=schema.Choice(
     title = _(u"National laws for marine pollution management",
                mapping={'number':''}),
@@ -308,6 +319,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
+    form.widget(plans_for_marine_pollution_management_for_special_consideration=RadioFieldWidget)
     plans_for_marine_pollution_management_for_special_consideration=schema.Choice(
     title = _(u"National plans for marine pollution management",
                mapping={'number':''}),
@@ -320,8 +332,9 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
+    form.widget(pollution_emergencies_in_the_convention_area=RadioFieldWidget)
     pollution_emergencies_in_the_convention_area=schema.Choice(
-    title = _(u"${number} Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?",
+    title = _(u"Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?",
                mapping={'number':'1.'}),
     required=False,
     source=vocabulary.yes_no_inprep
@@ -339,7 +352,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     
     )
     response_to_emergencies=schema.Text(
-    title = _(u"${number} In regards to the question above, did your country respond to the situation through any of the following:",
+    title = _(u"In regards to the question above, did your country respond to the situation through any of the following:",
                mapping={'number':'2.'}),
     required=False,
     
@@ -356,192 +369,224 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
+    form.widget(technical_guidelines_to_assist_planning_of_major_development_projects=RadioFieldWidget)
     technical_guidelines_to_assist_planning_of_major_development_projects=schema.Choice(
     title = _(u"Does your country currently have any technical and other guidelines (e.g., EIAs) to assist the planning of major development projects in such a way as to prevent or minimize harmful impacts on the Convention Area?",
                mapping={'number':'1. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(technical_cooperation_agreements=RadioFieldWidget)
     technical_cooperation_agreements=schema.Choice(
     title = _(u"Does your country have technical cooperation agreements with any other Contracting Parties relating to the purposes of the Convention?",
                mapping={'number':'1. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(status_of_ratification_of_the_existing_protocols=RadioFieldWidget)
     status_of_ratification_of_the_existing_protocols=schema.Choice(
     title = _(u"Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention.",
                mapping={'number':'1. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(plans_to_propose_amendments_to_the_convention=RadioFieldWidget)
     plans_to_propose_amendments_to_the_convention=schema.Choice(
     title = _(u"Does your country currently have any plan to propose any amendments to the Cartagena Convention?",
                mapping={'number':'2. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(designated_focal_point_for_the_oil_spills_protocol_=RadioFieldWidget)
     designated_focal_point_for_the_oil_spills_protocol_=schema.Choice(
     title = _(u"Does your country have a designated Focal Point for the Oil Spills Protocol?",
                mapping={'number':'1. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(national_policies_for_management_of_oil_spill_pollution__=RadioFieldWidget)
     national_policies_for_management_of_oil_spill_pollution__=schema.Choice(
     title = _(u"Does your country currently have any national policies for prevention, reduction and control of oil spill pollution? ",
                mapping={'number':'2. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(national_laws_for_management_of_oil_spill_pollution=RadioFieldWidget)
     national_laws_for_management_of_oil_spill_pollution=schema.Choice(
     title = _(u"national laws for management of oil spill pollution",
                mapping={'number':''}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(national_plans_for_management_of_oil_spill_pollution=RadioFieldWidget)
     national_plans_for_management_of_oil_spill_pollution=schema.Choice(
     title = _(u"national plans for management of oil spill pollution",
                mapping={'number':''}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(national_operational_measures_for_responding_to_oil_spill_incidents=RadioFieldWidget)
     national_operational_measures_for_responding_to_oil_spill_incidents=schema.Choice(
     title = _(u"Has your country established any national operational measures such as establishing national oil spill contingency plans for responding to oil spill incidents (Article 7 of the Oil Spills Protocol)?",
                mapping={'number':'3. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(oil_spill_incidents_since_1986=RadioFieldWidget)
     oil_spill_incidents_since_1986=schema.Choice(
     title = _(u"Has your country experienced any oil-spill incidents since 1986 (Article 1, paragraph 4)?",
                mapping={'number':'4. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(designated_focal_point_for_the_spaw_protocol=RadioFieldWidget)
     designated_focal_point_for_the_spaw_protocol=schema.Choice(
     title = _(u"Does your country have a designated Focal Point for the SPAW Protocol?",
                mapping={'number':'1. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(national_policies_for_the_protection_of_wild_flora_and_fauna=RadioFieldWidget)
     national_policies_for_the_protection_of_wild_flora_and_fauna=schema.Choice(
     title = _(u"Does your country currently have any national policies, laws, mechanisms or measures for the protection of Wild Flora and Fauna? (Article 10 of the SPAW Protocol)",
                mapping={'number':'2. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(national_laws_for_the_protection_of_wild_flora_and_fauna=RadioFieldWidget)
     national_laws_for_the_protection_of_wild_flora_and_fauna=schema.Choice(
     title = _(u"national laws for the protection of Wild Flora and Fauna",
                mapping={'number':''}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(national_plans_for_the_protection_of_wild_flora_and_fauna=RadioFieldWidget)
     national_plans_for_the_protection_of_wild_flora_and_fauna=schema.Choice(
     title = _(u"national plans for the protection of Wild Flora and Fauna",
                mapping={'number':''}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(established_protected_areas_pursuant_to_the_spaw_protocol=RadioFieldWidget)
     established_protected_areas_pursuant_to_the_spaw_protocol=schema.Choice(
     title = _(u"Has your country established any protected areas pursuant to the SPAW Protocol? (Article 4 of the SPAW Protocol) ",
                mapping={'number':'3. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(identified_all_endangered_threatened_species_within_your_country=RadioFieldWidget)
     identified_all_endangered_threatened_species_within_your_country=schema.Choice(
     title = _(u"Has your country identified all of the endangered / threatened species listed in Annexes I, II, and III of the SPAW Protocol that are within your country (i.e. within areas over which your country exercises sovereignty, sovereign rights, or jurisdiction)?",
                mapping={'number':'4. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(measures_to_ensure_strict_protection_of_the_endangered_threatened_species=RadioFieldWidget)
     measures_to_ensure_strict_protection_of_the_endangered_threatened_species=schema.Choice(
     title = _(u"Has your country taken measures to ensure strict protection of the endangered/threatened species listed in Annexes I and II (Article 11.1(a) and 11.1(b) of the SPAW Protocol)?",
                mapping={'number':'5. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(plans_for_the_management_of_endangered_threatened_species=RadioFieldWidget)
     plans_for_the_management_of_endangered_threatened_species=schema.Choice(
     title = _(u"Has your country formulated, adopted, and implemented any plans for the management and use of species listed in Annex III (Article 11.1 (c) of the SPAW Protocol)?",
                mapping={'number':'6. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(exemptions_to_species_protection=RadioFieldWidget)
     exemptions_to_species_protection=schema.Choice(
     title = _(u"Has your country adopted exemptions to species protection (Articles 11.2 and 14 of the SPAW Protocol)?",
                mapping={'number':'7. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(changes_in_the_delimitation_of_protected_areas_or_to_changes_in_their_status=RadioFieldWidget)
     changes_in_the_delimitation_of_protected_areas_or_to_changes_in_their_status=schema.Choice(
     title = _(u"Did your country proceed to any changes in the delimitation of protected areas and/or to changes in their status (Article 15 of the SPAW Protocol)?",
                mapping={'number':'8. '}),
     required=False,
     source=vocabulary.yes_no
     )
+    form.widget(changes_in_the_legal_status_of_species_listed=RadioFieldWidget)
     changes_in_the_legal_status_of_species_listed=schema.Choice(
     title = _(u"Did your country proceed to any changes in the legal status of species listed in Annexes I, III, or III (Article 15 of the SPAW Protocol)?",
                mapping={'number':'9. '}),
     required=False,
     source=vocabulary.yes_no
     )
+    form.widget(common_guidelines_or_criteria_adopted=RadioFieldWidget)
     common_guidelines_or_criteria_adopted=schema.Choice(
     title = _(u"Has your country incorporated into its law or policy the common guidelines or criteria adopted under Article 21 of the SPAW Protocol?",
                mapping={'number':'10. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(designated_focal_point_for_the_lbs_protocol=RadioFieldWidget)
     designated_focal_point_for_the_lbs_protocol=schema.Choice(
     title = _(u"Does your country have a designated Focal Point for the LBS Protocol?",
                mapping={'number':''}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
-    national_definition_of_pollution_from_land_based_sources_and_activiites=schema.Choice(
+    form.widget(national_definition_of_pollution_from_land_based_sources_and_activites=RadioFieldWidget)
+    national_definition_of_pollution_from_land_based_sources_and_activites=schema.Choice(
     title = _(u"Is there a national definition of pollution from 'Land-based sources and activities' (Article I (d))?",
                mapping={'number':'2. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources=RadioFieldWidget)
     legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources=schema.Choice(
     title = _(u"Does your country currently have any legislation for the prevention, reduction and control pollution from land-based sources in the Convention area (Article III)?",
                mapping={'number':'3. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol=RadioFieldWidget)
     plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol=schema.Choice(
     title = _(u"Has your country developed any implementation plans, programs, and measures to carry out the general terms of [or:  meet the objectives of] the LBS Protocol, including National Programmes of Action (NPAs)? (Article III)",
                mapping={'number':'4. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution=RadioFieldWidget)
     new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution=schema.Choice(
     title = _(u"Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period? ",
                mapping={'number':'5. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(other_types_and_or_sources_of_lbs_pollution=RadioFieldWidget)
     other_types_and_or_sources_of_lbs_pollution=schema.Choice(
     title = _(u"Are there any other types and/or sources of LBS pollution other than those listed in Annex I of the LBS Protocol that require special consideration in your country?",
                mapping={'number':'6. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(environmental_pollution_monitoring_and_assessment_programmes=RadioFieldWidget)
     environmental_pollution_monitoring_and_assessment_programmes=schema.Choice(
     title = _(u"Does your country have any existing environmental pollution monitoring and assessment programmes as outlined in LBS Protocol Article VI?",
                mapping={'number':'7. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(guidelines_concerning_environmental_impact_assessments=RadioFieldWidget)
     guidelines_concerning_environmental_impact_assessments=schema.Choice(
     title = _(u"Has your country developed and adopted guidelines concerning environmental impact assessments (EIAs) or has your country generated EIAs consistent with the LBS Protocol, Article VII (2)?",
                mapping={'number':'8. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(total_annual_estimate_of_pollutant_loads_from_lbs_activities=RadioFieldWidget)
     total_annual_estimate_of_pollutant_loads_from_lbs_activities=schema.Choice(
     title = _(u"Does your country have a total annual estimate of the pollutant loads to the marine environment for LBS activities?",
                mapping={'number':'9. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    form.widget(difficulties_in_the_implementation_of_the_lbs_protocol=RadioFieldWidget)
     difficulties_in_the_implementation_of_the_lbs_protocol=schema.Choice(
     title = _(u"Has your country experienced any difficulties in the implementation of the LBS protocol?",
                mapping={'number':'10. '}),
@@ -606,5 +651,5 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         'section9',
         label = _(u"Section 9"),
         description = _(u"Section 9: The Protocol Concerning Pollution from Land-Based Sources  (LBS) and Activities - Articles I, III, VI, VII"),
-        fields = ['designated_focal_point_for_the_lbs_protocol','national_definition_of_pollution_from_land_based_sources_and_activiites','legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources','plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol','new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution','other_types_and_or_sources_of_lbs_pollution','environmental_pollution_monitoring_and_assessment_programmes','guidelines_concerning_environmental_impact_assessments','total_annual_estimate_of_pollutant_loads_from_lbs_activities','difficulties_in_the_implementation_of_the_lbs_protocol','major_areas_of_assistance_required_to_implement_protocols',]
+        fields = ['designated_focal_point_for_the_lbs_protocol','national_definition_of_pollution_from_land_based_sources_and_activites','legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources','plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol','new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution','other_types_and_or_sources_of_lbs_pollution','environmental_pollution_monitoring_and_assessment_programmes','guidelines_concerning_environmental_impact_assessments','total_annual_estimate_of_pollutant_loads_from_lbs_activities','difficulties_in_the_implementation_of_the_lbs_protocol','major_areas_of_assistance_required_to_implement_protocols',]
        )

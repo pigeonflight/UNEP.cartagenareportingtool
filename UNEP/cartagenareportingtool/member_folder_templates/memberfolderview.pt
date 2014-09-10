@@ -30,30 +30,30 @@
 
     
   <div class="row">
-     <div class="cell width-10 position-0"><pre i18n:translate="introductory_text">Title inserted here</pre></div>
-<div class="cell width-6 position-10">
-<a  tal:attributes="href view/edit_report">
-<button class="btn btn-success">
-<b tal:condition="view/report_exists" i18n:translate="">start new report</b>
-<b tal:condition="not:view/report_exists" i18n:translate="">continue editing report</b>
-</button>
-</a>
-<p />
-<a  tal:condition="not:view/report_exists">
-<button class="btn btn-primary">
-<i i18n:translate="">view report</i>
-</button>
-</a>
-<a  tal:condition="view/report_exists" tal:attributes="href view/view_report">
-<button class="btn btn-primary disabled">
-<i i18n:translate="">view report</i>
-</button>
-</a>
-<!-- if there is no report -->
-<button class="btn"  tal:condition="not:view/report_exists">
-<i i18n:translate="">view report</i>
-</button>
-</div>
+      <div class="cell width-10 position-0">
+        <pre class="introductory-text" i18n:translate="introductory_text">introductory text</pre>
+      </div>
+      <div class="cell width-6 position-10">
+          <div class="reporting-tool-control-panel">
+                <a  tal:attributes="href view/edit_report">
+              <button class="btn btn-success">
+              <b tal:condition="not:view/report_exists" i18n:translate="">start new report</b>
+              <b tal:condition="view/report_exists" i18n:translate="">continue editing report</b>
+
+              </button>
+              </a>
+              <p />
+              <a  tal:condition="view/report_exists">
+              <button class="btn btn-primary">
+              <i i18n:translate="">view report</i>
+              </button>
+              </a>
+              <!-- if there is no report -->
+              <button class="btn disabled"  disabled="disabled" tal:condition="not:view/report_exists">
+              <i i18n:translate="">view report</i>
+              </button>
+          </div>
+      </div>
   </div>
 
   </metal:content-core>

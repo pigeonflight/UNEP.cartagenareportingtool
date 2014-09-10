@@ -1,1 +1,11 @@
 #form-widgets-telephone-AA-widgets-number,#form-widgets-telephone-AA-widgets-type {display:none;}
+#content pre.introductory-text {
+    background: transparent;
+    color: rgb(107, 97, 97);
+    font-family:'Gentium Basic', sans-serif;
+    font-size:18px;
+    line-height:1.5;
+}
+button.btn.disabled {
+opacity: .2;
+}
