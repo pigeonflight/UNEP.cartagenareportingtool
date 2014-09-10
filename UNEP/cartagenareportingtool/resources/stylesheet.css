@@ -1,11 +1,12 @@
 #form-widgets-telephone-AA-widgets-number,#form-widgets-telephone-AA-widgets-type {display:none;}
 #content pre.introductory-text {
     background: transparent;
-    color: rgb(107, 97, 97);
+    color: rgb(117, 117, 117);
     font-family:'Gentium Basic', sans-serif;
     font-size:18px;
     line-height:1.5;
     padding-left: 0px;
+    /* margin-left: -7px; */
 }
 button.btn.disabled {
 opacity: .2;
@@ -17,4 +18,4 @@ padding: 20px;
 height: auto;
 border-radius: 5px;
 box-shadow: 1px 1px 1px -1px #888;
-}
+}	

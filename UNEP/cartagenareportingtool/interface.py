@@ -603,7 +603,32 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         'section1',
         label = _(u"Section 1"),
         description = _(u"Section 1: Designated National Focal Point, Institution and Implementation Plans - Articles 4, 15"),
-        fields = ['does_your_country_have_a_designated_national_focal_point_for_the_cartagena_convention_','national_focal_point_name_of_organization','national_focal_point_contact_person','national_focal_point_job_title','national_focal_point_department','national_focal_point_address','national_focal_point_telephone','national_focal_point_email','national_focal_point_website','national_agency_ministry_institution','national_agency_name_of_organization','national_agency_contact_person','national_agency_job_title','national_agency_department','national_agency_address','national_agency_telephone','national_agency_email','national_agency_website','implementation_plans','brief_details_of_main_implementation_plans','why_no_plans','difficulties_in_the_implementation_of_plan_s_','why_implementation_difficulties_with_details','has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans',]
+        fields = [
+        'does_your_country_have_a_designated_national_focal_point_for_the_cartagena_convention_',
+        'national_focal_point_name_of_organization',
+        'national_focal_point_contact_person',
+        'national_focal_point_job_title',
+        'national_focal_point_department',
+        'national_focal_point_address',
+        'national_focal_point_telephone',
+        'national_focal_point_email',
+        'national_focal_point_website',
+        'national_agency_ministry_institution',
+        'national_agency_name_of_organization',
+        'national_agency_contact_person',
+        'national_agency_job_title',
+        'national_agency_department',
+        'national_agency_address',
+        'national_agency_telephone',
+        'national_agency_email',
+        'national_agency_website',
+        'implementation_plans',
+        'brief_details_of_main_implementation_plans',
+        'why_no_plans',
+        'difficulties_in_the_implementation_of_plan_s_',
+        'why_implementation_difficulties_with_details',
+        'has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans',
+        ]
        )
     model.fieldset(
         'section2',
