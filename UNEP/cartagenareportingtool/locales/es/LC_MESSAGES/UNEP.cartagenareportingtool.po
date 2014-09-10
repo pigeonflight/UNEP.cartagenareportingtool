@@ -1312,36 +1312,6 @@ msgstr "${number} ¿Ha elaborado su país algún plan, programa y medidas de imp
 msgid "Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period? "
 msgstr "${number} ¿Ha desarrollado su país alguna nueva y/o haya enmendado alguna política, ley, regulación o plan existente nacional para recudir la contaminación por fuentes terrestres a lo largo del período de reporte? "
 
-#. Default: ""
-#: UNEP.cartagenareportingtool:/interface.py:245
-msgid "${number} Is there a national definition within existing pollution related legislation or regulations for 'Pollution from Ships', 'Discharging or Dumping of wastes at sea', 'Exploration or Exploitation of the  Sea-Bed Activities', and 'Discharges (emissions) to the Atmosphere' (Articles 5, 6, 8, 9)?"
-msgstr "$ {número} ¿Existe una definición nacional dentro de las leyes o reglamentos relacionados con la contaminación por 'contaminación por los buques' existente ', descarga o vertimiento de desechos en el mar', 'prospección o explotación de los fondos marinos Actividades', y 'Altas (emisiones ) a la Atmósfera \"(artículos 5, 6, 8, 9)?"
-
-#. Default: ""
-#: UNEP.cartagenareportingtool:/interface.py:251
-msgid "${number} Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area? "
-msgstr "$ {número} ¿Su país ha tomado ninguna medida desde el último período de presentación de informes necesarios para prevenir, reducir y controlar las fuentes de contaminación antes mencionadas en la zona del Convenio? ␣"
-
-#. Default: ""
-#: UNEP.cartagenareportingtool:/interface.py:269
-msgid "${number} Are there any other sources and/or types of pollution that may affect marine resources in the Convention area which require special consideration in your country?"
-msgstr "$ {número} ¿Hay otras fuentes y / o tipos de contaminación que pueda afectar a los recursos marinos en la zona del Convenio que exigen una consideración especial en su país?"
-
-#. Default: ""
-#: UNEP.cartagenareportingtool:/interface.py:281
-msgid "${number} Does your country have any national policies for marine pollution prevention, reduction and control for these activities requiring special consideration? "
-msgstr "$ {número} ¿Tiene su país las políticas nacionales para la prevención de la contaminación del mar, la reducción y el control de estas actividades que requieren una consideración especial? ␣"
-
-#. Default: ""
-#: UNEP.cartagenareportingtool:/interface.py:317
-msgid "${number} Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?"
-msgstr "$ {número} ¿Su país ha experimentado cualquier emergencia de contaminación en la zona del Convenio (incluidas las emergencias en las que la zona del Convenio se halle en peligro inminente de ser contaminadas o ya contaminada)?"
-
-#. Default: ""
-#: UNEP.cartagenareportingtool:/interface.py:335
-msgid "${number} In regards to the question above, did your country respond to the situation through any of the following:"
-msgstr "$ {número} En lo que respecta a la pregunta anterior, ¿su país a responder a la situación a través de cualquiera de los siguientes:"
-
 #: UNEP.cartagenareportingtool:/member_folder_templates/memberfolderview.pt:37
 msgid "start new report"
 msgstr "continuar informe edición"
