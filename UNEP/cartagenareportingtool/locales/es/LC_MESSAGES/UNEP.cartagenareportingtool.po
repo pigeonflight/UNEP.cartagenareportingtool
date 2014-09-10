@@ -87,9 +87,8 @@ msgstr "Firma\n"
 ""
 
 #: UNEP.cartagenareportingtool:/interface.py:100
-#, fuzzy
 msgid "Does your country have a designated National Focal Point for the Cartagena Convention?"
-msgstr "¿Tiene su país un Punto Focal Nacional designado para el Convenio de Cartagena?"
+msgstr "${number} ¿Tiene su país un Punto Focal Nacional designado para el Convenio de Cartagena?"
 
 #: 
 msgid "If yes, please provide"
@@ -121,11 +120,11 @@ msgstr "Sitio web"
 
 #: UNEP.cartagenareportingtool:/interface.py:155
 msgid "Does your country have a designated National Agency/Ministry/Institution or other appropriate authority for coordinating the implementation of the Cartagena Convention (Article 15, paragraph 2)?"
-msgstr "¿Tiene su país una Agencia/Ministerio/Institución Nacional designada u otra autoridad apropiada para coordinar la implementación del Convenio de Cartagena (Artículo 15, párrafo 2)?"
+msgstr "${number} ¿Tiene su país una Agencia/Ministerio/Institución Nacional designada u otra autoridad apropiada para coordinar la implementación del Convenio de Cartagena (Artículo 15, párrafo 2)?"
 
 #: UNEP.cartagenareportingtool:/interface.py:209
 msgid "Has your country developed an implementation plans(s) to carry out the general obligations of the Cartagena Convention? (Article 4)"
-msgstr "¿Ha desarrollado su país un plan(es) de implementación para cumplir con las obligaciones generales bajo el Convenio de Cartagena? (Artículo 4)"
+msgstr "${number} ¿Ha desarrollado su país un plan(es) de implementación para cumplir con las obligaciones generales bajo el Convenio de Cartagena? (Artículo 4)"
 
 #: 
 msgid "Existing Plan(s)"
@@ -148,7 +147,7 @@ msgstr "Si existen planes, por favor especifique cuáles marcos existentes está
 #: UNEP.cartagenareportingtool:/interface.py:239
 #, fuzzy
 msgid "Has your country received any external financial assistance to develop and/or implement existing plan(s)?"
-msgstr "¿Ha recibido su país algún soporte financiero externo para elaborar y/o implementar sus plan(es) existente(s)?"
+msgstr "${number} ¿Ha recibido su país algún soporte financiero externo para elaborar y/o implementar sus plan(es) existente(s)?"
 
 #: 
 msgid "If yes, please identify the source of the assistance."
@@ -160,7 +159,7 @@ msgstr "Si es negativo, favor indique por qué no."
 
 #: UNEP.cartagenareportingtool:/interface.py:227
 msgid "Has your country experienced any difficulties in the implementation of the above-mentioned plan(s)?"
-msgstr "¿Ha experimentado su país dificultades en la implementación del/de los plan(es) arriba indicado(s)?"
+msgstr "${number} ¿Ha experimentado su país dificultades en la implementación del/de los plan(es) arriba indicado(s)?"
 
 #: 
 msgid "If yes, please describe why with details."
@@ -536,7 +535,7 @@ msgstr "Si es afirmativo, por favor brinde detalles y un enlace a todos los plan
 
 #: 
 msgid "Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period?"
-msgstr "¿Ha desarrollado su país alguna nueva y/o haya enmendado alguna política, ley, regulación o plan existente nacional para recudir la contaminación por fuentes terrestres a lo largo del período de reporte?"
+msgstr "${number} ¿Ha desarrollado su país alguna nueva y/o haya enmendado alguna política, ley, regulación o plan existente nacional para recudir la contaminación por fuentes terrestres a lo largo del período de reporte?"
 
 #: 
 #, fuzzy
@@ -741,7 +740,7 @@ msgstr "Página web (Agencia/Ministerio/Institución Nacional)"
 
 #. Default: ""
 #: UNEP.cartagenareportingtool:/interface.py:205
-msgid "3. Has your country developed an implementation plans(s) to carry out the general obligations of the Cartagena Convention? (Article 4)"
+msgid "${number} Ha desarrollado su país un plan (es) de ejecución para llevar a cabo las obligaciones generales de la Convención de Cartagena ? ( Artículo 4 )"
 msgstr ""
 
 #. Default: ""
@@ -766,8 +765,8 @@ msgstr "¿Por qué las dificultades de ejecución con detalles?"
 
 #. Default: ""
 #: UNEP.cartagenareportingtool:/interface.py:235
-msgid "5. Has your country received any external financial assistance to develop and/or implement existing plan(s)?"
-msgstr ""
+msgid "Has your country received any external financial assistance to develop and/or implement existing plan(s)?"
+msgstr "${number} ¿Ha recibido su país asistencia financiera externa para desarrollar y / o implementar el plan ( s ) existente?"
 
 #. Default: ""
 #: UNEP.cartagenareportingtool:/interface.py:241
@@ -1083,11 +1082,6 @@ msgstr "Sección 9: El Protocolo Relativo a la Contaminación proveniente de Fue
 #. Default: ""
 #: UNEP.cartagenareportingtool:/interface.py:88
 msgid "Date the report was submitted"
-msgstr ""
-
-#. Default: ""
-#: UNEP.cartagenareportingtool:/interface.py:97
-msgid "1. Does your country have a designated National Focal Point for the Cartagena Convention?"
 msgstr ""
 
 #: UNEP.cartagenareportingtool:/vocabulary.py:27
