@@ -140,7 +140,7 @@ msgstr ""
 
 #: UNEP.cartagenareportingtool:/interface.py:239
 msgid "Has your country received any external financial assistance to develop and/or implement existing plan(s)?"
-msgstr ""
+msgstr "${number} Has your country received any external financial assistance to develop and/or implement existing plan(s)?"
 
 #: 
 msgid "If yes, please identify the source of the assistance."
@@ -152,7 +152,7 @@ msgstr ""
 
 #: UNEP.cartagenareportingtool:/interface.py:227
 msgid "Has your country experienced any difficulties in the implementation of the above-mentioned plan(s)?"
-msgstr ""
+msgstr "${number} Has your country experienced any difficulties in the implementation of the above-mentioned plan(s)?"
 
 #: 
 msgid "If yes, please describe why with details."
@@ -196,7 +196,7 @@ msgstr ""
 
 #: 
 msgid "Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area?"
-msgstr ""
+msgstr "${number} Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area?"
 
 #: 
 msgid "If yes or in preparation, please provide the details of the major actions taken since the last reporting period"

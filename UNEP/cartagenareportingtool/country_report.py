@@ -27,6 +27,8 @@ from UNEP.cartagenareportingtool import vocabulary
 from interface import INumberSchema, ICountryReport
 from zope.lifecycleevent.interfaces import IObjectAddedEvent
 
+from z3c.form import form
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 # Custom content-type class; objects created for this content type will
 # be instances of this class. Use this class to add content-type specific
@@ -64,9 +66,11 @@ class View(dexterity.DisplayForm):
         url = "%s/edit" % self.context.absolute_url()
         return url
 
-class EditForm(dexterity.EditForm):
+class EditForm(group.GroupForm, dexterity.EditForm):
     grok.context(ICountryReport)
     #grok.template('edit')
+    
+    groups = (TestGroup,)
     
     def __call__(self):
         self.request.set('disable_border', 1)

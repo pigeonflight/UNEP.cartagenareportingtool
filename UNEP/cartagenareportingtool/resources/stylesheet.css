@@ -23,3 +23,13 @@ box-shadow: 1px 1px 1px -1px #888;
 .super-menu {
 display: none;
 }
+ul.formTabs{margin-top:10px;}
+.doc-saved {
+    position: fixed;
+    display:none;
+    z-index: 200;
+    top: 0px;
+    right: 30px;
+    width: 50%;
+    font-size: 200%;
+}

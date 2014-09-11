@@ -7,6 +7,7 @@ from UNEP.cartagenareportingtool import vocabulary
 from z3c.form.browser.radio import RadioFieldWidget
 from collective.z3cform.datagridfield import DataGridFieldFactory, DictRow
 from plone.supermodel import model
+from z3c.form import field, group
 
 class INumberSchema(Interface):
     phone_type = schema.Choice(
@@ -19,7 +20,6 @@ class INumberSchema(Interface):
                      required=False,
                         )
 
-        
         
 class ICountryReport(form.Schema, IImageScaleTraversable):
     
@@ -222,17 +222,29 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep_existingplans
     )
-    brief_details_of_main_implementation_plans=schema.Text(
-    title = _(u"Brief details of main implementation plans",
+    brief_details_of_main_implementation_plans_article4=schema.Text(
+    title = _(u"If yes or in preparation, please provide brief details of all of the main implementation plan(s) that are developed and/or being used in your country, or that are in preparation.",
                mapping={'number':''}),
     required=False,
     
     )
-    why_no_plans=schema.TextLine(
-    title = _(u"Why no plans",
+    why_no_plans_article4=schema.Text(
+    title = _(u"If no, please describe why not.",
                mapping={'number':''}),
     required=False,
     
+    )
+    plans_exist_article4=schema.Text(
+        title = _(u"If plans exist, please specify what existing frameworks are being used for implementation of the Convention.",
+                    mapping={'number':''}),
+        required=False,
+        )
+    form.widget(has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans=RadioFieldWidget)
+    has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans=schema.Choice(
+    title = _(u"Has your country received any external financial assistance to develop and/or implement existing plan(s)?",
+               mapping={'number':'5.'}),
+    required=False,
+    source=vocabulary.yes_no
     )
     form.widget(difficulties_in_the_implementation_of_plan_s_=RadioFieldWidget)
     difficulties_in_the_implementation_of_plan_s_=schema.Choice(
@@ -247,13 +259,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
-    form.widget(has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans=RadioFieldWidget)
-    has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans=schema.Choice(
-    title = _(u"Has your country received any external financial assistance to develop and/or implement existing plan(s)?",
-               mapping={'number':'5.'}),
-    required=False,
-    source=vocabulary.yes_no
-    )
+    
     form.widget(national_definitions_for_pollution_sources=RadioFieldWidget)
     national_definitions_for_pollution_sources=schema.Choice(
     title = _(u"${number} Is there a national definition within existing pollution related legislation or regulations for 'Pollution from Ships', 'Discharging or Dumping of wastes at sea', 'Exploration or Exploitation of the  Sea-Bed Activities', and 'Discharges (emissions) to the Atmosphere' (Articles 5, 6, 8, 9)?",
@@ -623,8 +629,9 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         'national_agency_email',
         'national_agency_website',
         'implementation_plans',
-        'brief_details_of_main_implementation_plans',
-        'why_no_plans',
+        'brief_details_of_main_implementation_plans_article4',
+        'why_no_plans_article4',
+        'plans_exist_article4',
         'difficulties_in_the_implementation_of_plan_s_',
         'why_implementation_difficulties_with_details',
         'has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans',
@@ -678,3 +685,9 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         description = _(u"Section 9: The Protocol Concerning Pollution from Land-Based Sources  (LBS) and Activities - Articles I, III, VI, VII"),
         fields = ['designated_focal_point_for_the_lbs_protocol','national_definition_of_pollution_from_land_based_sources_and_activites','legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources','plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol','new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution','other_types_and_or_sources_of_lbs_pollution','environmental_pollution_monitoring_and_assessment_programmes','guidelines_concerning_environmental_impact_assessments','total_annual_estimate_of_pollutant_loads_from_lbs_activities','difficulties_in_the_implementation_of_the_lbs_protocol','major_areas_of_assistance_required_to_implement_protocols',]
        )
+
+class TestGroup(group.Group):
+    label = u'Test Group'
+    fields = field.Fields(ICountryReport).select(
+        'country', 'full_name_of_reporting_institution')      
+

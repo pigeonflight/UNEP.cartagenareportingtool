@@ -1,12 +1,23 @@
 $(document).ready(function() {
+
+
+   //only do this if on the edit page
+  if(document.URL.indexOf("edit") >= 0){ 
+
+
+
     var prevnext = {
     formTabs: null,
 
-    next: function() { prevnext.formTabs.data('tabs').next(); prevnext._scrollToTop(); },
-    prev: function() { prevnext.formTabs.data('tabs').prev(); prevnext._scrollToTop(); },
+    next: function() { prevnext.formTabs.data('tabs').next(); prevnext._scrollToTop(); prevnext.save(); },
+    prev: function() { prevnext.formTabs.data('tabs').prev(); prevnext._scrollToTop(); prevnext.save(); },
 
     _scrollToTop: function() {
         $(window).scrollTop(prevnext.formTabs.closest('form').offset().top);  
+    },
+    save: function() {
+      $('#form-buttons-save').click();
+      
     },
 
     showButtons: function(event, index) {
@@ -59,4 +70,7 @@ $(document).ready(function() {
 };
 
 $(prevnext.init());
+
+}
+
 });
