@@ -66,11 +66,11 @@ class View(dexterity.DisplayForm):
         url = "%s/edit" % self.context.absolute_url()
         return url
 
-class EditForm(group.GroupForm, dexterity.EditForm):
+class EditForm(dexterity.EditForm):
     grok.context(ICountryReport)
     #grok.template('edit')
     
-    groups = (TestGroup,)
+    #groups = (TestGroup,)
     
     def __call__(self):
         self.request.set('disable_border', 1)
