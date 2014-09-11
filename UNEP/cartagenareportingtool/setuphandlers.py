@@ -4,6 +4,7 @@ from plone import api
 from Products.CMFPlone.interfaces import constrains
 from plone.app.controlpanel.security import ISecuritySchema
 import logging
+from zExceptions import BadRequest
 
 
 PROFILE_ID='profile-UNEP.cartagenareportingtool:default'
