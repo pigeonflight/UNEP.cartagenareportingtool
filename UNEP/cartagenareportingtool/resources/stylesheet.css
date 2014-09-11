@@ -19,3 +19,7 @@ height: auto;
 border-radius: 5px;
 box-shadow: 1px 1px 1px -1px #888;
 }	
+/* hide the top menu,not needed for this project */
+.super-menu {
+display: none;
+}

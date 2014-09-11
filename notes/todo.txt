@@ -1,0 +1,12 @@
+- [ ] - Fix form to match the word document
+- [ ] - administrator view (export all reports as a single document, spreadsheet version of the reports, download of individual reports)
+- [ ] - status view of (submitted, in progress)
+- [ ] - need a print option
+- [ ] - encourage regulary saving
+- [ ] - save as pdf functionality (may be delayed)
+- [ ] - make sure that clicking the banner takes you to the home page
+- [ ] - account usernames are the country 3 letter initial eg. JAM or BVI or USA
+- [ ] - add following sentence, right before the submit. 
+      Would you have any objections the secretariat making this report public?
+      ¿Usted tendría ninguna objeción a la secretaría hacer público este informe ?
+      Auriez-vous des objections du secrétariat rendant ce rapport public ?
