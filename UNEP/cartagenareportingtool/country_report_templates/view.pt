@@ -13,7 +13,7 @@
               tal:define="dummy python:request.set('disable_border', 1)" />
 <metal:header fill-slot="content-description">
 <a  tal:attributes="href view/edit_report">
-<button class="btn">continue editing report</button></a>
+<button class="btn btn-primary">continue editing report</button></a>
 </metal:header>
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">

@@ -160,8 +160,8 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
-    form.widget(national_agency_ministry_institution=RadioFieldWidget)
-    national_agency_ministry_institution=schema.Choice(
+    form.widget(designated_national_agency_ministry_institution=RadioFieldWidget)
+    designated_national_agency_ministry_institution=schema.Choice(
     title = _(u"Does your country have a designated National Agency/Ministry/Institution or other appropriate authority for coordinating the implementation of the Cartagena Convention (Article 15, paragraph 2)?",
                mapping={'number':'2.'}),
     required=False,
@@ -222,19 +222,19 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep_existingplans
     )
-    brief_details_of_main_implementation_plans_article4=schema.Text(
+    if_yes_brief_details_of_main_implementation_plans_article4=schema.Text(
     title = _(u"If yes or in preparation, please provide brief details of all of the main implementation plan(s) that are developed and/or being used in your country, or that are in preparation.",
                mapping={'number':''}),
     required=False,
     
     )
-    why_no_plans_article4=schema.Text(
+    if_why_no_plans_article4=schema.Text(
     title = _(u"If no, please describe why not.",
                mapping={'number':''}),
     required=False,
     
     )
-    plans_exist_article4=schema.Text(
+    if_plans_exist_article4=schema.Text(
         title = _(u"If plans exist, please specify what existing frameworks are being used for implementation of the Convention.",
                     mapping={'number':''}),
         required=False,
@@ -253,19 +253,38 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no
     )
-    why_implementation_difficulties_with_details=schema.TextLine(
+    if_why_implementation_difficulties_with_details=schema.TextLine(
     title = _(u"Why implementation difficulties with details",
                mapping={'number':''}),
     required=False,
     
     )
     
-    form.widget(national_definitions_for_pollution_sources=RadioFieldWidget)
-    national_definitions_for_pollution_sources=schema.Choice(
+    form.widget(is_there_a_national_definition_for_pollution_sources=RadioFieldWidget)
+    is_there_a_national_definition_for_pollution_sources=schema.Choice(
     title = _(u"${number} Is there a national definition within existing pollution related legislation or regulations for 'Pollution from Ships', 'Discharging or Dumping of wastes at sea', 'Exploration or Exploitation of the  Sea-Bed Activities', and 'Discharges (emissions) to the Atmosphere' (Articles 5, 6, 8, 9)?",
                mapping={'number':'1.'}),
     required=False,
     source=vocabulary.yes_no_inprep
+    )
+
+    if_yes_to_pollution_definitions_discharges_from_ships=schema.Text(
+    title = _(u"Discharges from ships:"),
+    required=False,
+    )
+
+    if_yes_to_pollution_definitions_dumping_of_wastes_and_other_matter_at_sea=schema.Text(
+    title = _(u"Dumping of wastes and other matter at sea:"),
+    required=False,
+    )
+
+    if_yes_to_pollution_definitions_exploration_or_exploitation_of_sea_bed=schema.Text(
+    title = _(u"Exploration or exploitation of the sea-bed:"),
+    required=False,
+    )
+    if_yes_to_pollution_definitions_discharges_air_emissions_into_atmosphere=schema.Text(
+    title = _(u"Discharges (air emissions) into the atmosphere:"),
+    required=False,
     )
     form.widget(management_measures_since_the_last_reporting_period_sources_of_pollution_in_the_convention_area=RadioFieldWidget)
     management_measures_since_the_last_reporting_period_sources_of_pollution_in_the_convention_area=schema.Choice(
@@ -274,14 +293,14 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
-    details_of_pollution_source_management_action_since_last_reporting_period=schema.Text(
-    title = _(u"details of pollution source  management action since last reporting period",
+    if_yes_details_of_pollution_source_management_action_since_last_reporting_period=schema.Text(
+    title = _(u"If yes or in preparation, please provide the details of the major actions taken since the last reporting period",
                mapping={'number':''}),
     required=False,
     
     )
-    why_no_action_since_last_reporting_period=schema.Text(
-    title = _(u"Why no action since last reporting period",
+    if_no_why_no_action_since_last_reporting_period=schema.Text(
+    title = _(u"If no, briefly state why not.",
                mapping={'number':''}),
     required=False,
     
@@ -293,50 +312,90 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no
     )
-    text_for_discharges_from_ship=schema.Text(
-    title = _(u"Text for Discharges from ship",
-               mapping={'number':''}),
+    if_yes_please_specify_answer_below=schema.Text(
+    title = _(u"If yes please specify and answer #${number} below",
+               mapping={'number':'4'}),
     required=False,
-    
     )
+
     form.widget(policies_for_marine_pollution_management_for_special_consideration=RadioFieldWidget)
     policies_for_marine_pollution_management_for_special_consideration=schema.Choice(
-    title = _(u"Does your country have any national policies for marine pollution prevention, reduction and control for these activities requiring special consideration? ",
+    title = _(u"Does your country have any national policies for marine pollution prevention, reduction and control for these activities requiring special consideration?",
                mapping={'number':'4.'}),
     required=False,
-    source=vocabulary.yes_no_inprep
+    source=vocabulary.yes_no_inprep_other
     )
-    policy_website_for_marine_pollution=schema.Text(
-    title = _(u"Policy website",
+    if_yes_policies_please_provide_details=schema.Text(
+    title=_(u"If yes or in preparation, please provide brief details."),
+    required=False,
+    )
+    if_yes_policy_website_for_marine_pollution=schema.TextLine(
+    title = _(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country.",
                mapping={'number':''}),
     required=False,
-    
     )
+    if_no_policies_why_not_for_marine_pollution=schema.Text(
+    title = _(u"If no, describe why not.",
+               mapping={'number':''}),
+    required=False,    
+    )
+    if_other_specify=schema.Text(
+    title = _(u"If other, specify.",
+               mapping={'number':''}),
+    required=False,
+    )
+
     form.widget(laws_for_marine_pollution_management_for_special_consideration=RadioFieldWidget)
     laws_for_marine_pollution_management_for_special_consideration=schema.Choice(
-    title = _(u"National laws for marine pollution management",
+    title = _(u"Does your country have any national laws for marine pollution prevention, reduction and control for these activities requiring special consideration?",
                mapping={'number':''}),
     required=False,
-    source=vocabulary.yes_no_inprep
+    source=vocabulary.yes_no_inprep_other
     )
-    law_website_for_marine_pollution=schema.Text(
-    title = _(u"Law Website",
+    if_yes_laws_please_provide_details=schema.Text(
+    title=_(u"If yes or in preparation, please provide brief details."),
+    required=False,
+    )
+    if_yes_laws_website_for_marine_pollution=schema.TextLine(
+    title = _(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country.",
                mapping={'number':''}),
     required=False,
-    
+    )
+    if_no_laws_why_not_for_marine_pollution=schema.Text(
+    title = _(u"If no, describe why not.",
+               mapping={'number':''}),
+    required=False,    
+    )
+    if_other_laws_specify=schema.Text(
+    title = _(u"If other, specify.",
+               mapping={'number':''}),
+    required=False,
     )
     form.widget(plans_for_marine_pollution_management_for_special_consideration=RadioFieldWidget)
     plans_for_marine_pollution_management_for_special_consideration=schema.Choice(
-    title = _(u"National plans for marine pollution management",
+    title = _(u"Does your country have any national plans for marine pollution prevention, reduction and control for these activities requiring special consideration?",
                mapping={'number':''}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
-    plan_website_for_marine_pollution=schema.Text(
-    title = _(u"Plan website",
+    if_yes_plans_please_provide_details=schema.Text(
+    title=_(u"If yes or in preparation, please provide brief details."),
+    required=False,
+    )
+    if_yes_plans_website_for_marine_pollution=schema.TextLine(
+    title = _(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country.",
                mapping={'number':''}),
     required=False,
-    
+    )
+    if_no_plans_why_not_for_marine_pollution=schema.Text(
+    title = _(u"If no, describe why not.",
+               mapping={'number':''}),
+    required=False,    
+    )
+    if_other_plans_specify=schema.Text(
+    title = _(u"If other, specify.",
+               mapping={'number':''}),
+    required=False,
     )
     form.widget(pollution_emergencies_in_the_convention_area=RadioFieldWidget)
     pollution_emergencies_in_the_convention_area=schema.Choice(
@@ -536,8 +595,8 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
-    form.widget(national_definition_of_pollution_from_land_based_sources_and_activites=RadioFieldWidget)
-    national_definition_of_pollution_from_land_based_sources_and_activites=schema.Choice(
+    form.widget(is_there_a_national_definitionof_pollution_from_land_based_sources_and_activites=RadioFieldWidget)
+    is_there_a_national_definitionof_pollution_from_land_based_sources_and_activites=schema.Choice(
     title = _(u"Is there a national definition of pollution from 'Land-based sources and activities' (Article I (d))?",
                mapping={'number':'2. '}),
     required=False,
@@ -619,7 +678,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         'national_focal_point_telephone',
         'national_focal_point_email',
         'national_focal_point_website',
-        'national_agency_ministry_institution',
+        'designated_national_agency_ministry_institution',
         'national_agency_name_of_organization',
         'national_agency_contact_person',
         'national_agency_job_title',
@@ -629,11 +688,11 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         'national_agency_email',
         'national_agency_website',
         'implementation_plans',
-        'brief_details_of_main_implementation_plans_article4',
-        'why_no_plans_article4',
-        'plans_exist_article4',
+        'if_yes_brief_details_of_main_implementation_plans_article4',
+        'if_why_no_plans_article4',
+        'if_plans_exist_article4',
         'difficulties_in_the_implementation_of_plan_s_',
-        'why_implementation_difficulties_with_details',
+        'if_why_implementation_difficulties_with_details',
         'has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans',
         ]
        )
@@ -641,7 +700,32 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         'section2',
         label = _(u"Section 2"),
         description = _(u"Section 2: Measures to Reduce Marine Pollution from Ships, Caused by Discharges or Dumping, from Exploration or Exploitation of the Sea-Bed , or from Discharges to the Atmosphere - Articles 5, 6, 8, 9"),
-        fields = ['national_definitions_for_pollution_sources','management_measures_since_the_last_reporting_period_sources_of_pollution_in_the_convention_area','details_of_pollution_source_management_action_since_last_reporting_period','why_no_action_since_last_reporting_period','other_pollution_sources_or_types_that_may_affect_marine_resources','text_for_discharges_from_ship','policies_for_marine_pollution_management_for_special_consideration','policy_website_for_marine_pollution','laws_for_marine_pollution_management_for_special_consideration','law_website_for_marine_pollution','plans_for_marine_pollution_management_for_special_consideration','plan_website_for_marine_pollution',]
+        fields = ['is_there_a_national_definition_for_pollution_sources',
+        'if_yes_to_pollution_definitions_discharges_from_ships',
+        'if_yes_to_pollution_definitions_dumping_of_wastes_and_other_matter_at_sea',
+        'if_yes_to_pollution_definitions_exploration_or_exploitation_of_sea_bed',
+        'if_yes_to_pollution_definitions_discharges_air_emissions_into_atmosphere',
+        'management_measures_since_the_last_reporting_period_sources_of_pollution_in_the_convention_area',
+        'if_yes_details_of_pollution_source_management_action_since_last_reporting_period',
+        'if_no_why_no_action_since_last_reporting_period','other_pollution_sources_or_types_that_may_affect_marine_resources',
+        'if_yes_please_specify_answer_below',
+        'policies_for_marine_pollution_management_for_special_consideration',
+        'if_yes_policies_please_provide_details',
+        'if_yes_policy_website_for_marine_pollution',
+        'if_no_policies_why_not_for_marine_pollution',
+        'if_other_specify',
+        'laws_for_marine_pollution_management_for_special_consideration',
+        'if_yes_laws_please_provide_details',
+        'if_yes_laws_website_for_marine_pollution',
+        'if_no_laws_why_not_for_marine_pollution',
+        'if_other_laws_specify',
+        'plans_for_marine_pollution_management_for_special_consideration',
+        'if_yes_plans_please_provide_details',
+        'if_yes_plans_website_for_marine_pollution',
+        'if_no_plans_why_not_for_marine_pollution',
+        'if_other_plans_specify',
+        
+        ]
        )
     model.fieldset(
         'section3',
@@ -683,7 +767,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         'section9',
         label = _(u"Section 9"),
         description = _(u"Section 9: The Protocol Concerning Pollution from Land-Based Sources  (LBS) and Activities - Articles I, III, VI, VII"),
-        fields = ['designated_focal_point_for_the_lbs_protocol','national_definition_of_pollution_from_land_based_sources_and_activites','legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources','plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol','new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution','other_types_and_or_sources_of_lbs_pollution','environmental_pollution_monitoring_and_assessment_programmes','guidelines_concerning_environmental_impact_assessments','total_annual_estimate_of_pollutant_loads_from_lbs_activities','difficulties_in_the_implementation_of_the_lbs_protocol','major_areas_of_assistance_required_to_implement_protocols',]
+        fields = ['designated_focal_point_for_the_lbs_protocol','is_there_a_national_definitionof_pollution_from_land_based_sources_and_activites','legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources','plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol','new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution','other_types_and_or_sources_of_lbs_pollution','environmental_pollution_monitoring_and_assessment_programmes','guidelines_concerning_environmental_impact_assessments','total_annual_estimate_of_pollutant_loads_from_lbs_activities','difficulties_in_the_implementation_of_the_lbs_protocol','major_areas_of_assistance_required_to_implement_protocols',]
        )
 
 class TestGroup(group.Group):
