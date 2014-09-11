@@ -18,11 +18,14 @@ from plone.namedfile.field import NamedImage, NamedFile
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from plone.namedfile.interfaces import IImageScaleTraversable
 from plone.supermodel import model
+from plone import api
 
 
+from UNEP.cartagenareportingtool.member_folder import IMemberFolder
 from UNEP.cartagenareportingtool import MessageFactory as _
 from UNEP.cartagenareportingtool import vocabulary
 from interface import INumberSchema, ICountryReport
+from zope.lifecycleevent.interfaces import IObjectAddedEvent
 
 
 # Custom content-type class; objects created for this content type will
@@ -74,22 +77,9 @@ class AddForm(dexterity.AddForm):
     """ custom add form """
     grok.name('UNEP.cartagenareportingtool.country_report')
 #
-
-"""
-    "national_focal_point_contact_person",
-    "national_focal_point_job_title",
-    "national_focal_point_department",
-    "national_focal_point_address",
-    "national_focal_point_telephone",
-    "national_focal_point_email",
-    "national_focal_point_website",
-    "national_agency_ministry_institution",
-     "national_agency_name_of_organization",
-    "national_agency_contact_person",
-    "national_agency_job_title",
-    "national_agency_department",
-    "national_agency_address",
-    "national_agency_telephone",
-    "national_agency_email",
-    "national_agency_website"]
-"""
+@grok.subscribe(IMemberFolder, IObjectAddedEvent)
+def add_report_to_member_folder(folder, event):
+    obj = api.content.create(
+    type='UNEP.cartagenareportingtool.countryreport',
+    title='country report',
+    container=folder)
