@@ -16,10 +16,10 @@ def setupVarious(context):
     setup = api.portal.get_tool(name='portal_setup')
     setup.runImportStepFromProfile(PROFILE_ID, 'typeinfo')
     
-    #api.content.delete(api.content.get('/news'))
-    #api.content.delete(api.content.get('/Members'))
-    #api.content.delete(api.content.get('/front-page'))
-    #api.content.delete(api.content.get('/events'))
+    api.content.delete(api.content.get('/news'))
+    api.content.delete(api.content.get('/Members'))
+    api.content.delete(api.content.get('/front-page'))
+    api.content.delete(api.content.get('/events'))
 
     portal = api.portal.get()
     
@@ -35,8 +35,8 @@ def setupVarious(context):
         api.content.transition(reports, transition='publish')
         behavior = constrains.ISelectableConstrainTypes(reports)
         behavior.setConstrainTypesMode(constrains.ENABLED)
-        behavior.setLocallyAllowedTypes(['UNEP.cartagenareportingtool.memberfolder'])
-        behavior.setImmediatelyAddableTypes(['UNEP.cartagenareportingtool.memberfolder'])
+        behavior.setLocallyAllowedTypes(['UNEP.cartagenareportingtool.countryreport'])
+        behavior.setImmediatelyAddableTypes(['UNEP.cartagenareportingtool.countryreport'])
     mp = api.portal.get_tool(name='portal_membership')
     # set type to custom member type
     mp.setMemberAreaType('UNEP.cartagenareportingtool.memberfolder')

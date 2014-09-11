@@ -66,16 +66,4 @@
     />
 
 <adapter factory=".behaviour.NameForCountryReport" />
-<!--
-
-      <adapter
-        for="Products.CMFCore.interfaces.IFolderish
-             Products.CMFDefault.interfaces.ICMFDefaultSkin
-            plone.dexterity.interfaces.IDexterityFTI"
-        provides="zope.publisher.interfaces.browser.IBrowserPage"
-        factory=".country_report.AddView"
-        name="UNEP.cartagenareportingtool.countryreport"
-        />
-
--->
 </configure>

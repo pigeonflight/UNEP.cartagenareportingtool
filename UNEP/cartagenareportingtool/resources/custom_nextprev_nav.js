@@ -1,4 +1,5 @@
-var prevnext = {
+$(document).ready(function() {
+    var prevnext = {
     formTabs: null,
 
     next: function() { prevnext.formTabs.data('tabs').next(); prevnext._scrollToTop(); },
@@ -27,7 +28,18 @@ var prevnext = {
         if (tabs.getTabs().length > 0) {
             if ($('fieldset#fieldset-default').length === 0)
                  return;
-            $ 
+            $('formTabs').before(document.createTextNode('<div class="prev-next-nav"><i></i>hello</div>'));
+            $('.formTabs').before($('<input id="prevnext_previous1" class="btn btn-primary" ' +
+                                    '       type="button" value="" />')
+                                .val('< Previous')
+                                .click(prevnext.prev))
+                          .before(document.createTextNode(' '));
+            $('.formTabs').before($('<input id="prevnext_next1" class="btn btn-primary" ' +
+                                 '       type="button" value="" />')
+                             .val('Next >')
+                             .click(prevnext.next))
+       
+
             $('.formControls:last :submit:first')
                 .before($('<input id="prevnext_previous" class="btn btn-primary" ' +
                           '       type="button" value="" />')
@@ -47,3 +59,4 @@ var prevnext = {
 };
 
 $(prevnext.init());
+});

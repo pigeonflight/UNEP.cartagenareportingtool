@@ -38,7 +38,7 @@
                 <a  tal:attributes="href view/edit_report">
               <button class="btn btn-success">
               <b tal:condition="not:view/report_exists" i18n:translate="">start new report</b>
-              <b tal:condition="view/report_exists" i18n:translate="">continue editing report</b>
+              <b tal:condition="view/report_exists" i18n:translate="">edit report</b>
 
               </button>
               </a>
