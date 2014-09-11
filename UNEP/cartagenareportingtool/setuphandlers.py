@@ -16,24 +16,27 @@ def setupVarious(context):
     setup = api.portal.get_tool(name='portal_setup')
     setup.runImportStepFromProfile(PROFILE_ID, 'typeinfo')
     
-    if api.content.get(path='/news'):
-        api.content.delete(api.content.get(path='/news'))
-    if api.content.get(path='/Members'):
-        api.content.delete(api.content.get(path='/Members'))
+    if api.content.get('/news'):
+        api.content.delete(api.content.get('/news'))
+    if api.content.get('/Members'):
+        api.content.delete(api.content.get('/Members'))
     if api.content.get('/events'):   
-        api.content.delete(api.content.get(path='/events'))
+        api.content.delete(api.content.get('/events'))
 
     portal = api.portal.get()
     
     #check for the existence of reports folder
     #
-    if not api.content.get(path='/r'):
-        reports = api.content.create(
+    if not api.content.get('/r'):
+        try:
+            reports = api.content.create(
             portal,
             'Folder',
             id='r',
             title='Reports'
-        )
+            )
+        except BadRequest:
+            return
         api.content.transition(reports, transition='publish')
         behavior = constrains.ISelectableConstrainTypes(reports)
         behavior.setConstrainTypesMode(constrains.ENABLED)
