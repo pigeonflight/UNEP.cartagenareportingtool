@@ -16,10 +16,10 @@ def setupVarious(context):
     setup = api.portal.get_tool(name='portal_setup')
     setup.runImportStepFromProfile(PROFILE_ID, 'typeinfo')
     
-    api.content.delete(api.content.get('/news'))
-    api.content.delete(api.content.get('/Members'))
-    api.content.delete(api.content.get('/front-page'))
-    api.content.delete(api.content.get('/events'))
+    if not api.content.get('/news'):
+        api.content.delete(api.content.get('/news'))
+        api.content.delete(api.content.get('/Members'))
+        api.content.delete(api.content.get('/events'))
 
     portal = api.portal.get()
     

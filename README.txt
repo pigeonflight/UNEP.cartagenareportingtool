@@ -2,6 +2,8 @@ Cartagena Reporting Tool
 ===========================
 Allows the submission of a country report based on the Cartagena template
 
+WARNING: this product deletes your news, Members, events folders, DON'T USE if you care about these folders!!!!!
+
 Special template.py.z tool
 ------------------------------
 There is a special tool called 'template.py.z'
