@@ -7,7 +7,7 @@
  <javascript id="++resource++UNEP.cartagenareportingtool/custom_nextprev_nav.js" 
  	expression="python:object.meta_type in ['Country Report',]"
  	authenticated="True"/>
- <javascript id="++resource++UNEP.cartagenareportingtool/docsave.js" 
+ <javascript id="++resource++UNEP.cartagenareportingtool/docsave_edit_view.js" 
  	expression="python:object.meta_type in ['Country Report',]"
  	authenticated="True"/>
 </object>

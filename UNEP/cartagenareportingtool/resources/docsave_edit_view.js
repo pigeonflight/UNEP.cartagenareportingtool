@@ -2,6 +2,11 @@ $(document).ready(function() {
 	//only do this if on the edit page
  if(document.URL.indexOf("edit") >= 0){ 
 
+            base_url = document.URL.split('edit')[0]
+            $('.formTabs').before($('<a id="view" class="btn btn-primary" href="'+ base_url + 'view">View</a>')
+                                )
+
+
      // add doc saved message
      $('body').append("<div class='alert alert-success doc-saved' id='status-message-doc-save'>document saved</div>")
 	// configure plone to support multiple submissions

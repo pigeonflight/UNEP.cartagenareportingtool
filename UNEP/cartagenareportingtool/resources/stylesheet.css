@@ -33,5 +33,23 @@ ul.formTabs{margin-top:10px;}
     width: 50%;
     font-size: 200%;
 }
+#form p {
+font-size: 20px;
+line-height: 1.2;
+color: #777;
+margin-top: 10px;
+background: rgb(234, 234, 234);
+padding: 5px;
+border: 1px solid #D6D2D2;
+}
+#form label.horizontal {
+margin-top: 16px;
+}
+#form span.option {
+margin-left: 16px;
+}
 [id^=formfield-form-widgets-national_],
 [id^=formfield-form-widgets-if_]{margin-left:20px;}
+a#view:visited,a#view:hover {
+    color: white;
+}
