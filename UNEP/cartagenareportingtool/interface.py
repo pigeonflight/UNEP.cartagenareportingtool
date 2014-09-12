@@ -797,6 +797,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     )
 
     # =============== schema8
+    schema8.append('designated_focal_point_for_the_spaw_protocol')
     form.widget(designated_focal_point_for_the_spaw_protocol=RadioFieldWidget)
     designated_focal_point_for_the_spaw_protocol=schema.Choice(
     title = _(u"Does your country have a designated Focal Point for the SPAW Protocol?",
@@ -982,6 +983,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         required=False,
         )
 
+    schema8.append('location_of_each_protected_area_established_since_last_report')
     form.widget(location_of_each_protected_area_established_since_last_report=DataGridFieldFactory)
     location_of_each_protected_area_established_since_last_report = schema.List(
     title=_(u"Location of each Protected Area established since the last report (GPS Coordinates if available)"),
@@ -1131,6 +1133,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     title=_(u"If yes or in preparation, please provide brief details."),
     required=False,
     )
+    schema9.append('legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources')
     form.widget(legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources=RadioFieldWidget)
     legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources=schema.Choice(
     title = _(u"Does your country currently have any legislation for the prevention, reduction and control pollution from land-based sources in the Convention area (Article III)?",
