@@ -30,7 +30,35 @@ class IStatusSchema(Interface):
                      title=_(u"Status"),
                      required=False,
                         )
+class IProtectedAreaSchema(Interface):
+    location_name = schema.TextLine(
+                     title=_(u"Location name"),
+                     required=False,
+                        )
+    location_gps = schema.TextLine(
+                     title=_(u"Location (GPS Coordinates if available)"),
+                     required=False,
+                        )
+    
+    legal_status = schema.Choice(
+                     title=_(u"Legal Status"),
+                     required=False,
+                     source=vocabulary.legal_status,
+                        )
+    status_of_management_plan = schema.Choice(
+                     title=_(u"Status of Management Plan"),
+                     required=False,
+                     source=vocabulary.status_of_management_plan,
+                        )
+class IMonitoringSchema(Interface):
+    monitoring_program = schema.TextLine(
+                     title=_(u"Monitoring Programme"),
+                     required=False,
+                        )
+    
 
+    
+    
 schema1 = []
 schema2 = []
 schema3 = []
@@ -95,7 +123,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     telephone = schema.List(
     title=_(u"Telephone"),
     readonly=False,
-    min_length=1,
+    required=False,
     value_type=DictRow(
             title=_(u"Number"),
             schema=INumberSchema
@@ -581,7 +609,6 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     source=vocabulary.yes_no
     )
 
-    ###########
     schema5.append('status_of_ratification_of_the_existing_protocols')
     form.widget(status_of_ratification_of_the_existing_protocols=RadioFieldWidget)
     status_of_ratification_of_the_existing_protocols=schema.Choice(
@@ -619,7 +646,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     please_indicate_the_status_of_ratification_of_existing_protocols = schema.List(
     title=_(u"Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention."),
     readonly=False,
-    min_length=1,
+    required=False,
     value_type=DictRow(
             title=_(u"Status"),
             schema=IStatusSchema
@@ -697,7 +724,8 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     designated_focal_point_for_oilspills_telephone = schema.List(
     title=_(u"Telephone"),
     readonly=False,
-    min_length=1,
+    required=False,
+    #min_length=1,
     value_type=DictRow(
             title=_(u"Number"),
             schema=INumberSchema
@@ -776,34 +804,197 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    schema8.append('designated_focal_point_full_name_spaw_organization')
+    designated_focal_point_full_name_spaw_organization=schema.TextLine(
+    title = _(u"Organization",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema8.append('designated_focal_point_spaw_contact_person')
+    designated_focal_point_spaw_contact_person=schema.TextLine(
+    title = _(u"Contact Person",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema8.append('designated_focal_point_spaw_contact_person_job_title')
+    designated_focal_point_spaw_contact_person_job_title=schema.TextLine(
+    title = _(u"Job Title",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema8.append('designated_focal_point_spaw_department')
+    designated_focal_point_spaw_department=schema.Text(
+    title = _(u"Department",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema8.append('designated_focal_point_spaw_address')
+    designated_focal_point_spaw_address=schema.Text(
+        title = _(u"Address",
+               mapping={'number':''}),
+        required=False,
+    )
+    schema8.append('designated_focal_point_spaw_telephone')
+    form.widget(designated_focal_point_spaw_telephone=DataGridFieldFactory)
+    designated_focal_point_spaw_telephone = schema.List(
+    title=_(u"Telephone"),
+    readonly=False,
+    required=False,
+    #min_length=1,
+    value_type=DictRow(
+            title=_(u"Number"),
+            schema=INumberSchema
+            )
+    )
+    schema8.append('designated_focal_point_spaw_email')
+    designated_focal_point_spaw_email=schema.TextLine(
+    title = _(u"E-mail",
+               mapping={'number':''}),
+    required=False,
+    
+    )
+    schema8.append('designated_focalpoint_spaw_web_page')
+    designated_focalpoint_spaw_web_page=schema.TextLine(
+    title = _(u"Website",
+               mapping={'number':''}),
+    required=False,)
+
+
+
+    schema8.append('national_policies_for_the_protection_of_wild_flora_and_fauna')
     form.widget(national_policies_for_the_protection_of_wild_flora_and_fauna=RadioFieldWidget)
     national_policies_for_the_protection_of_wild_flora_and_fauna=schema.Choice(
     title = _(u"Does your country currently have any national policies, laws, mechanisms or measures for the protection of Wild Flora and Fauna? (Article 10 of the SPAW Protocol)",
                mapping={'number':'2. '}),
     required=False,
-    source=vocabulary.yes_no_inprep
+    source=vocabulary.yes_no_inprep_other
     )
+
+
+    schema8.append('if_yes_policies_spaw_please_provide_details')
+    if_yes_policies_spaw_please_provide_details=schema.Text(
+    title=_(u"If yes or in preparation, please provide brief details."),
+    required=False,
+    )
+    schema8.append('if_yes_policy_spaw_website')
+    if_yes_policy_spaw_website=schema.TextLine(
+    title = _(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country.",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema8.append('if_no_spaw_policies_why_not')
+    if_no_spaw_policies_why_not=schema.Text(
+    title = _(u"If no, describe why not.",
+               mapping={'number':''}),
+    required=False,    
+    )
+    schema8.append('if_other_specify_spaws_policies')
+    if_other_specify_spaws_policies=schema.Text(
+    title = _(u"If other, specify.",
+               mapping={'number':''}),
+    required=False,
+    )
+
+
+    schema8.append('national_laws_for_the_protection_of_wild_flora_and_fauna')
     form.widget(national_laws_for_the_protection_of_wild_flora_and_fauna=RadioFieldWidget)
     national_laws_for_the_protection_of_wild_flora_and_fauna=schema.Choice(
     title = _(u"national laws for the protection of Wild Flora and Fauna",
                mapping={'number':''}),
     required=False,
-    source=vocabulary.yes_no_inprep
+    source=vocabulary.yes_no_inprep_other
     )
+
+    schema8.append('if_yes_laws_spaw_please_provide_details')
+    if_yes_laws_spaw_please_provide_details=schema.Text(
+    title=_(u"If yes or in preparation, please provide brief details."),
+    required=False,
+    )
+    schema8.append('if_yes_laws_spaw_website')
+    if_yes_laws_spaw_website=schema.TextLine(
+    title = _(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country.",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema8.append('if_no_spaw_laws_why_not')
+    if_no_spaw_laws_why_not=schema.Text(
+    title = _(u"If no, describe why not.",
+               mapping={'number':''}),
+    required=False,    
+    )
+    schema8.append('if_other_specify_spaws_laws')
+    if_other_specify_spaws_laws=schema.Text(
+    title = _(u"If other, specify.",
+               mapping={'number':''}),
+    required=False,
+    )
+
+
+    schema8.append('national_plans_for_the_protection_of_wild_flora_and_fauna')
     form.widget(national_plans_for_the_protection_of_wild_flora_and_fauna=RadioFieldWidget)
     national_plans_for_the_protection_of_wild_flora_and_fauna=schema.Choice(
     title = _(u"national plans for the protection of Wild Flora and Fauna",
                mapping={'number':''}),
     required=False,
-    source=vocabulary.yes_no_inprep
+    source=vocabulary.yes_no_inprep_other
     )
+
+    schema8.append('if_yes_plans_spaw_please_provide_details')
+    if_yes_plans_spaw_please_provide_details=schema.Text(
+    title=_(u"If yes or in preparation, please provide brief details."),
+    required=False,
+    )
+    schema8.append('if_yes_plans_spaw_website')
+    if_yes_plans_spaw_website=schema.TextLine(
+    title = _(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country.",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema8.append('if_no_spaw_plans_why_not')
+    if_no_spaw_plans_why_not=schema.Text(
+    title = _(u"If no, describe why not.",
+               mapping={'number':''}),
+    required=False,    
+    )
+    schema8.append('if_other_specify_spaws_plans')
+    if_other_specify_spaws_plans=schema.Text(
+    title = _(u"If other, specify.",
+               mapping={'number':''}),
+    required=False,
+    )
+
+
+  
+
+
+
+    schema8.append('established_protected_areas_pursuant_to_the_spaw_protocol')
     form.widget(established_protected_areas_pursuant_to_the_spaw_protocol=RadioFieldWidget)
     established_protected_areas_pursuant_to_the_spaw_protocol=schema.Choice(
     title = _(u"Has your country established any protected areas pursuant to the SPAW Protocol? (Article 4 of the SPAW Protocol) ",
                mapping={'number':'3. '}),
-    required=False,
-    source=vocabulary.yes_no_inprep
+        required=False,
+        source=vocabulary.yes_no_inprep
     )
+    schema8.append('if_yes_total_number_of_protected_areas_established')
+    if_yes_total_number_of_protected_areas_established=schema.Int(
+        title=_(u'The total number of the protected areas established and the list of protected areas that have been established since the last report to the Organization'),
+        required=False,
+        )
+
+    form.widget(location_of_each_protected_area_established_since_last_report=DataGridFieldFactory)
+    location_of_each_protected_area_established_since_last_report = schema.List(
+    title=_(u"Location of each Protected Area established since the last report (GPS Coordinates if available)"),
+    readonly=False,
+    required=False,
+    min_length=1,
+    value_type=DictRow(
+            title=_(u"Protected Area"),
+            schema=IProtectedAreaSchema
+            )
+    )
+
+    schema8.append('identified_all_endangered_threatened_species_within_your_country')
     form.widget(identified_all_endangered_threatened_species_within_your_country=RadioFieldWidget)
     identified_all_endangered_threatened_species_within_your_country=schema.Choice(
     title = _(u"Has your country identified all of the endangered / threatened species listed in Annexes I, II, and III of the SPAW Protocol that are within your country (i.e. within areas over which your country exercises sovereignty, sovereign rights, or jurisdiction)?",
@@ -811,6 +1002,8 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+
+    schema8.append('measures_to_ensure_strict_protection_of_the_endangered_threatened_species')
     form.widget(measures_to_ensure_strict_protection_of_the_endangered_threatened_species=RadioFieldWidget)
     measures_to_ensure_strict_protection_of_the_endangered_threatened_species=schema.Choice(
     title = _(u"Has your country taken measures to ensure strict protection of the endangered/threatened species listed in Annexes I and II (Article 11.1(a) and 11.1(b) of the SPAW Protocol)?",
@@ -818,6 +1011,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    schema8.append('plans_for_the_management_of_endangered_threatened_species')
     form.widget(plans_for_the_management_of_endangered_threatened_species=RadioFieldWidget)
     plans_for_the_management_of_endangered_threatened_species=schema.Choice(
     title = _(u"Has your country formulated, adopted, and implemented any plans for the management and use of species listed in Annex III (Article 11.1 (c) of the SPAW Protocol)?",
@@ -825,6 +1019,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    schema8.append('exemptions_to_species_protection')
     form.widget(exemptions_to_species_protection=RadioFieldWidget)
     exemptions_to_species_protection=schema.Choice(
     title = _(u"Has your country adopted exemptions to species protection (Articles 11.2 and 14 of the SPAW Protocol)?",
@@ -832,6 +1027,8 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+
+    schema8.append('changes_in_the_delimitation_of_protected_areas_or_to_changes_in_their_status')
     form.widget(changes_in_the_delimitation_of_protected_areas_or_to_changes_in_their_status=RadioFieldWidget)
     changes_in_the_delimitation_of_protected_areas_or_to_changes_in_their_status=schema.Choice(
     title = _(u"Did your country proceed to any changes in the delimitation of protected areas and/or to changes in their status (Article 15 of the SPAW Protocol)?",
@@ -839,6 +1036,8 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no
     )
+
+    schema8.append('changes_in_the_legal_status_of_species_listed')
     form.widget(changes_in_the_legal_status_of_species_listed=RadioFieldWidget)
     changes_in_the_legal_status_of_species_listed=schema.Choice(
     title = _(u"Did your country proceed to any changes in the legal status of species listed in Annexes I, III, or III (Article 15 of the SPAW Protocol)?",
@@ -846,6 +1045,8 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no
     )
+
+    schema8.append('common_guidelines_or_criteria_adopted')
     form.widget(common_guidelines_or_criteria_adopted=RadioFieldWidget)
     common_guidelines_or_criteria_adopted=schema.Choice(
     title = _(u"Has your country incorporated into its law or policy the common guidelines or criteria adopted under Article 21 of the SPAW Protocol?",
@@ -853,19 +1054,82 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
-    form.widget(designated_focal_point_for_the_lbs_protocol=RadioFieldWidget)
-    designated_focal_point_for_the_lbs_protocol=schema.Choice(
+
+
+
+
+    # ============================ schema9
+    schema9.append('does_country_have_designated_focal_point_for_the_lbs_protocol')
+    form.widget(does_country_have_designated_focal_point_for_the_lbs_protocol=RadioFieldWidget)
+    does_country_have_designated_focal_point_for_the_lbs_protocol=schema.Choice(
     title = _(u"Does your country have a designated Focal Point for the LBS Protocol?",
                mapping={'number':''}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
-    form.widget(is_there_a_national_definitionof_pollution_from_land_based_sources_and_activites=RadioFieldWidget)
-    is_there_a_national_definitionof_pollution_from_land_based_sources_and_activites=schema.Choice(
+    
+    schema9.append('designated_focal_point_lbs_contact_person')
+    designated_focal_point_lbs_contact_person=schema.TextLine(
+    title = _(u"Contact Person",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema9.append('designated_focal_point_lbs_contact_person_job_title')
+    designated_focal_point_lbs_contact_person_job_title=schema.TextLine(
+    title = _(u"Job Title",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema9.append('designated_focal_point_lbs_department')
+    designated_focal_point_lbs_department=schema.Text(
+    title = _(u"Department",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema9.append('designated_focal_point_lbs_address')
+    designated_focal_point_lbs_address=schema.Text(
+        title = _(u"Address",
+               mapping={'number':''}),
+        required=False,
+    )
+    schema9.append('designated_focal_point_lbs_telephone')
+    form.widget(designated_focal_point_lbs_telephone=DataGridFieldFactory)
+    designated_focal_point_lbs_telephone = schema.List(
+    title=_(u"Telephone"),
+    readonly=False,
+    required=False,
+    value_type=DictRow(
+            title=_(u"Number"),
+            schema=INumberSchema
+            )
+    )
+    schema9.append('designated_focal_point_lbs_email')
+    designated_focal_point_lbs_email=schema.TextLine(
+    title = _(u"E-mail",
+               mapping={'number':''}),
+    required=False,
+    
+    )
+    schema9.append('designated_focalpoint_lbs_web_page')
+    designated_focalpoint_lbs_web_page=schema.TextLine(
+    title = _(u"Website",
+               mapping={'number':''}),
+    required=False,)
+
+
+
+    schema9.append('is_there_a_national_definition_of_pollution_from_land_based_sources_and_activites')
+    form.widget(is_there_a_national_definition_of_pollution_from_land_based_sources_and_activites=RadioFieldWidget)
+    is_there_a_national_definition_of_pollution_from_land_based_sources_and_activites=schema.Choice(
     title = _(u"Is there a national definition of pollution from 'Land-based sources and activities' (Article I (d))?",
                mapping={'number':'2. '}),
     required=False,
     source=vocabulary.yes_no_inprep
+    )
+    schema9.append('if_yes_please_present_definitition_and_or_list_of_land_based_sources_of_pollution')
+    if_yes_please_present_definitition_and_or_list_of_land_based_sources_of_pollution=schema.Text(
+    title=_(u"If yes or in preparation, please provide brief details."),
+    required=False,
     )
     form.widget(legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources=RadioFieldWidget)
     legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources=schema.Choice(
@@ -874,13 +1138,64 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+
+    schema9.append('if_yes_laws_lbs_please_provide_details')
+    if_yes_laws_lbs_please_provide_details=schema.Text(
+    title=_(u"If yes or in preparation, please provide the name of the legislation, a link to the text of the legislation, the pollutants being addressed or the scope of the legislation."),
+    required=False,
+    )
+    schema9.append('if_yes_laws_lbs_website')
+    if_yes_laws_lbs_website=schema.TextLine(
+    title = _(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country.",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema9.append('if_no_laws_lbs_why_not')
+    if_no_laws_lbs_why_not=schema.Text(
+    title = _(u"If no, briefly state why not.",
+               mapping={'number':''}),
+    required=False,    
+    )
+    schema9.append('if_other_specify_lbs_laws')
+    if_other_specify_lbs_laws=schema.Text(
+    title = _(u"If other, specify.",
+               mapping={'number':''}),
+    required=False,
+    )
+
+    schema9.append('plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol')
     form.widget(plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol=RadioFieldWidget)
     plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol=schema.Choice(
     title = _(u"Has your country developed any implementation plans, programs, and measures to carry out the general terms of [or:  meet the objectives of] the LBS Protocol, including National Programmes of Action (NPAs)? (Article III)",
                mapping={'number':'4. '}),
     required=False,
-    source=vocabulary.yes_no_inprep
+    source=vocabulary.yes_no_inprep_other
     )
+    schema9.append('if_yes_plans_lbs_please_provide_details')
+    if_yes_plans_lbs_please_provide_details=schema.Text(
+    title=_(u"If yes, please provide brief details and a link to all of the implementation plans that are developed and/or used in your country.  If in preparation, please describe the nature of what is being prepared and the expected timeline for completion. "),
+    required=False,
+    )
+    schema9.append('if_yes_plans_lbs_website')
+    if_yes_plans_lbs_website=schema.TextLine(
+    title = _(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country.",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema9.append('if_no_lbs_plans_why_not')
+    if_no_lbs_plans_why_not=schema.Text(
+    title = _(u"If no, describe why not.",
+               mapping={'number':''}),
+    required=False,    
+    )
+    schema9.append('if_other_specify_lbs_plans')
+    if_other_specify_lbs_plans=schema.Text(
+    title = _(u"If other, specify.",
+               mapping={'number':''}),
+    required=False,
+    )
+
+    schema9.append('new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution')
     form.widget(new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution=RadioFieldWidget)
     new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution=schema.Choice(
     title = _(u"Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period? ",
@@ -888,6 +1203,32 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    schema9.append('if_yes__policies_lbs_please_provide_details')
+    if_yes__policies_lbs_please_provide_details=schema.Text(
+    title=_(u"If yes, please provide brief details and a link to all of the implementation plans that are developed and/or used in your country.  If in preparation, please describe the nature of what is being prepared and the expected timeline for completion. "),
+    required=False,
+    )
+    schema9.append('if_yes__policies_lbs_website')
+    if_yes__policies_lbs_website=schema.TextLine(
+    title = _(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country.",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema9.append('if_no_lbs_policies_why_not')
+    if_no_lbs_policies_why_not=schema.Text(
+    title = _(u"If no, describe why not.",
+               mapping={'number':''}),
+    required=False,    
+    )
+    schema9.append('if_other_specify_lbs_policies')
+    if_other_specify_lbs_policies=schema.Text(
+    title = _(u"If other, specify.",
+               mapping={'number':''}),
+    required=False,
+    )
+
+
+    schema9.append('other_types_and_or_sources_of_lbs_pollution')
     form.widget(other_types_and_or_sources_of_lbs_pollution=RadioFieldWidget)
     other_types_and_or_sources_of_lbs_pollution=schema.Choice(
     title = _(u"Are there any other types and/or sources of LBS pollution other than those listed in Annex I of the LBS Protocol that require special consideration in your country?",
@@ -895,6 +1236,13 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    schema9.append('if_yes_specify_what_concerns_other_lbs')
+    if_yes_specify_what_concerns_other_lbs=schema.Text(
+    title = _(u"If yes, please specify what concerns have developed for the other sources of LBS pollution in your country.",
+               mapping={'number':''}),
+    required=False,
+    )
+    schema9.append('environmental_pollution_monitoring_and_assessment_programmes')
     form.widget(environmental_pollution_monitoring_and_assessment_programmes=RadioFieldWidget)
     environmental_pollution_monitoring_and_assessment_programmes=schema.Choice(
     title = _(u"Does your country have any existing environmental pollution monitoring and assessment programmes as outlined in LBS Protocol Article VI?",
@@ -902,6 +1250,42 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    schema9.append('if_yes_monitoring_and_assessment_progs_lbs')
+    form.widget(if_yes_monitoring_and_assessment_progs_lbs=DataGridFieldFactory)
+    if_yes_monitoring_and_assessment_progs_lbs=schema.List(
+        title=_(u'If yes, please indicate what monitoring and assessment programs have developed reports for the following'),
+        readonly=False,
+        #min_length=1,
+        value_type=DictRow(
+            title=_(u"Monitoring and Assessment Programs"),
+            schema=IMonitoringSchema
+            ),
+         required=False,
+        )
+    schema9.append('if_yes_monitoring_website_lbs')
+    if_yes_monitoring_website_lbs = schema.TextLine(
+                      title=_(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country."),
+                      required=False,
+                        )
+    schema9.append('if_yes_summary_of_monitoring_prog')
+    if_yes_summary_of_monitoring_prog = schema.TextLine(
+                      title=_(u"Please provide detailed summaries of monitoring programmes in Annex 1."),
+                      required=False,
+                        )
+
+    schema9.append('if_in_preparation_describe_what_is_planned_monitoring_progs_lbs')
+    if_in_preparation_describe_what_is_planned_monitoring_progs_lbs = schema.TextLine(
+            title=_(u'If in preparation, please describe what is planned and the schedule for its completion.'),
+            required=False,
+        )
+    schema9.append('if_no_lbs_monitoring_progs_why_not')
+    if_no_lbs_monitoring_progs_why_not=schema.Text(
+    title = _(u"If no, describe why not.",
+               mapping={'number':''}),
+    required=False,    
+    )
+    
+    schema9.append('guidelines_concerning_environmental_impact_assessments')
     form.widget(guidelines_concerning_environmental_impact_assessments=RadioFieldWidget)
     guidelines_concerning_environmental_impact_assessments=schema.Choice(
     title = _(u"Has your country developed and adopted guidelines concerning environmental impact assessments (EIAs) or has your country generated EIAs consistent with the LBS Protocol, Article VII (2)?",
@@ -909,6 +1293,30 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+
+    schema9.append('if_yes_how_often_review_and_update_guidelines_lbs_eia_article_vii')
+    if_yes_how_often_review_and_update_guidelines_lbs_eia_article_vii = schema.Text(
+                      title=_(u"If yes, please describe how often do you review and update those guidelines."),
+                      required=False,
+                        )
+
+    schema9.append('if_in_preparation_describe_what_is_planned_guidelines_lbs_eia')
+    if_in_preparation_describe_what_is_planned_guidelines_lbs_eia = schema.Text(
+            title=_(u'If in preparation, please describe what is planned and the schedule for its completion.'),
+            required=False,
+        )
+    schema9.append('if_yes_monitoring_guidelines_lbs_eia')
+    if_yes_monitoring_guidelines_lbs_eia = schema.TextLine(
+                      title=_(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country."),
+                      required=False,
+                        )
+    schema9.append('if_no_guidelines_lbs_eia_why_not')
+    if_no_guidelines_lbs_eia_why_not=schema.Text(
+    title = _(u"If no, describe why not.",
+               mapping={'number':''}),
+    required=False,    
+    )
+    schema9.append('total_annual_estimate_of_pollutant_loads_from_lbs_activities')
     form.widget(total_annual_estimate_of_pollutant_loads_from_lbs_activities=RadioFieldWidget)
     total_annual_estimate_of_pollutant_loads_from_lbs_activities=schema.Choice(
     title = _(u"Does your country have a total annual estimate of the pollutant loads to the marine environment for LBS activities?",
@@ -916,6 +1324,24 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+
+    schema9.append('if_yes_estimate_of_pollutant_loads_from_lbs_activities')
+    if_yes_estimate_of_pollutant_loads_from_lbs_activities = schema.TextLine(
+                      title=_(u"If yes, please provide details of these loadings in Annex 2."),
+                      required=False,
+                        )
+    schema9.append('if_in_preparation_estimate_of_pollutant_loads_from_lbs_activities')
+    if_in_preparation_estimate_of_pollutant_loads_from_lbs_activities = schema.Text(
+            title=_(u'If in preparation, please describe what is planned and the schedule for its completion.'),
+            required=False,
+        )
+    schema9.append('if_no_estimate_of_pollutant_loads_from_lbs_activities_why_not')
+    if_no_estimate_of_pollutant_loads_from_lbs_activities_why_not=schema.Text(
+    title = _(u"If no, describe why not.",
+               mapping={'number':''}),
+    required=False,    
+    )
+    schema9.append('difficulties_in_the_implementation_of_the_lbs_protocol')
     form.widget(difficulties_in_the_implementation_of_the_lbs_protocol=RadioFieldWidget)
     difficulties_in_the_implementation_of_the_lbs_protocol=schema.Choice(
     title = _(u"Has your country experienced any difficulties in the implementation of the LBS protocol?",
@@ -923,6 +1349,12 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    schema9.append('if_yes_difficulties_in_the_implementation_of_the_lbs_protocol')
+    if_yes_difficulties_in_the_implementation_of_the_lbs_protocol = schema.TextLine(
+                      title=_(u"If yes, please describe those difficulties and possible reasons for them."),
+                      required=False,
+                        )
+    schema9.append('major_areas_of_assistance_required_to_implement_protocols')
     major_areas_of_assistance_required_to_implement_protocols=schema.Text(
     title = _(u"What are three major areas of assistance required to assist your country in implementing the obligations of the Cartagena Convention and its Protocols.",
                mapping={'number':'11. '}),
@@ -930,6 +1362,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     
     )
 
+    # Give fieldsets names
     model.fieldset(
         'section1',
         label = _(u"Section 1"),
@@ -976,17 +1409,14 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         'section8',
         label = _(u"Section 8"),
         description = _(u"Section 8: The Protocol Concerning Specially Protected Areas and Wildlife (SPAW) - Article 4, 10, 11, 20, 21"),
-        fields = ['designated_focal_point_for_the_spaw_protocol','national_policies_for_the_protection_of_wild_flora_and_fauna','national_laws_for_the_protection_of_wild_flora_and_fauna','national_plans_for_the_protection_of_wild_flora_and_fauna','established_protected_areas_pursuant_to_the_spaw_protocol','identified_all_endangered_threatened_species_within_your_country','measures_to_ensure_strict_protection_of_the_endangered_threatened_species','plans_for_the_management_of_endangered_threatened_species','exemptions_to_species_protection','changes_in_the_delimitation_of_protected_areas_or_to_changes_in_their_status','changes_in_the_legal_status_of_species_listed','common_guidelines_or_criteria_adopted',]
+        fields = schema8
        )
     model.fieldset(
         'section9',
         label = _(u"Section 9"),
         description = _(u"Section 9: The Protocol Concerning Pollution from Land-Based Sources  (LBS) and Activities - Articles I, III, VI, VII"),
-        fields = ['designated_focal_point_for_the_lbs_protocol','is_there_a_national_definitionof_pollution_from_land_based_sources_and_activites','legislation_for_prevention_reduction_and_control_of_pollution_from_land_based_sources','plans_programs_and_measures_that_meet_objectives_of_the_lbs_protocol','new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution','other_types_and_or_sources_of_lbs_pollution','environmental_pollution_monitoring_and_assessment_programmes','guidelines_concerning_environmental_impact_assessments','total_annual_estimate_of_pollutant_loads_from_lbs_activities','difficulties_in_the_implementation_of_the_lbs_protocol','major_areas_of_assistance_required_to_implement_protocols',]
-       )
+        fields = schema9
+        )
 
-class TestGroup(group.Group):
-    label = u'Test Group'
-    fields = field.Fields(ICountryReport).select(
-        'country', 'full_name_of_reporting_institution')      
+     
 

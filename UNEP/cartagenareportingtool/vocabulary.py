@@ -36,6 +36,20 @@ phone_type = SimpleVocabulary.fromValues(
     _(u'other'),
     )
  )
+legal_status = SimpleVocabulary.fromValues(
+  (
+  _(u'designated'),
+  _(u'proposed'),
+  _(u'other'),
+    )
+  )
+status_of_management_plan = SimpleVocabulary.fromValues(
+  (
+    _(u'does not exist'),
+    _(u'exists'),
+    _(u'in preparation'),
+    )
+  )
 protocols = SimpleVocabulary.fromValues(
   (
     _(u'Cartagena Convention and the Oil Spill Protocol'),
