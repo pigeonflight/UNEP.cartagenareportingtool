@@ -36,6 +36,14 @@ phone_type = SimpleVocabulary.fromValues(
     _(u'other'),
     )
  )
+protocols = SimpleVocabulary.fromValues(
+  (
+    _(u'Cartagena Convention and the Oil Spill Protocol'),
+    _(u'SPAW Protocol'),
+    _(u'LBS Protocol'),
+  )
+)
+
 countries = SimpleVocabulary.fromValues(
       (
   _(u'Antigua & Barbuda'),

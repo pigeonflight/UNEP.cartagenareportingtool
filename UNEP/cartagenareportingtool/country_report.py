@@ -85,5 +85,5 @@ class AddForm(dexterity.AddForm):
 def add_report_to_member_folder(folder, event):
     obj = api.content.create(
     type='UNEP.cartagenareportingtool.countryreport',
-    title='country report',
+    title='Country Report',
     container=folder)

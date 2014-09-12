@@ -20,10 +20,26 @@ class INumberSchema(Interface):
                      title=_(u"Number"),
                      required=False,
                         )
+class IStatusSchema(Interface):
+    protocol = schema.Choice(
+                     title=_(u"Protocol"),
+                     required=False,
+                     source=vocabulary.protocols,
+                        )
+    status = schema.TextLine(
+                     title=_(u"Status"),
+                     required=False,
+                        )
 
-schema1 = schema2 = schema3 = schema4 = []
-schema5 = schema6 = schema7 = []
-schema8 = schema9 = []       
+schema1 = []
+schema2 = []
+schema3 = []
+schema4 = []
+schema5 = []
+schema6 = []
+schema7 = []
+schema8 = []
+schema9 = []       
 
 class ICountryReport(form.Schema, IImageScaleTraversable):
     
@@ -79,7 +95,6 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     telephone = schema.List(
     title=_(u"Telephone"),
     readonly=False,
-    max_length=5,
     min_length=1,
     value_type=DictRow(
             title=_(u"Number"),
@@ -272,27 +287,43 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     form.widget(has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans=RadioFieldWidget)
     has_your_country_recieved_any_external_financial_assistance_to_develop_and_or_implement_existing_plans=schema.Choice(
     title = _(u"Has your country received any external financial assistance to develop and/or implement existing plan(s)?",
-               mapping={'number':'5.'}),
+               mapping={'number':'4.'}),
     required=False,
     source=vocabulary.yes_no
     )
+
+    schema1.append('if_yes_please_identify_the_source_external_financial_assistance')
+    if_yes_please_identify_the_source_external_financial_assistance=schema.TextLine(
+    title = _(u"If yes, please identify the source of the assistance.",
+               mapping={'number':''}),
+    required=False,
+    
+    )
+    schema1.append('if_no_please_state_why_not_financial_assistance')
+    if_no_please_state_why_not_financial_assistance=schema.TextLine(
+    title = _(u"If no, please state why not.",
+               mapping={'number':''}),
+    required=False,
+    
+    )
+
     schema1.append('difficulties_in_the_implementation_of_plan_s_')
     form.widget(difficulties_in_the_implementation_of_plan_s_=RadioFieldWidget)
     difficulties_in_the_implementation_of_plan_s_=schema.Choice(
     title = _(u"Has your country experienced any difficulties in the implementation of the above-mentioned plan(s)?",
-               mapping={'number':'4.'}),
+               mapping={'number':'5.'}),
     required=False,
     source=vocabulary.yes_no
     )
     schema1.append('if_why_implementation_difficulties_with_details')
     if_why_implementation_difficulties_with_details=schema.TextLine(
-    title = _(u"Why implementation difficulties with details",
+    title = _(u"If yes, please describe why with details.",
                mapping={'number':''}),
     required=False,
     
     )
     
-    # schema2
+    # ====================== schema2 ==========================
     schema2.append('is_there_a_national_definition_for_pollution_sources')
     form.widget(is_there_a_national_definition_for_pollution_sources=RadioFieldWidget)
     is_there_a_national_definition_for_pollution_sources=schema.Choice(
@@ -449,14 +480,14 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     )
 
-    #schema3
+    # ========================= schema3
     schema3.append('pollution_emergencies_in_the_convention_area')
     form.widget(pollution_emergencies_in_the_convention_area=RadioFieldWidget)
     pollution_emergencies_in_the_convention_area=schema.Choice(
     title = _(u"Has your country experienced any pollution emergencies in the Convention area (including emergencies in which the Convention area is in imminent danger of being polluted or already polluted)?",
                mapping={'number':'1.'}),
     required=False,
-    source=vocabulary.yes_no_inprep
+    source=vocabulary.yes_no
     )
     
     schema3.append('if_yes_describe_pollution_emergencies')
@@ -483,7 +514,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     
     schema3.append('if_cooperation_contracting_parties_and_experience')
     if_cooperation_contracting_parties_and_experience=schema.Text(
-    title = _(u"Contracting parties and experience",
+    title = _(u"If cooperation took place with other Contracting Parties, please specify the name of Contracting Parties you have worked with and briefly describe the experience.",
                mapping={'number':''}),
     required=False,
     )
@@ -507,33 +538,51 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     )
     schema3.append('if_yes_list_contingency_plans_developed')
     if_yes_list_contingency_plans_developed=schema.Text(
-    title=_(u"If yes, please list the contingency plans developed and the countries involved."),
-    required=False,
+        title=_(u"If yes, please list the contingency plans developed and the countries involved."),
+        required=False,
     )
     schema3.append('if_yes_provide_a_website_url_jointly_developed_and_promoted_contingency_plans')
     if_yes_provide_a_website_url_jointly_developed_and_promoted_contingency_plans=schema.TextLine(
         title=_(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country."),
-    required=False,
+        required=False,
     )
 
-    #schema4
+    # ========================= schema4
     schema4.append('technical_guidelines_to_assist_planning_of_major_development_projects')
     form.widget(technical_guidelines_to_assist_planning_of_major_development_projects=RadioFieldWidget)
     technical_guidelines_to_assist_planning_of_major_development_projects=schema.Choice(
-    title = _(u"Does your country currently have any technical and other guidelines (e.g., EIAs) to assist the planning of major development projects in such a way as to prevent or minimize harmful impacts on the Convention Area?",
+        title = _(u"Does your country currently have any technical and other guidelines (e.g., EIAs) to assist the planning of major development projects in such a way as to prevent or minimize harmful impacts on the Convention Area?",
                mapping={'number':'1. '}),
-    required=False,
-    source=vocabulary.yes_no_inprep
+        required=False,
+        source=vocabulary.yes_no_inprep_other
     )
-    schema4.append('technical_cooperation_agreements')
+    schema4.append('if_yes_or_in_preparation_please_provide_brief_details_technical_guidelines_to_assist_planning_of_major_development_projects')
+    if_yes_or_in_preparation_please_provide_brief_details_technical_guidelines_to_assist_planning_of_major_development_projects=schema.Text(
+        title=_(u"If yes or in preparation, please provide brief details."),
+        required=False,
+    )
+    schema4.append('if_yes_provide_a_website_url_technical_guidelines_to_assist_planning_of_major_development_projects')
+    if_yes_provide_a_website_url_technical_guidelines_to_assist_planning_of_major_development_projects=schema.TextLine(
+        title=_(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country."),
+        required=False,
+    )
+    schema4.append('if_no_describe_why_not_technical_guidelines_to_assist_planning')
+    if_no_describe_why_not_technical_guidelines_to_assist_planning=schema.Text(
+        title=_(u"If no, describe why not."),
+        required=False)
+
+    # ======================== schema5 
+    schema5.append('technical_cooperation_agreements')
     form.widget(technical_cooperation_agreements=RadioFieldWidget)
     technical_cooperation_agreements=schema.Choice(
     title = _(u"Does your country have technical cooperation agreements with any other Contracting Parties relating to the purposes of the Convention?",
                mapping={'number':'1. '}),
     required=False,
-    source=vocabulary.yes_no_inprep
+    source=vocabulary.yes_no
     )
-    schema4.append('status_of_ratification_of_the_existing_protocols')
+
+    ###########
+    schema5.append('status_of_ratification_of_the_existing_protocols')
     form.widget(status_of_ratification_of_the_existing_protocols=RadioFieldWidget)
     status_of_ratification_of_the_existing_protocols=schema.Choice(
     title = _(u"Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention.",
@@ -541,14 +590,67 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
-    schema4.append('plans_to_propose_amendments_to_the_convention')
+
+    schema5.append('if_yes_please_provide_the_names_of_cooperative_agreements')
+    if_yes_please_provide_the_names_of_cooperative_agreements=schema.Text(
+        title=_(u"If yes, please provide the names of cooperating parties with areas of cooperation covered by the agreements."),
+        required=False)
+    
+    schema5.append('if_yes_provide_a_website_url_cooperative_agreements')
+    if_yes_provide_a_website_url_cooperative_agreements=schema.Text(
+        title=_(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country."),
+        required=False
+        )
+    schema5.append('if_no_describe_areas_in_which_such_agreements_desired')
+    if_no_describe_areas_in_which_such_agreements_desired=schema.Text(
+        title=_(u"If no, describe areas in which such agreements are desired."),
+        required=False
+        )
+    schema5.append('if_other_specify_cooperative_agreements')
+    if_other_specify_cooperative_agreements=schema.Text(
+    title = _(u"If other, specify.",
+               mapping={'number':''}),
+    required=False,
+    )
+   
+    # ==================== schema6
+    schema6.append('please_indicate_the_status_of_ratification_of_existing_protocols')
+    form.widget(please_indicate_the_status_of_ratification_of_existing_protocols=DataGridFieldFactory)
+    please_indicate_the_status_of_ratification_of_existing_protocols = schema.List(
+    title=_(u"Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention."),
+    readonly=False,
+    min_length=1,
+    value_type=DictRow(
+            title=_(u"Status"),
+            schema=IStatusSchema
+            )
+    )
+    schema6.append('if_country_not_yet_ratified_to_cartagena_convention_summary_of_efforts')
+    if_country_not_yet_ratified_to_cartagena_convention_summary_of_efforts = schema.Text(
+        title=_(u"If your country has not yet ratified/acceded to the Cartagena Convention or any of the Protocols listed above, please provide a summary of efforts towards ratification/accession"),
+        required=False,
+    )
+    schema6.append('if_yes_provide_a_website_url_summary_of_efforts_to_ratify')
+    if_yes_provide_a_website_url_summary_of_efforts_to_ratify=schema.Text(
+        title=_(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country."),
+        required=False
+        )
+
+    schema6.append('plans_to_propose_amendments_to_the_convention')
     form.widget(plans_to_propose_amendments_to_the_convention=RadioFieldWidget)
     plans_to_propose_amendments_to_the_convention=schema.Choice(
     title = _(u"Does your country currently have any plan to propose any amendments to the Cartagena Convention?",
                mapping={'number':'2. '}),
     required=False,
-    source=vocabulary.yes_no_inprep
+    source=vocabulary.yes_no
     )
+    schema6.append('if_yes_provide_a_website_url_a_brief_summary_of_your_proposal')
+    if_yes_provide_a_website_url_a_brief_summary_of_your_proposal=schema.Text(
+        title=_(u"Provide a website or URL reference to link the response to the appropriate information that is maintained by your country."),
+        required=False
+        )
+    # ========================== schema7
+    schema7.append('designated_focal_point_for_the_oil_spills_protocol_')
     form.widget(designated_focal_point_for_the_oil_spills_protocol_=RadioFieldWidget)
     designated_focal_point_for_the_oil_spills_protocol_=schema.Choice(
     title = _(u"Does your country have a designated Focal Point for the Oil Spills Protocol?",
@@ -556,27 +658,100 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
-    form.widget(national_policies_for_management_of_oil_spill_pollution__=RadioFieldWidget)
-    national_policies_for_management_of_oil_spill_pollution__=schema.Choice(
+    schema7.append('designated_focal_point_full_name_of_reporting_institution')
+    designated_focal_point_full_name_of_reporting_institution=schema.TextLine(
+    title = _(u"Full name of reporting institution",
+               mapping={'number':''}),
+    required=False,
+    
+    )
+    schema7.append('designated_focal_point_contact_person')
+    designated_focal_point_contact_person=schema.TextLine(
+    title = _(u"Contact Person",
+               mapping={'number':''}),
+    required=False,
+    
+    )
+    schema7.append('designated_focal_point_contact_person_job_title')
+    designated_focal_point_contact_person_job_title=schema.TextLine(
+    title = _(u"Job Title",
+               mapping={'number':''}),
+    required=False,
+    
+    )
+    schema7.append('designated_focal_point_department')
+    designated_focal_point_department=schema.Text(
+    title = _(u"Department",
+               mapping={'number':''}),
+    required=False,
+    
+    )
+    schema7.append('designated_focal_point_for_oilspills_address')
+    designated_focal_point_for_oilspills_address=schema.Text(
+        title = _(u"Address",
+               mapping={'number':''}),
+        required=False,
+    )
+    schema7.append('designated_focal_point_for_oilspills_telephone')
+    form.widget(designated_focal_point_for_oilspills_telephone=DataGridFieldFactory)
+    designated_focal_point_for_oilspills_telephone = schema.List(
+    title=_(u"Telephone"),
+    readonly=False,
+    min_length=1,
+    value_type=DictRow(
+            title=_(u"Number"),
+            schema=INumberSchema
+            )
+    )
+    schema7.append('designated_focal_point_for_oilspills_email')
+    designated_focal_point_for_oilspills_email=schema.TextLine(
+    title = _(u"E-mail",
+               mapping={'number':''}),
+    required=False,
+    
+    )
+    schema7.append('designated_focalpoint_for_oilspills_web_page')
+    designated_focalpoint_for_oilspills_web_page=schema.TextLine(
+    title = _(u"Website",
+               mapping={'number':''}),
+    required=False,
+    
+    )
+
+
+
+
+
+
+
+
+
+    schema7.append('does_country_have_national_policies_for_management_of_oil_spill_pollution')
+    form.widget(does_country_have_national_policies_for_management_of_oil_spill_pollution=RadioFieldWidget)
+    does_country_have_national_policies_for_management_of_oil_spill_pollution=schema.Choice(
     title = _(u"Does your country currently have any national policies for prevention, reduction and control of oil spill pollution? ",
                mapping={'number':'2. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
-    form.widget(national_laws_for_management_of_oil_spill_pollution=RadioFieldWidget)
-    national_laws_for_management_of_oil_spill_pollution=schema.Choice(
+
+    schema7.append('does_country_have_national_laws_for_management_of_oil_spill_pollution')
+    form.widget(does_country_have_national_laws_for_management_of_oil_spill_pollution=RadioFieldWidget)
+    does_country_have_national_laws_for_management_of_oil_spill_pollution=schema.Choice(
     title = _(u"national laws for management of oil spill pollution",
                mapping={'number':''}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
-    form.widget(national_plans_for_management_of_oil_spill_pollution=RadioFieldWidget)
-    national_plans_for_management_of_oil_spill_pollution=schema.Choice(
+    schema7.append('does_country_have_national_plans_for_management_of_oil_spill_pollution')
+    form.widget(does_country_have_national_plans_for_management_of_oil_spill_pollution=RadioFieldWidget)
+    does_country_have_national_plans_for_management_of_oil_spill_pollution=schema.Choice(
     title = _(u"national plans for management of oil spill pollution",
                mapping={'number':''}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    schema7.append('national_operational_measures_for_responding_to_oil_spill_incidents')
     form.widget(national_operational_measures_for_responding_to_oil_spill_incidents=RadioFieldWidget)
     national_operational_measures_for_responding_to_oil_spill_incidents=schema.Choice(
     title = _(u"Has your country established any national operational measures such as establishing national oil spill contingency plans for responding to oil spill incidents (Article 7 of the Oil Spills Protocol)?",
@@ -584,6 +759,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+    schema7.append('oil_spill_incidents_since_1986')
     form.widget(oil_spill_incidents_since_1986=RadioFieldWidget)
     oil_spill_incidents_since_1986=schema.Choice(
     title = _(u"Has your country experienced any oil-spill incidents since 1986 (Article 1, paragraph 4)?",
@@ -591,6 +767,8 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
+
+    # =============== schema8
     form.widget(designated_focal_point_for_the_spaw_protocol=RadioFieldWidget)
     designated_focal_point_for_the_spaw_protocol=schema.Choice(
     title = _(u"Does your country have a designated Focal Point for the SPAW Protocol?",
@@ -751,6 +929,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
+
     model.fieldset(
         'section1',
         label = _(u"Section 1"),
@@ -773,26 +952,26 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         'section4',
         label = _(u"Section 4"),
         description = _(u"Section 4: Environmental Impact Assessment - Article 12"),
-        fields = ['technical_guidelines_to_assist_planning_of_major_development_projects',]
+        fields = schema4
        )
     model.fieldset(
         'section5',
         label = _(u"Section 5"),
         description = _(u"Section 5: Scientific and Technical Cooperation - Article 13"),
-        fields = ['technical_cooperation_agreements',]
+        fields = schema5
        )
     model.fieldset(
         'section6',
         label = _(u"Section 6"),
         description = _(u"Section 6: Adoption/Amendment of the Convention and its Protocols - Articles 17,18"),
-        fields = ['status_of_ratification_of_the_existing_protocols','plans_to_propose_amendments_to_the_convention',]
+        fields = schema6
        )
     model.fieldset(
         'section7',
         label = _(u"Section 7"),
         description = _(u"Section 7: The Protocol Concerning Cooperation in Combating Oil Spills in the Wider Caribbean Region"),
-        fields = ['designated_focal_point_for_the_oil_spills_protocol_','national_policies_for_management_of_oil_spill_pollution__','national_laws_for_management_of_oil_spill_pollution','national_plans_for_management_of_oil_spill_pollution','national_operational_measures_for_responding_to_oil_spill_incidents','oil_spill_incidents_since_1986',]
-       )
+        fields = schema7
+        )
     model.fieldset(
         'section8',
         label = _(u"Section 8"),

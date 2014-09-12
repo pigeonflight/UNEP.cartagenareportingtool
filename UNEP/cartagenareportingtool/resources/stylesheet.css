@@ -46,10 +46,18 @@ border: 1px solid #D6D2D2;
 margin-top: 16px;
 }
 #form span.option {
-margin-left: 16px;
+margin-left: 36px;
+display: block;
+clear: both;
 }
 [id^=formfield-form-widgets-national_],
 [id^=formfield-form-widgets-if_]{margin-left:20px;}
-a#view:visited,a#view:hover {
-    color: white;
+a#view,#continue-editing,
+.portaltype-unep-cartagenareportingtool-countryreport input.button-field {
+float: right;
+}
+#form-buttons-cancel{display: none}
+div#plone-document-byline {
+visibility: hidden;
+display: none;
 }
