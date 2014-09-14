@@ -3,23 +3,23 @@ from UNEP.cartagenareportingtool import MessageFactory as _
 
 yes_no = SimpleVocabulary.fromValues(
     [
-     'Yes','No'
+     _(u'Yes'),_(u'No')
      ]
     )
 yes_no_inprep = SimpleVocabulary.fromValues(
     [
-     'Yes','No','In Preparation'
+     _(u'Yes'),_(u'No'),_(u'In Preparation')
      ]
     )
 
 yes_no_inprep_other = SimpleVocabulary.fromValues(
     [
-     'Yes','No','In Preparation','Other'
+     _(u'Yes'),_(u'No'),_(u'In Preparation'),_(u'Other')
      ]
     )
 yes_no_inprep_existingplans = SimpleVocabulary.fromValues(
     [
-     'Yes','No','In Preparation','Existing Plans'
+     _(u'Yes'),_(u'No'),_(u'In Preparation'),_(u'Existing Plans')
      ]
     )
 plans = SimpleVocabulary.fromValues(

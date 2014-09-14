@@ -27,10 +27,14 @@ def logged_in_handler(event):
     request = getattr(portal, "REQUEST", None)
     portal_url = portal.absolute_url()
     user = event.object
-
+    pm = portal['portal_membership']
+    members_folder = pm.membersfolder_id
+   
     #redirect_to_user folder
-    redirect_path = "%s/r/%s" % (portal_url,user.getId())
-    print redirect_path
+    # this means that the information is always available at the default memberfolder
+    redirect_path = "%s/%s/%s" % (portal_url,members_folder,user.getId())
+    #print redirect_path 
+    # bruteforce came_from to always be empty
     if request.get('came_from', None):
             request['came_from'] = ''
             request.form['came_from'] = ''
