@@ -28,6 +28,7 @@ def setupVarious(context):
     
     #check for the existence of reports folder
     #
+    portal.manage_changeProperties(default_page='site_index')
     if not api.content.get('/r'):
         try:
             reports = api.content.create(
