@@ -362,28 +362,28 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     )
     schema2.append('if_yes_to_pollution_definitions_discharges_from_ships')
     if_yes_to_pollution_definitions_discharges_from_ships=schema.Text(
-    title = _(u"Discharges from ships:"),
+    title = _(u"If yes, please provide the text of the national definitions for: Discharges from ships:"),
     required=False,
     )
     schema2.append('if_yes_to_pollution_definitions_dumping_of_wastes_and_other_matter_at_sea')
     if_yes_to_pollution_definitions_dumping_of_wastes_and_other_matter_at_sea=schema.Text(
-    title = _(u"Dumping of wastes and other matter at sea:"),
+    title = _(u"If yes, please provide the text of the national definitions for: Dumping of wastes and other matter at sea:"),
     required=False,
     )
     schema2.append('if_yes_to_pollution_definitions_exploration_or_exploitation_of_sea_bed')
     if_yes_to_pollution_definitions_exploration_or_exploitation_of_sea_bed=schema.Text(
-    title = _(u"Exploration or exploitation of the sea-bed:"),
+    title = _(u"If yes, please provide the text of the national definitions for: Exploration or exploitation of the sea-bed:"),
     required=False,
     )
     schema2.append('if_yes_to_pollution_definitions_discharges_air_emissions_into_atmosphere')
     if_yes_to_pollution_definitions_discharges_air_emissions_into_atmosphere=schema.Text(
-    title = _(u"Discharges (air emissions) into the atmosphere:"),
+    title = _(u"If yes, please provide the text of the national definitions for: Discharges (air emissions) into the atmosphere:"),
     required=False,
     )
     schema2.append('management_measures_since_the_last_reporting_period_sources_of_pollution_in_the_convention_area')
     form.widget(management_measures_since_the_last_reporting_period_sources_of_pollution_in_the_convention_area=RadioFieldWidget)
     management_measures_since_the_last_reporting_period_sources_of_pollution_in_the_convention_area=schema.Choice(
-    title = _(u"${number} Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area? ",
+    title = _(u"Has your country taken any measures since the last reporting period necessary to prevent, reduce and control the abovementioned sources of pollution in the Convention area?",
                mapping={'number':'2.'}),
     required=False,
     source=vocabulary.yes_no_inprep
@@ -520,7 +520,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     
     schema3.append('if_yes_describe_pollution_emergencies')
     if_yes_describe_pollution_emergencies=schema.Text(
-    title = _(u"If yes, please describe the details and answer the question below. ",
+    title = _(u"If yes, please describe the details and answer the question below.",
                mapping={'number':''}),
     required=False,
     )
@@ -757,7 +757,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     schema7.append('does_country_have_national_policies_for_management_of_oil_spill_pollution')
     form.widget(does_country_have_national_policies_for_management_of_oil_spill_pollution=RadioFieldWidget)
     does_country_have_national_policies_for_management_of_oil_spill_pollution=schema.Choice(
-    title = _(u"Does your country currently have any national policies for prevention, reduction and control of oil spill pollution? ",
+    title = _(u"Does your country currently have any national policies for prevention, reduction and control of oil spill pollution?",
                mapping={'number':'2. '}),
     required=False,
     source=vocabulary.yes_no_inprep
@@ -972,7 +972,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     schema8.append('established_protected_areas_pursuant_to_the_spaw_protocol')
     form.widget(established_protected_areas_pursuant_to_the_spaw_protocol=RadioFieldWidget)
     established_protected_areas_pursuant_to_the_spaw_protocol=schema.Choice(
-    title = _(u"Has your country established any protected areas pursuant to the SPAW Protocol? (Article 4 of the SPAW Protocol) ",
+    title = _(u"Has your country established any protected areas pursuant to the SPAW Protocol? (Article 4 of the SPAW Protocol)",
                mapping={'number':'3. '}),
         required=False,
         source=vocabulary.yes_no_inprep
@@ -1176,7 +1176,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     )
     schema9.append('if_yes_plans_lbs_please_provide_details')
     if_yes_plans_lbs_please_provide_details=schema.Text(
-    title=_(u"If yes, please provide brief details and a link to all of the implementation plans that are developed and/or used in your country.  If in preparation, please describe the nature of what is being prepared and the expected timeline for completion. "),
+    title=_(u"If yes, please provide brief details and a link to all of the implementation plans that are developed and/or used in your country.  If in preparation, please describe the nature of what is being prepared and the expected timeline for completion."),
     required=False,
     )
     schema9.append('if_yes_plans_lbs_website')
@@ -1201,14 +1201,14 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     schema9.append('new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution')
     form.widget(new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution=RadioFieldWidget)
     new_and_or_amended_existing_national_policies__laws__regulations__plans__for_reducing_lbs_pollution=schema.Choice(
-    title = _(u"Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period? ",
+    title = _(u"Has your country developed new and/or amended existing national policies, laws, regulations, plans, for reducing LBS pollution over the reporting period?",
                mapping={'number':'5. '}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
     schema9.append('if_yes__policies_lbs_please_provide_details')
     if_yes__policies_lbs_please_provide_details=schema.Text(
-    title=_(u"If yes, please provide brief details and a link to all of the implementation plans that are developed and/or used in your country.  If in preparation, please describe the nature of what is being prepared and the expected timeline for completion. "),
+    title=_(u"If yes, please provide brief details and a link to all of the implementation plans that are developed and/or used in your country.  If in preparation, please describe the nature of what is being prepared and the expected timeline for completion."),
     required=False,
     )
     schema9.append('if_yes__policies_lbs_website')
