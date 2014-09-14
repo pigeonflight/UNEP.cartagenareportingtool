@@ -77,50 +77,50 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         title = _(u'Title'),
         required = False,
     )
-    country=schema.Choice(
+    default_country=schema.Choice(
     title = _(u"Country",
                mapping={'number':''}),
     required=False,
     source=vocabulary.countries
     )
-    reporting_period_start=schema.Date(
+    default_reporting_period_start=schema.Date(
     title = _(u"Reporting Period Start",
                mapping={'number':''}),
     required=False,
     
     )
-    reporting_period_end=schema.Date(
+    default_reporting_period_end=schema.Date(
     title = _(u"Reporting Period End",
                mapping={'number':''}),
     required=False,
     
     )
-    full_name_of_reporting_institution=schema.TextLine(
+    default_full_name_of_reporting_institution=schema.TextLine(
     title = _(u"Full name of reporting institution",
                mapping={'number':''}),
     required=False,
     
     )
-    reporting_officer_name=schema.TextLine(
+    default_reporting_officer_name=schema.TextLine(
     title = _(u"Name and Title of reporting officer",
                mapping={'number':''}),
     required=False,
     
     )
-    agency=schema.TextLine(
+    default_agency=schema.TextLine(
     title = _(u"Agency",
                mapping={'number':''}),
     required=False,
     
     )
-    mailing_address=schema.Text(
+    default_mailing_address=schema.Text(
     title = _(u"Mailing Address",
                mapping={'number':''}),
     required=False,
     
     )
-    form.widget(telephone=DataGridFieldFactory)
-    telephone = schema.List(
+    form.widget(default_telephone=DataGridFieldFactory)
+    default_telephone = schema.List(
     title=_(u"Telephone"),
     readonly=False,
     required=False,
@@ -129,32 +129,32 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
             schema=INumberSchema
             )
     )
-    email=schema.TextLine(
+    default_email=schema.TextLine(
     title = _(u"E-mail",
                mapping={'number':''}),
     required=False,
-    
+
     )
-    web_page=schema.TextLine(
+    default_web_page=schema.TextLine(
     title = _(u"Webpage",
                mapping={'number':''}),
     required=False,
     
     )
-    date_the_report_was_submitted=schema.Date(
+    default_date_the_report_was_submitted=schema.Date(
     title = _(u"Date the report was submitted",
                mapping={'number':''}),
     required=False,
     
     )
-    signature=schema.TextLine(
+    default_signature=schema.TextLine(
     title = _(u"Signature",
                mapping={'number':''}),
     required=False,
     
     )
 
-    # schema1
+    # ========================= schema1
     schema1.append('does_your_country_have_a_designated_national_focal_point_for_the_cartagena_convention_')
     form.widget(does_your_country_have_a_designated_national_focal_point_for_the_cartagena_convention_=RadioFieldWidget)
     does_your_country_have_a_designated_national_focal_point_for_the_cartagena_convention_=schema.Choice(
@@ -449,7 +449,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     form.widget(laws_for_marine_pollution_management_for_special_consideration=RadioFieldWidget)
     laws_for_marine_pollution_management_for_special_consideration=schema.Choice(
     title = _(u"Does your country have any national laws for marine pollution prevention, reduction and control for these activities requiring special consideration?",
-               mapping={'number':''}),
+               mapping={'number':'4b.'}),
     required=False,
     source=vocabulary.yes_no_inprep_other
     )
@@ -480,7 +480,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     form.widget(plans_for_marine_pollution_management_for_special_consideration=RadioFieldWidget)
     plans_for_marine_pollution_management_for_special_consideration=schema.Choice(
     title = _(u"Does your country have any national plans for marine pollution prevention, reduction and control for these activities requiring special consideration?",
-               mapping={'number':''}),
+               mapping={'number':'4c.'}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
@@ -609,15 +609,6 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     source=vocabulary.yes_no
     )
 
-    schema5.append('status_of_ratification_of_the_existing_protocols')
-    form.widget(status_of_ratification_of_the_existing_protocols=RadioFieldWidget)
-    status_of_ratification_of_the_existing_protocols=schema.Choice(
-    title = _(u"Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention.",
-               mapping={'number':'1. '}),
-    required=False,
-    source=vocabulary.yes_no_inprep
-    )
-
     schema5.append('if_yes_please_provide_the_names_of_cooperative_agreements')
     if_yes_please_provide_the_names_of_cooperative_agreements=schema.Text(
         title=_(u"If yes, please provide the names of cooperating parties with areas of cooperation covered by the agreements."),
@@ -644,7 +635,8 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     schema6.append('please_indicate_the_status_of_ratification_of_existing_protocols')
     form.widget(please_indicate_the_status_of_ratification_of_existing_protocols=DataGridFieldFactory)
     please_indicate_the_status_of_ratification_of_existing_protocols = schema.List(
-    title=_(u"Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention."),
+    title = _(u"Please indicate the status of ratification/accession of the existing Protocols to the Cartagena Convention.",
+               mapping={'number':'1. '}),
     readonly=False,
     required=False,
     value_type=DictRow(
@@ -677,9 +669,9 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         required=False
         )
     # ========================== schema7
-    schema7.append('designated_focal_point_for_the_oil_spills_protocol_')
-    form.widget(designated_focal_point_for_the_oil_spills_protocol_=RadioFieldWidget)
-    designated_focal_point_for_the_oil_spills_protocol_=schema.Choice(
+    schema7.append('does_your_country_designated_focal_point_for_the_oil_spills_protocol_')
+    form.widget(does_your_country_designated_focal_point_for_the_oil_spills_protocol_=RadioFieldWidget)
+    does_your_country_designated_focal_point_for_the_oil_spills_protocol_=schema.Choice(
     title = _(u"Does your country have a designated Focal Point for the Oil Spills Protocol?",
                mapping={'number':'1. '}),
     required=False,
@@ -738,8 +730,8 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
-    schema7.append('designated_focalpoint_for_oilspills_web_page')
-    designated_focalpoint_for_oilspills_web_page=schema.TextLine(
+    schema7.append('designated_focal_point_for_oilspills_web_page')
+    designated_focal_point_for_oilspills_web_page=schema.TextLine(
     title = _(u"Website",
                mapping={'number':''}),
     required=False,
@@ -779,9 +771,9 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     source=vocabulary.yes_no_inprep
     )
-    schema7.append('national_operational_measures_for_responding_to_oil_spill_incidents')
-    form.widget(national_operational_measures_for_responding_to_oil_spill_incidents=RadioFieldWidget)
-    national_operational_measures_for_responding_to_oil_spill_incidents=schema.Choice(
+    schema7.append('has_your_country_national_operational_measures_for_responding_to_oil_spill_incidents')
+    form.widget(has_your_country_national_operational_measures_for_responding_to_oil_spill_incidents=RadioFieldWidget)
+    has_your_country_national_operational_measures_for_responding_to_oil_spill_incidents=schema.Choice(
     title = _(u"Has your country established any national operational measures such as establishing national oil spill contingency plans for responding to oil spill incidents (Article 7 of the Oil Spills Protocol)?",
                mapping={'number':'3. '}),
     required=False,
@@ -797,9 +789,9 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     )
 
     # =============== schema8
-    schema8.append('designated_focal_point_for_the_spaw_protocol')
-    form.widget(designated_focal_point_for_the_spaw_protocol=RadioFieldWidget)
-    designated_focal_point_for_the_spaw_protocol=schema.Choice(
+    schema8.append('does_your_country_designated_focal_point_for_the_spaw_protocol')
+    form.widget(does_your_country_designated_focal_point_for_the_spaw_protocol=RadioFieldWidget)
+    does_your_country_designated_focal_point_for_the_spaw_protocol=schema.Choice(
     title = _(u"Does your country have a designated Focal Point for the SPAW Protocol?",
                mapping={'number':'1. '}),
     required=False,
@@ -854,17 +846,17 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
-    schema8.append('designated_focalpoint_spaw_web_page')
-    designated_focalpoint_spaw_web_page=schema.TextLine(
+    schema8.append('designated_focal_point_spaw_web_page')
+    designated_focal_point_spaw_web_page=schema.TextLine(
     title = _(u"Website",
                mapping={'number':''}),
     required=False,)
 
 
 
-    schema8.append('national_policies_for_the_protection_of_wild_flora_and_fauna')
-    form.widget(national_policies_for_the_protection_of_wild_flora_and_fauna=RadioFieldWidget)
-    national_policies_for_the_protection_of_wild_flora_and_fauna=schema.Choice(
+    schema8.append('does_your_country_national_policies_for_the_protection_of_wild_flora_and_fauna')
+    form.widget(does_your_country_national_policies_for_the_protection_of_wild_flora_and_fauna=RadioFieldWidget)
+    does_your_country_national_policies_for_the_protection_of_wild_flora_and_fauna=schema.Choice(
     title = _(u"Does your country currently have any national policies, laws, mechanisms or measures for the protection of Wild Flora and Fauna? (Article 10 of the SPAW Protocol)",
                mapping={'number':'2. '}),
     required=False,
@@ -983,9 +975,9 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         required=False,
         )
 
-    schema8.append('location_of_each_protected_area_established_since_last_report')
-    form.widget(location_of_each_protected_area_established_since_last_report=DataGridFieldFactory)
-    location_of_each_protected_area_established_since_last_report = schema.List(
+    schema8.append('if_yes_location_of_each_protected_area_established_since_last_report')
+    form.widget(if_yes_location_of_each_protected_area_established_since_last_report=DataGridFieldFactory)
+    if_yes_location_of_each_protected_area_established_since_last_report = schema.List(
     title=_(u"Location of each Protected Area established since the last report (GPS Coordinates if available)"),
     readonly=False,
     required=False,
@@ -1065,7 +1057,7 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     form.widget(does_country_have_designated_focal_point_for_the_lbs_protocol=RadioFieldWidget)
     does_country_have_designated_focal_point_for_the_lbs_protocol=schema.Choice(
     title = _(u"Does your country have a designated Focal Point for the LBS Protocol?",
-               mapping={'number':''}),
+               mapping={'number':'1.'}),
     required=False,
     source=vocabulary.yes_no_inprep
     )
@@ -1112,8 +1104,8 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
     required=False,
     
     )
-    schema9.append('designated_focalpoint_lbs_web_page')
-    designated_focalpoint_lbs_web_page=schema.TextLine(
+    schema9.append('designated_focal_point_lbs_web_page')
+    designated_focal_point_lbs_web_page=schema.TextLine(
     title = _(u"Website",
                mapping={'number':''}),
     required=False,)
