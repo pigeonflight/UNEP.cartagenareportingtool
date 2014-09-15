@@ -3,7 +3,7 @@ $(document).ready(function() {
  if(document.URL.indexOf("edit") >= 0){ 
 
             base_url = document.URL.split('edit')[0]
-            $('.formTabs').before($('<a id="view" href="'+ base_url + 'view"><button class="btn btn-primary">View</button></a>')
+            $('#form').before($('<a id="view" href="'+ base_url + 'view"><button class="btn btn-primary">View</button></a>')
                                 )
 
 

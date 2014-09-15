@@ -1,6 +1,6 @@
 - [x] - Fix form to match the word document
 - [ ] - administrator view (export all reports as a single document, spreadsheet version of the reports, download of individual reports)
-- [.] - create a redirect from the home page
+- [x] - create a redirect from the home page
 - [ ] - status view of (submitted, in progress)
 - [ ] - need a print option
 - [x] - encourage regulary saving

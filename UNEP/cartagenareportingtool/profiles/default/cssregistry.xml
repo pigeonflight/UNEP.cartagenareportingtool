@@ -23,7 +23,7 @@
       available keys and default values.
       -->
      <stylesheet
-        id="++resource++UNEP.cartagenareportingtool/bootstrap-theme-min.css"
+        id="++resource++UNEP.cartagenareportingtool/bootstrap-theme.min.css"
         cacheable="True"
         compression="safe"
         cookable="True"

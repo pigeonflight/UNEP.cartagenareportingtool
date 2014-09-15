@@ -25,22 +25,27 @@ def setupVarious(context):
         api.content.delete(api.content.get('/events'))
 
     portal = api.portal.get()
-    
-    #check for the existence of reports folder
-    #
+
+    # configure default site view to be 'site_index'
     portal.manage_changeProperties(default_page='site_index')
-    if not api.content.get('/r'):
+    portal.setLayout("site_index")
+    # we will be organizing folders by year
+    # starting by hardcoding for 2014
+    # no longer using the reports folder 
+    
+    memberfolder = '2014' #this can eventually be an environment variable or something
+    if not api.content.get('/%s' % memberfolder):
         try:
-            reports = api.content.create(
+            reportfolder = api.content.create(
             portal,
             'Folder',
-            id='r',
-            title='Reports'
+            id=memberfolder,
+            title='%s report' % memberfolder
             )
         except BadRequest:
             return
-        api.content.transition(reports, transition='publish')
-        behavior = constrains.ISelectableConstrainTypes(reports)
+        api.content.transition(reportfolder, transition='publish')
+        behavior = constrains.ISelectableConstrainTypes(reportfolder)
         behavior.setConstrainTypesMode(constrains.ENABLED)
         behavior.setLocallyAllowedTypes(['UNEP.cartagenareportingtool.countryreport'])
         behavior.setImmediatelyAddableTypes(['UNEP.cartagenareportingtool.countryreport'])
@@ -48,7 +53,8 @@ def setupVarious(context):
     # set type to custom member type
     mp.setMemberAreaType('UNEP.cartagenareportingtool.memberfolder')
     # set member folder name
-    mp.setMembersFolderById('r')
+    print "setting members folder"
+    mp.setMembersFolderById(memberfolder)
     
     # call update security 
     set_up_security(context)
