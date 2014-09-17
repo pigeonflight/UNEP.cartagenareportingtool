@@ -55,7 +55,11 @@ class IMonitoringSchema(Interface):
                      title=_(u"Monitoring Programme"),
                      required=False,
                         )
-    
+class IReportStatus(Interface):
+    placeholder = schema.TextLine(
+                     title=_(u"Report Status"),
+                     required=False,
+                        )
 
     
     

@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone.app.dexterity">
+<body>
+<tal:comment tal:condition="nothing">
+    This is the view that users see when they view the summary of the report
+</tal:comment>
+
+<div metal:fill-slot="top_slot"
+              tal:define="dummy python:request.set('disable_border', 1)" />
+<metal:header fill-slot="content-title">
+This is a placeholder for the status report
+</metal:header>
+<metal:header fill-slot="content-description">
+the header
+</metal:header>
+<metal:main fill-slot="content-core">
+  <metal:content-core define-macro="content-core">
+
+   <table class="table table-hover">
+	   	<tr class="active">
+	   		<th class="active">country</th><th class="active">report status</th>
+	   	</tr>
+	   	<tal:countries tal:repeat="country view/status_info">
+		 <tr class="active">
+		  	<td class="active" tal:content="country/name">country</td>
+		  	<td class="active" tal:content="country/status">status</td>
+		 </tr>
+	  	</tal:countries>
+	</table>
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
