@@ -10,4 +10,7 @@
  <javascript id="++resource++UNEP.cartagenareportingtool/docsave_edit_view.js" 
  	expression="python:object.meta_type in ['Country Report',]"
  	authenticated="True"/>
+ <javascript id="++resource++UNEP.cartagenareportingtool/setup_show_hide.js" 
+ 	expression="python:object.meta_type in ['Country Report',]"
+ 	authenticated="True"/>
 </object>

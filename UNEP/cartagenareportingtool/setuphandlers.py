@@ -32,6 +32,7 @@ def setupVarious(context):
     # we will be organizing folders by year
     # starting by hardcoding for 2014
     # no longer using the reports folder 
+
     
     memberfolder = '2014' #this can eventually be an environment variable or something
     if not api.content.get('/%s' % memberfolder):

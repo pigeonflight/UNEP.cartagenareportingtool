@@ -52,6 +52,8 @@ clear: both;
 }
 [id^=formfield-form-widgets-default_],[id^=formfield-form-widgets-national_],[id^=formfield-form-widgets-designated_focal_point_],
 [id^=formfield-form-widgets-if_]{margin-left:20px;}
+[id^=formfield-form-widgets-national_],[id^=formfield-form-widgets-designated_focal_point_],
+/*[id^=formfield-form-widgets-if_]{display: none}*/
 [id^=formfield-form-widgets-default_] label,[id^=formfield-form-widgets-national_] label,[id^=formfield-form-widgets-designated_focal_point_] label,
 [id^=formfield-form-widgets-if_] label{font-weight:normal}
 a#view,#continue-editing,
