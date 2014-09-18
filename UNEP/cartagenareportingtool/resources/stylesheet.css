@@ -18,7 +18,7 @@ padding: 20px;
 height: auto;
 border-radius: 5px;
 box-shadow: 1px 1px 1px -1px #888;
-}	
+}   
 /* hide the top menu,not needed for this project */
 .super-menu {
 display: none;
@@ -80,4 +80,11 @@ display: none;
 }
 table.datagridwidget-table-view .header {
 font-weight: normal;
+}
+table tr.started td {
+    background: lightgreen;
+}
+tr.started td a{
+    display:block;
+    background: rgb(192, 241, 188);
 }

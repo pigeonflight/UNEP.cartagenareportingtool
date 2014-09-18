@@ -27,11 +27,11 @@
 	   		<th i18n:translate="">progress</th>
 	   	</tr>
 	   	<tal:countries tal:repeat="country view/status_info">
-		 <tr class="active">
-		  	<td class="active" tal:content="country/name">country</td>
+		 <tr class="active" tal:attributes="class country/class">
+		  	<td class="active"><a tal:omit-tag="not:country/doclink" tal:attributes="href country/doclink"><tal:countryname tal:content="country/name">country</tal:countryname></a></td>
 		  	<td class="active" tal:content="country/status">status</td>
 		  	<td>
-		  		<div class="radial-progress" data-progress="10" tal:attributes="data-progress country/progress">
+		  		<div class="radial-progress" data-zprogress="10" tal:attributes="data-progress country/progress">
 	<div class="circle">
 		<div class="mask full">
 			<div class="fill"></div>

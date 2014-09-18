@@ -1,5 +1,6 @@
 .radial-progress {
-  margin: 5px;
+  /* margin: 5px; */
+  margin-left: 10px;
   width: 20px;
   height: 20px;
   background-color: #d6dadc;
@@ -14,7 +15,7 @@
   border-radius: 50%;
 }
 .radial-progress .circle .shadow {
-  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0) inset;
 }
 .radial-progress .circle .mask,
 .radial-progress .circle .fill {
@@ -29,7 +30,7 @@
 }
 .radial-progress .circle .mask .fill {
   clip: rect(0px, 10px, 20px, 0px);
-  background-color: #97a71d;
+  background-color: #782C2C;
 }
 .radial-progress .inset {
   width: 10px;
