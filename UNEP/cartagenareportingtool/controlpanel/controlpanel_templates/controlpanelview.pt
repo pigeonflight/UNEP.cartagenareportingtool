@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="UNEP.cartagenareportingtool">
+<body>
+<tal:comment tal:condition="nothing">
+    This is the view that users see when they view the summary of the report
+</tal:comment>
+
+<metal:javascriptslot fill-slot="javascript_head_slot">
+	
+</metal:javascriptslot>
+
+<div metal:fill-slot="top_slot"
+              tal:define="dummy python:request.set('disable_border', 1)" />
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="main">
+<a href="@@usergroup-userprefs"><img src="http://localhost:8080/Ploneyy/portal_url/user.png" alt="" title="" height="16" width="16"> Manage users</a><p> &nbsp;</p>
+   <table class="listing table table-hover">
+	   	<tr class="active">
+	   		<th class="active" i18n:translate="">country</th>
+	   		<th class="" i18n:translate="">3 letter code</th>
+	   		<th class="active" i18n:translate="">report status</th>
+	   		<th i18n:translate="">progress</th>
+	   	</tr>
+	   	<tal:countries tal:repeat="country view/status_info">
+		 <tr class="active" tal:attributes="class country/class">
+		  	<td class="active"><a tal:omit-tag="not:country/doclink" tal:attributes="href country/doclink"><tal:countryname tal:content="country/name">country</tal:countryname></a></td>
+		  	<td tal:content="country/username">3 letter country code</td>
+		  	<td class="active" tal:content="country/status">status</td>
+		  	<td>
+		  		<div class="radial-progress" data-zprogress="10" tal:attributes="data-progress country/progress">
+	<div class="circle">
+		<div class="mask full">
+			<div class="fill"></div>
+		</div>
+		<div class="mask half">
+			<div class="fill"></div>
+			<div class="fill fix"></div>
+		</div>
+		<div class="shadow"></div>
+	</div>
+	<div class="inset">
+		<div class="xpercentage"></div>
+	</div>
+</div>
+		  	</td>
+		 </tr>
+	  	</tal:countries>
+	</table>	
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>

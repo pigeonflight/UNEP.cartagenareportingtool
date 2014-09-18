@@ -19,12 +19,18 @@ class Index(object):
         pm = portal['portal_membership']
         members_folder = pm.membersfolder_id
         # check if user is logged in
+        
 
+        # if the logged in user is an administrator then redirect to the controlpanel
+        
         if self.user_is_logged_in():
             user = api.user.get_current()
             user_id = user.getId()
-            #print "redirect to user folder"
-            redirect_url = "%s/%s/%s" % (portal_url,members_folder,user_id)
+            sub_path = "%s/%s" % (members_folder,user_id)
+            if 'Manager' in user.getRoles():
+                sub_path = "@@cartagenareportingtool-controlpanel"
+           
+            redirect_url = "%s/%s" % (portal_url,sub_path)
         else:
             #print "redirect to top folder"
             redirect_url = "%s/%s" % (portal_url,members_folder)

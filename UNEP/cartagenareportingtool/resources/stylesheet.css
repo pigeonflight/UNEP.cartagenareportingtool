@@ -1,4 +1,4 @@
-#form-widgets-telephone-AA-widgets-number,#form-widgets-telephone-AA-widgets-type {display:none;}
+@media screen{ #form-widgets-telephone-AA-widgets-number,#form-widgets-telephone-AA-widgets-type {display:none;}
 #content pre.introductory-text {
     background: transparent;
     color: rgb(117, 117, 117);
@@ -18,7 +18,7 @@ padding: 20px;
 height: auto;
 border-radius: 5px;
 box-shadow: 1px 1px 1px -1px #888;
-}	
+}   
 /* hide the top menu,not needed for this project */
 .super-menu {
 display: none;
@@ -52,6 +52,8 @@ clear: both;
 }
 [id^=formfield-form-widgets-default_],[id^=formfield-form-widgets-national_],[id^=formfield-form-widgets-designated_focal_point_],
 [id^=formfield-form-widgets-if_]{margin-left:20px;}
+[id^=formfield-form-widgets-national_],[id^=formfield-form-widgets-designated_focal_point_],
+/*[id^=formfield-form-widgets-if_]{display: none}*/
 [id^=formfield-form-widgets-default_] label,[id^=formfield-form-widgets-national_] label,[id^=formfield-form-widgets-designated_focal_point_] label,
 [id^=formfield-form-widgets-if_] label{font-weight:normal}
 a#view,#continue-editing,
@@ -78,4 +80,36 @@ display: none;
 }
 table.datagridwidget-table-view .header {
 font-weight: normal;
+}
+table tr.started td {
+    background: lightgreen;
+}
+tr.started td a{
+    display:block;
+    background: rgb(192, 241, 188);
+}
+button#print-report {
+float: right;
+clear: both;
+margin-bottom: 15px;
+}
+}
+
+@media print {
+  body {
+    width: 100%;
+  }
+  #content { width: 98%;}
+  .footer-blocks{display:none;}
+  .cep-header {
+    display: none;
+        }
+#content button,header {
+display: none;
+}
+fieldset{xpage-break-after: always;
+padding-top:.2cm;}
+@page {
+    margin:2.5cm;
+}
 }

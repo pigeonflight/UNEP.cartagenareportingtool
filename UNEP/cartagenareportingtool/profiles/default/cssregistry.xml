@@ -33,6 +33,26 @@
         rel="stylesheet"
         rendering="import" />
         <stylesheet
+        id="++resource++UNEP.cartagenareportingtool/bootstrap-tables.min.css"
+        cacheable="True"
+        compression="safe"
+        cookable="True"
+        enabled="1"
+        expression=""
+        media=""
+        rel="stylesheet"
+        rendering="import" />
+        <stylesheet
+        id="++resource++UNEP.cartagenareportingtool/bootstrap-tables-theme.min.css"
+        cacheable="True"
+        compression="safe"
+        cookable="True"
+        enabled="1"
+        expression=""
+        media=""
+        rel="stylesheet"
+        rendering="import" />
+        <stylesheet
         id="++resource++UNEP.cartagenareportingtool/bootstrap.min.css"
         cacheable="True"
         compression="safe"
@@ -54,6 +74,16 @@
         rendering="import" />
       <stylesheet
         id="++resource++UNEP.cartagenareportingtool/jSelect/jselect.css"
+        cacheable="True"
+        compression="safe"
+        cookable="True"
+        enabled="1"
+        expression=""
+        media=""
+        rel="stylesheet"
+        rendering="import" />
+        <stylesheet
+        id="++resource++UNEP.cartagenareportingtool/progress.css"
         cacheable="True"
         compression="safe"
         cookable="True"
