@@ -13,7 +13,6 @@ PRODUCT = 'UNEP.cartagenareportingtool'
 def setupVarious(context):
     if context.readDataFile('unep.cartagenareportingtool.marker.txt') is None:
         return
-    
     setup = api.portal.get_tool(name='portal_setup')
     setup.runImportStepFromProfile(PROFILE_ID, 'typeinfo')
     
@@ -59,6 +58,26 @@ def setupVarious(context):
     
     # call update security 
     set_up_security(context)
+    set_up_users(context)
+
+def set_up_users(context):
+    memberstates = context.readDataFile('memberstates.csv')
+    
+    for member in memberstates.splitlines():
+        member = member.split(',')
+
+        properties = dict(
+            fullname=member[4],
+            location=member[5],
+            description=member[6]
+            )
+        username = member[0]
+        email = member[3]
+        user = api.user.create(
+                  username=username,
+                  email=email,
+                  properties=properties,
+                )
 
 def set_up_security(context):
     """ Enable/disable security controlpanel (a.k.a. @@security-controlpanel)
