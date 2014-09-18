@@ -74,7 +74,9 @@ def setupVarious(context):
 def set_up_users(context):
     memberstates = context.readDataFile('memberstates.csv')
     
-    for member in memberstates.splitlines():
+    # we assume that he file has a heading
+    # the [1:] at the end slices off the heading of the file
+    for member in memberstates.splitlines()[1:]:
         member = member.split(',')
 
         properties = dict(

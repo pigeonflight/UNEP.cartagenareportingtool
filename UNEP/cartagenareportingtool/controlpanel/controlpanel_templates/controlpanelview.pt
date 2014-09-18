@@ -19,16 +19,18 @@
 
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
-
+<a href="@@usergroup-userprefs"><img src="http://localhost:8080/Ploneyy/portal_url/user.png" alt="" title="" height="16" width="16"> Manage users</a><p> &nbsp;</p>
    <table class="listing table table-hover">
 	   	<tr class="active">
 	   		<th class="active" i18n:translate="">country</th>
+	   		<th class="" i18n:translate="">3 letter code</th>
 	   		<th class="active" i18n:translate="">report status</th>
 	   		<th i18n:translate="">progress</th>
 	   	</tr>
 	   	<tal:countries tal:repeat="country view/status_info">
 		 <tr class="active" tal:attributes="class country/class">
 		  	<td class="active"><a tal:omit-tag="not:country/doclink" tal:attributes="href country/doclink"><tal:countryname tal:content="country/name">country</tal:countryname></a></td>
+		  	<td tal:content="country/username">3 letter country code</td>
 		  	<td class="active" tal:content="country/status">status</td>
 		  	<td>
 		  		<div class="radial-progress" data-zprogress="10" tal:attributes="data-progress country/progress">

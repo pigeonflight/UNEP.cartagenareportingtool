@@ -1,7 +1,8 @@
-#from zope.interface import Interface
+import math
+from zope.interface.interfaces import IMethod
 #from zope import schema
 from five import grok
-#from UNEP.cartagenareportingtool.interface import IReportStatus
+from UNEP.cartagenareportingtool.interface import ICountryReport
 from Products.CMFCore.interfaces import ISiteRoot
 from plone import api
 
@@ -17,6 +18,8 @@ grok.templatedir('controlpanel_templates')
 # note the use of grok.View (in contrast to dexterity.DisplayForm)
 # grok.View does not try to "inspect" the context and return
 # custom widgets, which would be a problem with a context of ISiteRoot
+
+
 class ControlPanelView(grok.View):
     """
     View for controlpanel
@@ -45,7 +48,7 @@ class ControlPanelView(grok.View):
                 'name':"Jamaica",
                  'status':"good",
                   'progress':10},
-                 {'username':'TNT',
+                 {'username':'TTO',
                  name':"Trinidad",
                  'status':"also good",
                  'progress':50}
@@ -60,13 +63,27 @@ class ControlPanelView(grok.View):
             doclink = ''
             status = 'not started'
             css_class = "%s %s" % (username,'not-started')
+            country_data = []
             if country_report:
+                for name, desc in ICountryReport.namesAndDescriptions():
+                    value = getattr(country_report,name)
+                    if IMethod.providedBy(desc):
+                        value = value()
+                    country_data.append(value)
+
                 progress = 5
                 doclink = country_report.absolute_url()
                 status = 'started'
                 css_class = "%s %s" % (username,'started')
+                for idx in range(len(country_data)):
+                    #print country_data[idx]
+                    if country_data[idx]:
+                        progress = progress + 1
+                progress = int(math.ceil(float(progress) / float(len(country_data)) * 100))
+                print "prg",progress
             props = {}
             props['username'] = username
+            props['report_data'] = country_data
             props['name'] = user.getProperty('fullname')
             props['status'] = status
             props['class']  = css_class

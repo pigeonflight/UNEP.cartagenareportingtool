@@ -1,4 +1,4 @@
-#form-widgets-telephone-AA-widgets-number,#form-widgets-telephone-AA-widgets-type {display:none;}
+@media screen{ #form-widgets-telephone-AA-widgets-number,#form-widgets-telephone-AA-widgets-type {display:none;}
 #content pre.introductory-text {
     background: transparent;
     color: rgb(117, 117, 117);
@@ -87,4 +87,29 @@ table tr.started td {
 tr.started td a{
     display:block;
     background: rgb(192, 241, 188);
+}
+button#print-report {
+float: right;
+clear: both;
+margin-bottom: 15px;
+}
+}
+
+@media print {
+  body {
+    width: 100%;
+  }
+  #content { width: 98%;}
+  .footer-blocks{display:none;}
+  .cep-header {
+    display: none;
+        }
+#content button,header {
+display: none;
+}
+fieldset{xpage-break-after: always;
+padding-top:.2cm;}
+@page {
+    margin:2.5cm;
+}
 }
