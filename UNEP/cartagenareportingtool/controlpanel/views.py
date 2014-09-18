@@ -26,7 +26,9 @@ class ControlPanelView(grok.View):
     def status_info(self):
         return [
               {'name':"Jamaica",
-               'status':"good"},
+               'status':"good",
+                'progress':10},
                {'name':"Trinidad",
-               'status':"also good"}
+               'status':"also good",
+               'progress':50}
               ]
