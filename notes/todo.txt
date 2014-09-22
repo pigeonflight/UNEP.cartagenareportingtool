@@ -1,10 +1,10 @@
-- [ ] - add following sentence, right before the submit. 
+- [x] - add following sentence, right before the submit. 
 Would you have any objections the secretariat making this report public?
 ¿Usted tendría ninguna objeción a la secretaría hacer público este informe ?
 Auriez-vous des objections du secrétariat rendant ce rapport public ?
 - [x] - implement submission workflow [submit-->"submitted",
                                       reopen-->"open"]
-- [ ] - configure link for promotion (setup production site and url)
+- [x] - configure link for promotion (setup production site and url)
 - [ ] - ability to attach documents
 - [x] - Fix form to match the word document
 - [x] - create a redirect from the home page
