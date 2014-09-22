@@ -25,9 +25,9 @@ from UNEP.cartagenareportingtool.member_folder import IMemberFolder
 from UNEP.cartagenareportingtool import MessageFactory as _
 from UNEP.cartagenareportingtool import vocabulary
 from interface import INumberSchema, ICountryReport
-from zope.lifecycleevent.interfaces import IObjectAddedEvent
+from zope.lifecycleevent.interfaces import IObjectAddedEvent, IObjectCreatedEvent
 
-from z3c.form import form
+#from z3c.form import form
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 # Custom content-type class; objects created for this content type will
@@ -35,6 +35,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 # methods and properties. Put methods that are mainly useful for rendering
 # in separate view classes.
 
+    
+    
 class CountryReport(Item):
     grok.implements(ICountryReport)
 
@@ -87,3 +89,14 @@ def add_report_to_member_folder(folder, event):
     type='UNEP.cartagenareportingtool.countryreport',
     title='Country Report',
     container=folder)
+
+@grok.subscribe(ICountryReport, IObjectAddedEvent)
+def add_default_country(item, event):
+    value = item.absolute_url_path().split('/')[-2]
+    term = vocabulary.countries.getTerm(value)
+    item.default_country = term.value
+
+#@form.default_value(field=ICountryReport['default_country'])
+#def countryDefaultValue(data):
+#    
+#    return u'JAM'

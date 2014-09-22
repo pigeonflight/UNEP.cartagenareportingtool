@@ -1417,4 +1417,4 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         fields = schema9
         )
 
-    
+
