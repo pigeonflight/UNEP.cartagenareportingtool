@@ -81,6 +81,15 @@ class ICountryReport(form.Schema, IImageScaleTraversable):
         title = _(u'Title'),
         required = False,
     )
+    form.widget(public_consent=CheckBoxFieldWidget)
+    form.mode(public_consent='hidden')
+    public_consent=schema.Choice(
+    title = _(u"Would you have any objections to the secretariat making this report public?",
+               mapping={'number':''}),
+    required=False,
+    source=vocabulary.yes_no
+    )
+
     default_country=schema.Choice(
     title = _(u"Country",
                mapping={'number':''}),

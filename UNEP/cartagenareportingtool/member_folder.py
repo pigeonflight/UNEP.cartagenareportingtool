@@ -83,6 +83,29 @@ class MemberFolderView(grok.View):
             url = "%s/view" % all_reports[0].id
         return url
         
+    def submit_url(self):
+        # feels like repeating myself
+        # XXX refactor later to be prettier
+        all_reports = self.get_all_reports
+        if len(all_reports) == 0:
+            url = "#"
+        else:
+            url = "%s/submit" % all_reports[0].id
+        return url
+    
+    
+    def state(self):
+        return api.content.get_state(self.context['country-report'])
+        
+    def report_not_submitted(self):
+        #get state
+        return self.state == "open"
+        
+    def can_edit_report(self):
+        user = api.user.get_current()
+        permissions = api.user.get_permissions(username=user.id, obj=self.context['country-report'])
+        return permissions['Modify portal content']
+        
     @property
     def member_path(self):
         current_user = api.user.get_current()

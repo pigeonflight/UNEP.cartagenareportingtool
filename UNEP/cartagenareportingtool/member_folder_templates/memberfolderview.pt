@@ -35,7 +35,7 @@
       </div>
       <div class="cell width-6 position-10">
           <div class="reporting-tool-control-panel">
-                <a  tal:attributes="href view/edit_report">
+                <a  tal:condition="view/can_edit_report" tal:attributes="href view/edit_report">
               <button class="btn btn-success">
               <b tal:condition="not:view/report_exists" i18n:translate="">start new report</b>
               <b tal:condition="view/report_exists" i18n:translate="">edit report</b>
@@ -43,7 +43,13 @@
               </button>
               </a>
               <p />
-              <a  tal:condition="view/report_exists">
+              <a  tal:condition="view/report_not_submitted" tal:attributes="href view/submit_url">
+              <button class="btn btn-success">
+              <b i18n:translate="">submit report</b>
+              </button>
+              </a>
+              <p />
+              <a  tal:condition="view/report_exists" tal:attributes="href view/view_report">
               <button class="btn btn-primary">
               <i i18n:translate="">view report</i>
               </button>

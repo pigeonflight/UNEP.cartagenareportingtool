@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="UNEP.cartagenareportingtool">
+<body>
+
+<tal:comment tal:condition="nothing">
+    This is the submit report
+</tal:comment>
+<div metal:fill-slot="top_slot"
+              tal:define="dummy python:request.set('disable_border', 1)" />
+
+<metal:slot fill-slot="header">
+</metal:slot>
+<metal:slot fill-slot="content-title">
+</metal:slot>
+<metal:slot fill-slot="content-description">
+</metal:slot>
+
+<metal:main fill-slot="main">
+  <metal:content-core define-macro="content-core">
+
+    
+    
+  <div class="row">
+    <form action="" method="post" tal:attributes="action view/submit_report">
+     <div class="cell width-2 position-0">
+
+ 
+     
+      </div>
+      <div class="cell width-12 position-2">
+      
+          <div class="reporting-tool-control-panel">
+          <label class="objections-note" i18n:translate="">Would you have any objections to the secretariat making this report public?</label>
+          <br />
+          <input type="radio" name="make-report-public" value="No"/> <tal:block i18n:translate="">No</tal:block>
+          <input type="radio" name="make-report-public" value="Yes"/> <tal:block i18n:translate="">Yes</tal:block>
+          <br />
+          <input type="submit">
+ 
+          </div>
+      </div>
+      </form>
+  </div>
+
+  </metal:content-core>
+</metal:main>
+
+</body>
+</html>
+

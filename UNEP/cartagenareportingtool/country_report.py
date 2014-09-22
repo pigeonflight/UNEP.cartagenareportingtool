@@ -63,11 +63,86 @@ class View(dexterity.DisplayForm):
     # grok.name('view')
 
     # Add view methods here
+    def can_edit_report(self):
+        user = api.user.get_current()
+        permissions = api.user.get_permissions(username=user.id, obj=self.context)
+        return permissions['Modify portal content']
+        
     def edit_report(self):
         """ determine if a report exists """
         url = "%s/edit" % self.context.absolute_url()
         return url
 
+    def state(self):
+        return api.content.get_state(self.context)
+
+    def is_submitted(self):
+        return self.state() == "submitted"
+    
+    @property    
+    def submit_report_form(self):
+        return "%s/%s" % (self.context.absolute_url(),'submit-report')
+    
+    @property    
+    def submit_report(self):
+        return "%s/%s" % (self.context.absolute_url(),'submit')
+        
+    @property    
+    def reopen_report(self):
+        return "%s/%s" % (self.context.absolute_url(),'reopen')
+    
+class Submit(grok.View):
+    grok.context(ICountryReport)
+    grok.name('submit')
+    def render(self):
+        # transition
+        form_items = self.request.form.items()
+        form_items = dict(form_items)
+        self.context.public_consent = form_items['make-report-public']
+        state_info = {}
+        state_info['initial_state'] = api.content.get_state(self.context)
+        api.content.transition(obj=self.context,transition='submit')
+        state_info['new_state'] = api.content.get_state(self.context)
+        self.request.response.setHeader("Content-type","application/json")
+        return {"message":"""
+                 the initial state was '%(initial_state)s' and the new state is
+                '%(new_state)s'
+                """ % state_info}
+
+class SubmitReport(grok.View):
+    grok.context(ICountryReport)
+    grok.name('submit-report')
+    
+    @property    
+    def submit_report(self):
+        return "%s/%s" % (self.context.absolute_url(),'submit')
+        
+    def submit_action(self):
+    # transition
+        state_info = {}
+        state_info['initial_state'] = api.content.get_state(self.context)
+        api.content.transition(obj=self.context,transition='submit')
+        state_info['new_state'] = api.content.get_state(self.context)
+        self.request.response.setHeader("Content-type","application/json")
+        return {"message":"""
+                 the initial state was '%(initial_state)s' and the new state is
+                '%(new_state)s'
+                """ % state_info}
+
+class Reopen(grok.View):
+    grok.context(ICountryReport)
+    grok.name('reopen')
+    def render(self):
+        # transition
+        state_info = {}
+        state_info['initial_state'] = api.content.get_state(self.context)
+        api.content.transition(obj=self.context,transition='reopen')
+        state_info['new_state'] = api.content.get_state(self.context)
+        return {"message":"""
+                 the initial state was '%(initial_state)s' and the new state is
+                '%(new_state)s'
+                """ % state_info}
+            
 class EditForm(dexterity.EditForm):
     grok.context(ICountryReport)
     #grok.template('edit')
@@ -93,8 +168,13 @@ def add_report_to_member_folder(folder, event):
 @grok.subscribe(ICountryReport, IObjectAddedEvent)
 def add_default_country(item, event):
     value = item.absolute_url_path().split('/')[-2]
-    term = vocabulary.countries.getTerm(value)
-    item.default_country = term.value
+    try:
+        term = vocabulary.countries.getTerm(value)
+        item.default_country = term.value
+    except LookupError:
+        pass
+        
+    
 
 #@form.default_value(field=ICountryReport['default_country'])
 #def countryDefaultValue(data):

@@ -94,6 +94,24 @@ clear: both;
 margin-bottom: 15px;
 }
 .footer-blocks{display:none;}
+.report-state{
+    padding: 14px;
+    font-size: 200%;
+    width: 190px;
+    text-align: center;
+}
+
+.report-state.submitted {
+    background: rgb(65, 192, 75);
+    color: white;
+    border-left: 12px solid green;
+}
+.report-state.open {
+    background: rgb(192, 155, 65);
+    color: white;
+    border-left: 12px solid rgb(128, 49, 0);
+}
+#formfield-form-widgets-public_consent{display:none;}
 }
 
 @media print {
@@ -101,7 +119,7 @@ margin-bottom: 15px;
     width: 100%;
   }
   #content { width: 98%;}
-  .footer-blocks{display:none;}
+  .footer-blocks,.report-state{display:none;}
   .cep-header {
     display: none;
         }

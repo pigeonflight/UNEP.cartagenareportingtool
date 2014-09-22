@@ -73,7 +73,8 @@ class ControlPanelView(grok.View):
 
                 progress = 5
                 doclink = country_report.absolute_url()
-                status = 'started'
+                
+                status = api.content.get_state(country_report)
                 css_class = "%s %s" % (username,'started')
                 for idx in range(len(country_data)):
                     #print country_data[idx]

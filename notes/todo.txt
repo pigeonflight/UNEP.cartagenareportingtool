@@ -1,13 +1,18 @@
+- [ ] - add following sentence, right before the submit. 
+Would you have any objections the secretariat making this report public?
+¿Usted tendría ninguna objeción a la secretaría hacer público este informe ?
+Auriez-vous des objections du secrétariat rendant ce rapport public ?
+- [x] - implement submission workflow [submit-->"submitted",
+                                      reopen-->"open"]
+- [ ] - configure link for promotion (setup production site and url)
+- [ ] - ability to attach documents
 - [x] - Fix form to match the word document
-- [.] - administrator view (export all reports as a single document, spreadsheet version of the reports, download of individual reports)
 - [x] - create a redirect from the home page
 - [x] - status view of (submitted, in progress)
-- [ ] - need a print option
+- [x] - need a print option
 - [x] - encourage regulary saving
-- [ ] - save as pdf functionality (may be delayed)
 - [ ] - make sure that clicking the banner takes you to the home page
 - [x] - account usernames are the country 3 letter initial eg. JAM or BVI or USA
-- [ ] - add following sentence, right before the submit. 
-      Would you have any objections the secretariat making this report public?
-      ¿Usted tendría ninguna objeción a la secretaría hacer público este informe ?
-      Auriez-vous des objections du secrétariat rendant ce rapport public ?
+- [ ] - alert on submission (send an email to the designated admin)
+- [ ] - save as pdf functionality (may be delayed)
+- [.] - administrator view (export all reports as a single document, spreadsheet version of the reports, download of individual reports)
