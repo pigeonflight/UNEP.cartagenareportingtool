@@ -19,7 +19,7 @@
 
 <metal:main fill-slot="main">
   <metal:content-core define-macro="main">
-<a href="@@usergroup-userprefs"><img src="http://localhost:8080/Ploneyy/portal_url/user.png" alt="" title="" height="16" width="16"> Manage users</a><p> &nbsp;</p>
+<a href="@@usergroup-userprefs"><img src="user.png" alt="" title="" height="16" width="16"> Manage users</a><p> &nbsp;</p>
    <table class="listing table table-hover">
 	   	<tr class="active">
 	   		<th class="active" i18n:translate="">country</th>

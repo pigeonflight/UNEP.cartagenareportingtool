@@ -93,6 +93,7 @@ float: right;
 clear: both;
 margin-bottom: 15px;
 }
+.footer-blocks{display:none;}
 }
 
 @media print {
