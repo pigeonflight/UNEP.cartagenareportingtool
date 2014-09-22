@@ -33,7 +33,7 @@ class Index(object):
             redirect_url = "%s/%s" % (portal_url,sub_path)
         else:
             #print "redirect to top folder"
-            redirect_url = "%s/%s" % (portal_url,members_folder)
+            redirect_url = "%s/%s" % (portal_url,'login')
         request.response.redirect(redirect_url)
 
     

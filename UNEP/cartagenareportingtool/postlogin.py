@@ -34,16 +34,18 @@ def logged_in_handler(event):
     #redirect_to_user folder
     # this means that the information is always available at the default memberfolder
     sub_path = "%s/%s" % (members_folder,user.getId())
-
+    print "subpath",sub_path
+    sub_path = "@@site_index"
     # if the logged in user is an administrator then redirect to the controlpanel
-    print "get roles",user.getRoles()
+    # print "get roles",user.getRoles()
     if 'Manager' in user.getRoles():
         sub_path = "@@cartagenareportingtool-controlpanel"
     
     redirect_path = "%s/%s" % (portal_url,sub_path)
-    #print redirect_path 
+    print "redirect",redirect_path 
     # bruteforce came_from to always be empty
     if request.get('came_from', None):
             request['came_from'] = ''
             request.form['came_from'] = ''
+    request.form['came_from'] = ''
     request.response.redirect(redirect_path)
