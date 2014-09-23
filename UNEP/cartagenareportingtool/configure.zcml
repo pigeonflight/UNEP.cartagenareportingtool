@@ -55,6 +55,14 @@
     handler="UNEP.cartagenareportingtool.setuphandlers.setupVarious"
     />
 
+   <genericsetup:upgradeStep
+        title="Upgrade UNEPCartagenaReportingTool"
+        description="upgrades the reporting tool to version 1.0.1"
+        source="*"
+        destination="1.0.1"
+        handler=".upgrades.upgrade_to_1_0_1"
+        profile="UNEP.cartagenareportingtool:default" />
+
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot directory="jbot_overrides" />
    
