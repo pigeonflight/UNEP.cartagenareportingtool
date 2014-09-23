@@ -29,6 +29,9 @@ from zope.lifecycleevent.interfaces import IObjectAddedEvent, IObjectCreatedEven
 
 #from z3c.form import form
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from plone.api.exc import UserNotFoundError
+from AccessControl import getSecurityManager
+
 
 # Custom content-type class; objects created for this content type will
 # be instances of this class. Use this class to add content-type specific
@@ -65,8 +68,16 @@ class View(dexterity.DisplayForm):
     # Add view methods here
     def can_edit_report(self):
         user = api.user.get_current()
-        permissions = api.user.get_permissions(username=user.id, obj=self.context)
-        return permissions['Modify portal content']
+        try:
+            permissions = api.user.get_permissions(username=user.id, 
+                              obj=self.context) 
+            can_edit = permissions['Modify portal content']           
+        except UserNotFoundError:
+            # check if they are an admin
+            user = getSecurityManager().getUser()
+            can_edit = 'Manager' in user.getRoles() 
+        return can_edit
+        
         
     def edit_report(self):
         """ determine if a report exists """
