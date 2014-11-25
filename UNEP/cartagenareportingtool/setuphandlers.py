@@ -113,6 +113,6 @@ def set_up_security(context):
     #site security setup!
     security = ISecuritySchema(site)
     security.enable_user_folders = True
-    security.set_enable_self_reg(True)
-    security.set_enable_user_pwd_choice(True)
+    #security.set_enable_self_reg(True)
+    #security.set_enable_user_pwd_choice(True)
     
