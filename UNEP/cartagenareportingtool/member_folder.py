@@ -14,6 +14,8 @@ from plone.namedfile.field import NamedImage, NamedFile
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from plone.namedfile.interfaces import IImageScaleTraversable
 from plone import api
+from zope.component import getMultiAdapter
+from plone.api.exc import UserNotFoundError
 
 
 from UNEP.cartagenareportingtool import MessageFactory as _
@@ -103,8 +105,18 @@ class MemberFolderView(grok.View):
         
     def can_edit_report(self):
         user = api.user.get_current()
-        permissions = api.user.get_permissions(username=user.id, obj=self.context['country-report'])
-        return permissions['Modify portal content']
+        #try:
+        #    user_id = user.id
+        #except AttributeError:
+        #    pm = api.portal.get_tool(name="portal_membership")
+        #    user_id = pm.getAuthenticatedMember().getUserName()
+        allowed = False
+        try:
+            permissions = api.user.get_permissions(username=user.id, obj=self.context['country-report'])
+            allowed = permissions['Modify portal content']
+        except UserNotFoundError:
+            allowed = 'Manager' in user.getRoles()
+        return allowed
         
     @property
     def member_path(self):

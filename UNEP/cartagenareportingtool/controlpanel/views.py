@@ -56,6 +56,7 @@ class ControlPanelView(grok.View):
         """
         user_status = []
         users = api.user.get_users()
+        print [user.id for user in users]
         for user in users:
             username = user.id
             country_report = self.get_country_report(username)
